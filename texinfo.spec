@@ -5,7 +5,7 @@ Summary(pl):	Narzêdzia potrzebne przy tworzeniu dokumentacji w formacie texinfo
 Summary(tr):	texinfo biçimleyici ve info okuyucu
 Name:		texinfo
 Version:	4.0b
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		Applications/Publishing
 Group(de):	Applikationen/Publizieren
