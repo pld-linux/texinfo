@@ -227,3 +227,18 @@ diff -Nru texinfo-3.12s/doc/texinfo.txi texinfo-3.12s.new/doc/texinfo.txi
  @comment  node-name,  next,  previous,  up
  @section Catching Errors with Info Formatting
  @cindex Catching errors with Info formatting
+diff -Nru texinfo-4.0/doc/info-stnd.texi texinfo-4.0.new/doc/info-stnd.texi
+--- texinfo-4.0/doc/info-stnd.texi	Fri Jun 25 23:57:05 1999
++++ texinfo-4.0.new/doc/info-stnd.texi	Fri Oct  1 12:51:32 1999
+@@ -10,9 +10,9 @@
+ 
+ @include version.texi
+ 
+-@dircategory Texinfo documentation system
++@dircategory Texinfo documentation system:
+ @direntry
+-* Standalone info program: (info-stnd).    Standalone Info-reading program.
++* Standalone info program: (info-stnd).	Standalone Info-reading program
+ @end direntry
+ 
+ @ifinfo
