@@ -190,7 +190,6 @@ Narzêdzie do konwersji plików texinfo na dvi.
 %build
 rm -f missing m4/{codeset,gettext,glibc21,iconv,isc-posix,lcmessage,progtest}.m4
 ln -sf version.texi doc/version2.texi
-mv po/Makevars po/Makewars
 %{__gettextize}
 %{__aclocal} -I m4
 %{__autoconf}
