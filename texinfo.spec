@@ -5,11 +5,12 @@ Summary(pl):	Narzêdzia potrzebne przy tworzeniu dokumentacji w formacie texinfo
 Summary(tr):	texinfo biçimleyici ve info okuyucu
 Name:		texinfo
 Version:	4.0
-Release:	10
+Release:	16
 License:	GPL
 Group:		Applications/Publishing
+Group(de):	Applikationen/Publizieren
 Group(pl):	Aplikacje/Publikowanie
-Source0:	ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnu.org/pub/gnu/texinfo/%{name}-%{version}.tar.gz
 Source1:	info.desktop
 Patch1:		%{name}-fix.patch
 Patch3:		%{name}-zlib.patch
@@ -72,8 +73,9 @@ Summary(de):	Ein TTY-basiertes Leseprogramm für GNU info-Dokumentation
 Summary(fr):	un lecteur de documentations info
 Summary(pl):	Samodzielny, terminalowy czytnik dokumentów GNU texinfo
 Summary(tr):	GNU texinfo belgeleri için tty tabanlý görüntüleyici
-Group:		Utilities/System
-Group(pl):	Narzêdzia/System
+Group:		Applications/System
+Group(de):	Applikationen/System
+Group(pl):	Aplikacje/System
 Prereq:		fix-info-dir
 
 %description -n info
@@ -113,12 +115,11 @@ automake
 gettextize --copy --force
 aclocal
 autoconf
-LDFLAGS="-s -lz"; export LDFLAGS
 %configure \
 	--without-included-gettext
 %{__make} -C doc distclean-aminfo
 %{__make}
-rm util/install-info
+rm -f util/install-info
 %{__make} -C util 
 
 %install
@@ -132,8 +133,7 @@ ln -s %{_sbindir}/install-info $RPM_BUILD_ROOT/sbin/install-info
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Utilities
 
-gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/*info*,%{_mandir}/man?/*} \
-	ChangeLog INTRODUCTION NEWS README info/README
+gzip -9nf ChangeLog INTRODUCTION NEWS README info/README
 
 %find_lang %{name}
 
