@@ -1,19 +1,19 @@
 # Polish translation for texinfo.
 # Copyright (C) 2003 Free Software Foundation, Inc.
 # This file is distributed under the same license as the texinfo package.
-# Jakub Bogusz <qboosh@pld.org.pl>, 2003.
+# Jakub Bogusz <qboosh@pld-linux.org>, 2003.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: texinfo 4.6\n"
-"Report-Msgid-Bugs-To: bug-texinfo@gnu.org\n"
 "POT-Creation-Date: 2003-06-10 13:52-0700\n"
 "PO-Revision-Date: 2003-06-19 13:14+0200\n"
-"Last-Translator: Jakub Bogusz <qboosh@pld.org.pl>\n"
+"Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-2\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Report-Msgid-Bugs-To: bug-texinfo@gnu.org\n"
 
 #: info/echo-area.c:283 info/session.c:712
 msgid "Move forward a character"
