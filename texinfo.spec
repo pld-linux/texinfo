@@ -4,13 +4,13 @@ Summary(fr):	Outils créant des documentations au format texinfo
 Summary(pl):	Narzêdzia potrzebne przy tworzeniu dokumentacji w formacie texinfo
 Summary(tr):	texinfo biçimleyici ve info okuyucu
 Name:		texinfo
-Version:	4.0
-Release:	20
+Version:	4.0b
+Release:	0.1
 License:	GPL
 Group:		Applications/Publishing
 Group(de):	Applikationen/Publizieren
 Group(pl):	Aplikacje/Publikowanie
-Source0:	ftp://ftp.gnu.org/pub/gnu/texinfo/%{name}-%{version}.tar.gz
+Source0:	ftp://alpha.gnu.org/pub/gnu/%{name}-%{version}.tar.gz
 Source1:	info.desktop
 Patch0:		%{name}-fix.patch
 Patch1:		%{name}-zlib.patch
