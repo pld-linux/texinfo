@@ -147,15 +147,6 @@ diff -Nur texinfo-4.0b.orig/doc/texinfo.txi texinfo-4.0b/doc/texinfo.txi
  @section Format with @code{texi2dvi}
  @pindex texi2dvi @r{(shell script)}
  
-@@ -12956,7 +12956,7 @@
- For a list of other options, run @samp{texi2dvi --help}.
- 
- 
--@node Print with lpr, Within Emacs, Format with texi2dvi, Hardcopy
-+@node Print with lpr, Within Emacs, texi2dvi, Hardcopy
- @section Shell Print Using @code{lpr -d}
- @pindex lpr @r{(DVI print command)}
- 
 @@ -13465,7 +13465,7 @@
  @xref{small}, for information about
  commands that make it easier to produce examples for a smaller manual.
