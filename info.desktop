@@ -1,0 +1,12 @@
+info name "info"
+info description "GNU Info Page Reader"
+info exec "xterm -e info &"
+info group "Utilities/Misc"
+[Desktop Entry]
+Name=info
+Name[pl]=info
+Comment=GNU Info Page Reader
+Comment=GNU przegl±darka stron info
+Exec=/usr/X11R6/bin/xterm -e /usr/bin/info
+Terminal=0
+Type=Application
