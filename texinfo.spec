@@ -26,6 +26,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	zlib-devel
 Requires:	info = %{version}
+Requires:	tetex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
