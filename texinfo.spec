@@ -5,7 +5,7 @@ Summary(pl):	Narzêdzia potrzebne przy tworzeniu dokumentacji w formacie texinfo
 Summary(tr):	texinfo biçimleyici ve info okuyucu
 Name:		texinfo
 Version:	4.0b
-Release:	4
+Release:	5
 License:	GPL
 Group:		Applications/Publishing
 Group(de):	Applikationen/Publizieren
@@ -19,6 +19,7 @@ Patch3:		%{name}-version.texi.patch
 Patch4:		%{name}-DESTDIR.patch
 Patch5:		%{name}-fileextension.patch
 Patch6:		%{name}-danish.patch
+Patch7:		%{name}-cpp_macros.patch
 URL:		http://texinfo.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -130,6 +131,7 @@ Narzêdzie do konwersji plików texinfo na dvi.
 %patch4 -p1
 %patch5 -p1
 %patch6 -p1
+%patch7 -p1
 
 %build
 ln -sf version.texi doc/version2.texi
