@@ -67,12 +67,11 @@ araçlarla birlikte, tüm bu araçlar için bir emacs arayüzü de sunar.
 Summary:	A stand-alone TTY-based reader for GNU texinfo documentation
 Summary(de):	Ein TTY-basiertes Leseprogramm für GNU info-Dokumentation
 Summary(fr):	un lecteur de documentations info
-Summary(pl):	Samodzielny, bazuj±cy na terminalu czytnik dokumentów GNU texinfo
+Summary(pl):	Samodzielny, terminalowy czytnik dokumentów GNU texinfo
 Summary(tr):	GNU texinfo belgeleri için tty tabanlý görüntüleyici
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
-Prereq:		mktemp
-Prereq:		textutils
+Prereq:		/usr/sbin/fix-info-dir
 
 %description -n info
 The GNU project uses the texinfo file format for much of its documentation.
@@ -125,7 +124,6 @@ install -d $RPM_BUILD_ROOT{%{_applnkdir}/Utilities,%{_sbindir},/sbin}
 
 make install DESTDIR=$RPM_BUILD_ROOT
 
-install util/fix-info-dir $RPM_BUILD_ROOT%{_sbindir}
 
 mv -f $RPM_BUILD_ROOT%{_bindir}/install-info $RPM_BUILD_ROOT%{_sbindir}
 ln -s %{_sbindir}/install-info $RPM_BUILD_ROOT/sbin/install-info
@@ -135,19 +133,17 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Utilities
 gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/*info*,%{_mandir}/man?/*} \
 	ChangeLog INTRODUCTION NEWS README info/README
 
-rm -f $RPM_BUILD_ROOT%{_infodir}/dir
-touch $RPM_BUILD_ROOT%{_infodir}/dir
 
 %find_lang %{name}
 
 %post
-[ -x /usr/sbin/fix-info-dir ] && /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+[ -x /usr/sbin/fix-info-dir ] && /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
 
 %postun
-[ -x /usr/sbin/fix-info-dir ] && /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+[ -x /usr/sbin/fix-info-dir ] && /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
 
 %post -n info
-/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+/usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -169,12 +165,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/info
 %attr(755,root,root) /sbin/install-info
-%attr(755,root,root) /usr/sbin/fix-info-dir
 %attr(755,root,root) %{_sbindir}/install-info
 
 %{_applnkdir}/Utilities/info.desktop
 
-%ghost %{_infodir}/dir
 %{_infodir}/info.info*
 %{_infodir}/info-stnd.info*
 
