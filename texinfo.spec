@@ -9,7 +9,7 @@ Summary(tr):	texinfo biГimleyici ve info okuyucu
 Summary(uk):	╤нструменти для створення файл╕в документац╕╖ формату Texinfo
 Name:		texinfo
 Version:	4.6
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/Publishing
 Source0:	ftp://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.bz2
