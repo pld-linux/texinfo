@@ -4,25 +4,26 @@ Summary(fr):	Formatteur texinfo et lecteur pour info.
 Summary(pl):	Texinfo -- formatter plików texinfo
 Summary(tr):	texinfo biçimleyici ve info okuyucu
 Name:		texinfo
-Version:	3.12h
-Release:	3
+Version:	3.12s
+Release:	1
 Copyright:	GPL
 Group:		Applications/Publishing
 Group(pl):	Aplikacje/Publikowanie
 Source:		ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
-Source1:	info-dir
-Source2:	info.desktop
-Patch0:		texinfo-exe.patch
+Source1:	info.desktop
 Patch1:		texinfo-fix.patch
-Patch2:		texinfo-alpha-tioc.patch
 Patch3:		texinfo-zlib.patch
 Patch4:		texinfo-info.patch
 Patch5:		texinfo-version.texi.patch
 Patch6:		texinfo-DESTDIR.patch
+Patch7:		texinfo-fix-info-dir.patch
 BuildRequires:	zlib-devel
 Prereq:		/sbin/install-info
 Requires:	info = %{version}
+Requires:	mktemp
 Buildroot:	/tmp/%{name}-%{version}-root
+
+%define		_sysconfdir	/etc
 
 %description
 The GNU project uses the texinfo file format for much of its documentation. 
@@ -83,13 +84,12 @@ bulunur.
 
 %prep
 %setup -q
-%patch0 -p1
 %patch1 -p1
-%patch2 -p1
-%patch3 -p1
+%patch3 -p1 
 %patch4 -p1
 %patch5 -p1
 %patch6 -p1
+%patch7 -p1 
 
 %build
 ln -s version.texi doc/version2.texi
@@ -106,19 +106,17 @@ make -C util
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{/usr/X11R6/share/applnk/Utilities,%{_sbindir},/sbin}
+install -d $RPM_BUILD_ROOT{/usr/X11R6/share/applnk/Utilities,%{_sbindir}} \
+	$RPM_BUILD_ROOT{/sbin,%{_sysconfdir}}
 
 make install DESTDIR=$RPM_BUILD_ROOT
 
 install util/fix-info-dir $RPM_BUILD_ROOT%{_sbindir}
 
-install %{SOURCE1} $RPM_BUILD_ROOT/etc/info-dir
-ln -sf ../../../etc/info-dir $RPM_BUILD_ROOT%{_infodir}/dir
-
 mv -f $RPM_BUILD_ROOT%{_bindir}/install-info $RPM_BUILD_ROOT%{_sbindir}
 ln -s %{_sbindir}/install-info $RPM_BUILD_ROOT/sbin/install-info
 
-install %{SOURCE2} $RPM_BUILD_ROOT/usr/X11R6/share/applnk/Utilities
+install %{SOURCE1} $RPM_BUILD_ROOT/usr/X11R6/share/applnk/Utilities
 
 gzip -9nf $RPM_BUILD_ROOT%{_infodir}/*info* \
 	ChangeLog INTRODUCTION NEWS README info/README
@@ -126,12 +124,10 @@ gzip -9nf $RPM_BUILD_ROOT%{_infodir}/*info* \
 %find_lang %{name}
 
 %post
-/sbin/install-info %{_infodir}/texinfo.gz /etc/info-dir
+/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%preun
-if [ "$1" = "0" ]; then
-	/sbin/install-info --delete %{_infodir}/texinfo.gz /etc/info-dir
-fi
+%postun
+/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %pre -n info
 if [ -e /usr/info ] && [ ! -L /usr/info ]; then
@@ -143,6 +139,10 @@ if [ -e /usr/info ] && [ ! -L /usr/info ]; then
 	rm -rf /usr/info
 	ln -sf %{_infodir} /usr/info
 fi
+if [ -L %{_infodir}/dir ]; then
+	rm -f %{_infodir}/dir
+fi
+/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -153,16 +153,18 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/makeinfo
 %attr(755,root,root) %{_bindir}/texi2dvi
 %attr(755,root,root) %{_bindir}/texindex
-%{_infodir}/info-stnd.info*
+
 %{_infodir}/texinfo*
 
 %files -n info -f texinfo.lang
 %defattr(644,root,root,755)
-/usr/X11R6/share/applnk/Utilities/info.desktop
-%config(noreplace) %verify(not mtime size md5) /etc/info-dir
-%config %{_infodir}/dir
 %attr(755,root,root) %{_bindir}/info
-%{_infodir}/info.info*
 %attr(755,root,root) /sbin/install-info
 %attr(755,root,root) %{_sbindir}/fix-info-dir
 %attr(755,root,root) %{_sbindir}/install-info
+
+/usr/X11R6/share/applnk/Utilities/info.desktop
+
+%ghost %{_infodir}/dir
+%{_infodir}/info.info*
+%{_infodir}/info-stnd.info*
