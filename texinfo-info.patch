@@ -15,10 +15,6 @@ diff -ur texinfo-4.1-/doc/info-stnd.texi texinfo-4.1/doc/info-stnd.texi
  @end direntry
  
  @ifinfo
-Only in texinfo-4.1/doc: info-stnd.texi.orig
-Only in texinfo-4.1/doc: info-stnd.texi.rej
-Only in texinfo-4.1/doc: info.texi.orig
-Only in texinfo-4.1/doc: texinfo.txi.orig
 --- texinfo-4.2/doc/info.texi.orig	Mon Mar 18 10:00:32 2002
 +++ texinfo-4.2/doc/info.texi	Tue May  7 06:41:06 2002
 @@ -8,9 +8,10 @@
@@ -34,9 +30,9 @@ Only in texinfo-4.1/doc: texinfo.txi.orig
  @end direntry
  
  @ifinfo
-diff -ur texinfo-4.1-/doc/texinfo.txi texinfo-4.1/doc/texinfo.txi
---- texinfo-4.1-/doc/texinfo.txi	Mon Mar  4 15:52:53 2002
-+++ texinfo-4.1/doc/texinfo.txi	Sat Mar  9 15:55:55 2002
+diff -ur texinfo-4.3-/doc/texinfo.txi texinfo-4.1/doc/texinfo.txi
+--- texinfo-4.3-/doc/texinfo.txi	Mon Mar  4 15:52:53 2002
++++ texinfo-4.3/doc/texinfo.txi	Sat Mar  9 15:55:55 2002
 @@ -22,13 +22,13 @@
  
  @comment %**end of header
@@ -69,11 +65,11 @@ diff -ur texinfo-4.1-/doc/texinfo.txi texinfo-4.1/doc/texinfo.txi
  * Within Emacs::                How to format and print from an Emacs shell.
  * Texinfo Mode Printing::       How to format and print in Texinfo mode.
 @@ -561,7 +561,7 @@
-                                   located in other directories.
+                                  located in other directories.
  * Installing Dir Entries::      How to specify what menu entry to add
-                                   to the Info directory.
+                                  to the Info directory.
 -* Invoking install-info::       @code{install-info} options.
-+* install-info::		@code{install-info} options.
++* install-info::                @code{install-info} options.
  
  Include Files
  
@@ -110,9 +106,9 @@ diff -ur texinfo-4.1-/doc/texinfo.txi texinfo-4.1/doc/texinfo.txi
  
  If some macro feature causes errors when producing the printed version
  of a manual, try expanding the macros with @command{makeinfo} by
--invoking @command{texi2dvi} with the @samp{-e} option; see @ref{Format
+-invoking @command{texi2dvi} with the @samp{-E} option; see @ref{Format
 -with texi2dvi}.
-+invoking @command{texi2dvi} with the @samp{-e} option; see @ref{texi2dvi}.
++invoking @command{texi2dvi} with the @samp{-E} option; see @ref{texi2dvi}.
  
  @node alias
  @section @samp{@@alias @var{new}=@var{existing}}
@@ -191,11 +187,11 @@ diff -ur texinfo-4.1-/doc/texinfo.txi texinfo-4.1/doc/texinfo.txi
  require changing the source file.
  
 @@ -14453,7 +14453,7 @@
-                                   located in other directories.
+                                  located in other directories.
  * Installing Dir Entries::      How to specify what menu entry to add
-                                   to the Info directory.
+                                  to the Info directory.
 -* Invoking install-info::       @code{install-info} options.
-+* install-info::		@code{install-info} options.
++* install-info::                @code{install-info} options.
  @end menu
  
  
@@ -217,15 +213,13 @@ diff -ur texinfo-4.1-/doc/texinfo.txi texinfo-4.1/doc/texinfo.txi
  @dots{}
  END-INFO-DIR-ENTRY
  @end smallexample
-@@ -14747,8 +14747,8 @@
- as a whole in the appropriate other category.
+@@ -14747,7 +14747,7 @@
+ traditional @command{man} system.
  
  
 -@node Invoking install-info
--@subsection Invoking install-info
 +@node install-info
-+@subsection install-info
- 
+ @subsection Invoking @command{install-info}
  @pindex install-info
  
 @@ -17143,7 +17143,7 @@
