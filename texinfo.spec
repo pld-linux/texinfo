@@ -108,7 +108,7 @@ install util/fix-info-dir $RPM_BUILD_ROOT/sbin
 install %{SOURCE1} $RPM_BUILD_ROOT/etc/info-dir
 ln -sf ../../../etc/info-dir $RPM_BUILD_ROOT%{_infodir}/dir
 
-mv -f $RPM_BUILD_ROOT/usr/bin/install-info $RPM_BUILD_ROOT/sbin
+mv -f $RPM_BUILD_ROOT%{_bindir}/install-info $RPM_BUILD_ROOT/sbin
 
 install %{SOURCE2} $RPM_BUILD_ROOT/etc/X11/wmconfig/info
 
@@ -139,7 +139,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc {ChangeLog,INTRODUCTION,NEWS,README,info/README}.gz
-%attr(755,root,root) /usr/bin/*
+%attr(755,root,root) %{_bindir}/*
 %{_infodir}/info-stnd.info*
 %{_infodir}/texinfo*
 
@@ -148,7 +148,7 @@ rm -rf $RPM_BUILD_ROOT
 %config(missingok) /etc/X11/wmconfig/info
 %config(noreplace) %verify(not mtime size md5) /etc/info-dir
 %config %{_infodir}/dir
-%attr(755,root,root) /usr/bin/info
+%attr(755,root,root) %{_bindir}/info
 %{_infodir}/info.info*
 %attr(755,root,root) /sbin/install-info
 %attr(755,root,root) /sbin/fix-info-dir
@@ -216,7 +216,7 @@ rm -rf $RPM_BUILD_ROOT
 
 * Tue Feb 25 1997 Erik Troan <ewt@redhat.com>
 - patched install-info.c for glibc.
-- added /usr/bin/install-info to the filelist
+- added %{_bindir}/install-info to the filelist
 
 * Tue Feb 18 1997 Michael Fulbright <msf@redhat.com>
 - upgraded to version 3.9.
