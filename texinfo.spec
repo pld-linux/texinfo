@@ -168,7 +168,7 @@ ln -sf version.texi doc/version2.texi
 #gettextize --copy --force
 #aclocal
 autoconf
-automake -a -c
+automake -a -c -f
 %configure \
 	--without-included-gettext
 %{__make} -C doc maintainer-clean-aminfo
