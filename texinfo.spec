@@ -170,8 +170,8 @@ rm -f missing m4/{codeset,gettext,glibc21,iconv,isc-posix,lcmessage,progtest}.m4
 ln -sf version.texi doc/version2.texi
 gettextize --copy --force
 aclocal -I m4
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 %configure \
 	--without-included-gettext
 %{__make} -C doc maintainer-clean-aminfo
