@@ -1,18 +1,5 @@
-diff -Nru texinfo-4.0/util/Makefile.am texinfo-4.0.new/util/Makefile.am
---- texinfo-4.0/util/Makefile.am	Sat Jul 17 00:00:26 1999
-+++ texinfo-4.0.new/util/Makefile.am	Thu Oct 12 21:33:37 2000
-@@ -7,7 +7,7 @@
- 
- localedir = $(datadir)/locale
- INCLUDES = -I$(top_srcdir)/lib -I../intl -DLOCALEDIR=\"$(localedir)\"
--LDADD = ../lib/libtxi.a @INTLLIBS@
-+LDADD = ../lib/libtxi.a -lz @INTLLIBS@
- 
- # Most of these are just for fun.  The only one that's really supported
- # is texi2dvi.
-diff -Nru texinfo-4.0/util/install-info.c texinfo-4.0.new/util/install-info.c
---- texinfo-4.0/util/install-info.c	Thu Oct 12 21:34:07 2000
-+++ texinfo-4.0.new/util/install-info.c	Thu Oct 12 21:33:06 2000
+--- texinfo-4.0f/util/install-info.c.orig	Sat Feb  9 14:35:16 2002
++++ texinfo-4.0f/util/install-info.c	Sat Feb  9 14:37:13 2002
 @@ -19,6 +19,7 @@
  
  #include "system.h"
@@ -88,7 +75,7 @@ diff -Nru texinfo-4.0/util/install-info.c texinfo-4.0.new/util/install-info.c
 -      /* Empty files don't set errno, so we get something like
 -         "install-info: No error for foo", which is confusing.  */
 -      if (nread == 0)
--        fatal (_("%s: empty file"), *opened_filename);
+-        fatal (_("%s: empty file"), *opened_filename, 0);
 -      pfatal_with_name (*opened_filename);
 -    }
 -
@@ -162,8 +149,8 @@ diff -Nru texinfo-4.0/util/install-info.c texinfo-4.0.new/util/install-info.c
  
    *sizep = filled;
    return data;
-@@ -1407,7 +1358,7 @@
-     warning (_("no entries found for `%s'; nothing deleted"), infile);
+@@ -1409,7 +1360,7 @@
+     warning (_("no entries found for `%s'; nothing deleted"), infile, 0);
  
    output_dirfile (opened_dirfilename, dir_nlines, dir_lines, n_entries_to_add,
 -                  entries_to_add, input_sections, compression_program);
@@ -171,3 +158,14 @@ diff -Nru texinfo-4.0/util/install-info.c texinfo-4.0.new/util/install-info.c
  
    xexit (0);
  }
+--- texinfo-4.0f/util/Makefile.am~	Sat Feb  9 15:15:46 2002
++++ texinfo-4.0f/util/Makefile.am	Sat Feb  9 15:15:46 2002
+@@ -7,7 +7,7 @@
+ 
+ localedir = $(datadir)/locale
+ INCLUDES = -I$(top_srcdir)/lib -I../intl -DLOCALEDIR=\"$(localedir)\"
+-LDADD = ../lib/libtxi.a @INTLLIBS@
++LDADD = ../lib/libtxi.a @INTLLIBS@ -lz
+ 
+ # Most of these are for fun.  The only one that's really supported is texi2dvi.
+ EXTRA_DIST = README deref.c fix-info-dir fixfonts \
