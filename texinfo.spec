@@ -5,7 +5,7 @@ Summary(pl):	Narzêdzia potrzebne przy tworzeniu dokumentacji w formacie texinfo
 Summary(tr):	texinfo biçimleyici ve info okuyucu
 Name:		texinfo
 Version:	4.0
-Release:	1
+Release:	2
 Copyright:	GPL
 Group:		Applications/Publishing
 Group(pl):	Aplikacje/Publikowanie
@@ -18,7 +18,7 @@ Patch5:		texinfo-version.texi.patch
 Patch6:		texinfo-DESTDIR.patch
 Patch7:		texinfo-fix-info-dir.patch
 BuildRequires:	zlib-devel
-BuildRequires:	ncurses-devel
+BuildRequires:	ncurses-devel >= 5.0
 Prereq:		/usr/sbin/fix-info-dir
 Requires:	info = %{version}
 Requires:	mktemp
