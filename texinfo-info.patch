@@ -1,7 +1,6 @@
-diff -Nru texinfo-4.5.orig/doc/info-stnd.texi texinfo-4.5/doc/info-stnd.texi
---- texinfo-4.5.orig/doc/info-stnd.texi	Wed Nov  6 01:42:29 2002
-+++ texinfo-4.5/doc/info-stnd.texi	Fri Feb 14 10:54:27 2003
-@@ -32,10 +32,10 @@
+--- texinfo-4.7/doc/info-stnd.texi.orig	2004-03-24 02:41:06.000000000 +0100
++++ texinfo-4.7/doc/info-stnd.texi	2004-04-12 13:07:58.150558008 +0200
+@@ -35,10 +35,10 @@
  @end quotation
  @end copying
  
@@ -10,15 +9,29 @@ diff -Nru texinfo-4.5.orig/doc/info-stnd.texi texinfo-4.5/doc/info-stnd.texi
  @direntry
 -* info standalone: (info-stnd).            Read Info documents without Emacs.
 -* infokey: (info-stnd)Invoking infokey.    Compile Info customizations.
-+* info standalone: (info-stnd).		Read Info documents without Emacs.
-+* infokey: (info-stnd)Invoking infokey.	Compile Info customizations.
++* info standalone: (info-stnd).		Read Info documents without Emacs
++* infokey: (info-stnd)infokey.		Compile Info customizations
  @end direntry
  
  @titlepage
-diff -Nru texinfo-4.5.orig/doc/info.texi texinfo-4.5/doc/info.texi
---- texinfo-4.5.orig/doc/info.texi	Wed Nov  6 01:45:36 2002
-+++ texinfo-4.5/doc/info.texi	Fri Feb 14 10:54:27 2003
-@@ -35,9 +35,10 @@
+@@ -1963,12 +1963,12 @@
+ textual source file using the @code{infokey} command.
+ 
+ @menu
+-* Invoking infokey::
++* infokey::
+ * infokey source format::
+ @end menu
+ 
+ 
+-@node Invoking infokey
++@node infokey
+ @section Invoking @command{infokey}
+ 
+ @cindex invoking infokey
+--- texinfo-4.7/doc/info.texi.orig	2004-04-06 10:21:35.000000000 +0200
++++ texinfo-4.7/doc/info.texi	2004-04-12 13:08:41.859913176 +0200
+@@ -37,9 +37,9 @@
  @end quotation
  @end copying
  
@@ -26,15 +39,13 @@ diff -Nru texinfo-4.5.orig/doc/info.texi texinfo-4.5/doc/info.texi
 +@dircategory Texinfo documentation system:
  @direntry
 -* Info: (info).         How to use the documentation browsing system.
-+* Info: (info).				How to use the documentation
-+					browsing system
++* Info: (info).				The documentation browsing system
  @end direntry
  
  @titlepage
-diff -Nru texinfo-4.5.orig/doc/texinfo.txi texinfo-4.5/doc/texinfo.txi
---- texinfo-4.5.orig/doc/texinfo.txi	Tue Feb  4 16:17:21 2003
-+++ texinfo-4.5/doc/texinfo.txi	Fri Feb 14 11:07:13 2003
-@@ -55,13 +55,13 @@
+--- texinfo-4.7/doc/texinfo.txi.orig	2004-04-09 23:30:07.000000000 +0200
++++ texinfo-4.7/doc/texinfo.txi	2004-04-12 13:23:06.957398368 +0200
+@@ -54,13 +54,13 @@
  @end quotation
  @end copying
  
@@ -46,44 +57,44 @@ diff -Nru texinfo-4.5.orig/doc/texinfo.txi texinfo-4.5/doc/texinfo.txi
 -* texi2dvi: (texinfo)Format with texi2dvi.      Print Texinfo documents.
 -* texindex: (texinfo)Format with tex/texindex.  Sort Texinfo index files.
 -* makeinfo: (texinfo)Invoking makeinfo.         Translate Texinfo source.
-+* Texinfo: (texinfo)			The GNU documentation format
-+* install-info: (texinfo)install-info	Update info/dir entries
-+* texi2dvi: (texinfo)texi2dvi		Print Texinfo documents
-+* texindex: (texinfo)texindex		Sort Texinfo index files
-+* makeinfo: (texinfo)makeinfo		Translate Texinfo source
++* Texinfo: (texinfo).			The GNU documentation format
++* install-info: (texinfo)install-info.	Update info/dir entries
++* texi2dvi: (texinfo)texi2dvi.		Print Texinfo documents
++* texindex: (texinfo)texindex.		Sort Texinfo index files
++* makeinfo: (texinfo)makeinfo.		Translate Texinfo source
  @end direntry
  
  @c Before release, run C-u C-c C-u C-a (texinfo-all-menus-update with a
-@@ -534,8 +534,8 @@
+@@ -553,8 +553,8 @@
  Formatting and Printing Hardcopy
  
  * Use TeX::                     Use @TeX{} to format for hardcopy.
 -* Format with tex/texindex::    How to format with explicit shell commands.
 -* Format with texi2dvi::        A simpler way to format.
-+* texindex::			How to format with explicit shell commands.
-+* texi2dvi::			A simpler way to format.
++* texindex::                    How to format with explicit shell commands.
++* texi2dvi::                    A simpler way to format.
  * Print with lpr::              How to print.
  * Within Emacs::                How to format and print from an Emacs shell.
  * Texinfo Mode Printing::       How to format and print in Texinfo mode.
 @@ -578,7 +578,7 @@
+ Creating an Info File
+ 
+ * makeinfo advantages::         @code{makeinfo} provides better error checking.
+-* Invoking makeinfo::           How to run @code{makeinfo} from a shell.
++* makeinfo::                    How to run @code{makeinfo} from a shell.
+ * makeinfo options::            Specify fill-column and other options.
+ * Pointer Validation::          How to check that pointers point somewhere.
+ * makeinfo in Emacs::           How to run @code{makeinfo} from Emacs.
+@@ -597,7 +597,7 @@
                                   located in other directories.
  * Installing Dir Entries::      How to specify what menu entry to add
                                   to the Info directory.
 -* Invoking install-info::       @code{install-info} options.
 +* install-info::                @code{install-info} options.
  
- Sample Texinfo Files
+ Generating HTML
  
-@@ -607,7 +607,7 @@
- 
- Formatting Mistakes
- 
--* makeinfo Preferred::          @code{makeinfo} finds errors.
-+* makeinfo::			@code{makeinfo} finds errors.
- * Debugging with Info::         How to catch errors with Info formatting.
- * Debugging with TeX::          How to catch errors with @TeX{} formatting.
- * Using texinfo-show-structure::  How to use @code{texinfo-show-structure}.
-@@ -2409,7 +2409,7 @@
+@@ -2433,7 +2433,7 @@
  you must run the @code{texindex} command after first running the
  @code{tex} typesetting command; and then you must run the @code{tex}
  command again.  Or else run the @code{texi2dvi} command which
@@ -92,38 +103,38 @@ diff -Nru texinfo-4.5.orig/doc/texinfo.txi texinfo-4.5/doc/texinfo.txi
  
  Often, when you are writing a document, you want to typeset and print
  only part of a file to see what it will look like.  You can use the
-@@ -4079,8 +4079,8 @@
+@@ -3638,8 +3638,8 @@
  
  You need to include the @code{@@set@dots{}contentsaftertitlepage}
  commands early in the document (just after @code{@@setfilename}, for
 -example).  We recommend using @command{texi2dvi} (@pxref{Format with
 -texi2dvi}) to specify this without altering the source file at all.  For
-+example).  We recommend using @command{texi2dvi} (@pxref{(texinfo)texi2dvi})
++example).  We recommend using @command{texi2dvi} (@pxref{texi2dvi})
 +to specify this without altering the source file at all.  For
  example:
  @example
  texi2dvi --texinfo=@@setcontentsaftertitlepage foo.texi
-@@ -12893,7 +12893,7 @@
+@@ -13478,7 +13478,7 @@
  problems with @TeX{}.  If you get macro-related errors when producing
  the printed version of a manual, try expanding the macros with
  @command{makeinfo} by invoking @command{texi2dvi} with the @samp{-E}
--option (@ref{Format with texi2dvi}).
-+option (@ref{texi2dvi}).
+-option (@pxref{Format with texi2dvi}).
++option (@pxref{texi2dvi}).
  
  @itemize @bullet
  @item
-@@ -13078,8 +13078,8 @@
+@@ -13704,8 +13704,8 @@
  
  @menu
  * Use TeX::                     Use @TeX{} to format for hardcopy.
 -* Format with tex/texindex::    How to format with explicit shell commands.
 -* Format with texi2dvi::        A simpler way to format.
-+* texindex::			How to format with explicit shell commands.
-+* texi2dvi::			A simpler way to format.
++* texindex::                    How to format with explicit shell commands.
++* texi2dvi::                    A simpler way to format.
  * Print with lpr::              How to print.
  * Within Emacs::                How to format and print from an Emacs shell.
  * Texinfo Mode Printing::       How to format and print in Texinfo mode.
-@@ -13110,7 +13110,7 @@
+@@ -13737,7 +13737,7 @@
  File}).
  
  
@@ -132,7 +143,7 @@ diff -Nru texinfo-4.5.orig/doc/texinfo.txi texinfo-4.5/doc/texinfo.txi
  @section Format with @code{tex} and @code{texindex}
  @cindex Shell formatting with @code{tex} and @code{texindex}
  @cindex Formatting with @code{tex} and @code{texindex}
-@@ -13131,7 +13131,7 @@
+@@ -13758,7 +13758,7 @@
  @pindex texindex
  The @code{tex} formatting command itself does not sort the indices; it
  writes an output file of unsorted index data.  (The @code{texi2dvi}
@@ -141,7 +152,7 @@ diff -Nru texinfo-4.5.orig/doc/texinfo.txi texinfo-4.5/doc/texinfo.txi
  Format with @code{texi2dvi}}.)  To generate a printed index after
  running the @code{tex} command, you first need a sorted index to work
  from.  The @code{texindex} command sorts indices.  (The source file
-@@ -13208,7 +13208,7 @@
+@@ -13835,7 +13835,7 @@
  
  @pindex texi2dvi
  Alternatively, it's a one-step process: run @code{texi2dvi}
@@ -150,7 +161,7 @@ diff -Nru texinfo-4.5.orig/doc/texinfo.txi texinfo-4.5/doc/texinfo.txi
  
  You need not run @code{texindex} each time after you run @code{tex}.  If
  you do not, on the next run, the @code{tex} formatting command will use
-@@ -13240,7 +13240,7 @@
+@@ -13867,7 +13867,7 @@
  (@pxref{Pointer Validation}).
  
  
@@ -159,7 +170,7 @@ diff -Nru texinfo-4.5.orig/doc/texinfo.txi texinfo-4.5/doc/texinfo.txi
  @section Format with @code{texi2dvi}
  @pindex texi2dvi @r{(shell script)}
  
-@@ -13785,7 +13785,7 @@
+@@ -14419,7 +14419,7 @@
  @xref{small}, for information about
  commands that make it easier to produce examples for a smaller manual.
  
@@ -168,7 +179,7 @@ diff -Nru texinfo-4.5.orig/doc/texinfo.txi texinfo-4.5/doc/texinfo.txi
  @TeX{}}, for other ways to format with @code{@@smallbook} that do not
  require changing the source file.
  
-@@ -13815,7 +13815,7 @@
+@@ -14449,7 +14449,7 @@
  @end group
  @end example
  
@@ -177,7 +188,7 @@ diff -Nru texinfo-4.5.orig/doc/texinfo.txi texinfo-4.5/doc/texinfo.txi
  @TeX{}}, for other ways to format for different paper sizes that do not
  require changing the source file.
  
-@@ -13861,7 +13861,7 @@
+@@ -14495,7 +14495,7 @@
  margins, you must define a new command in @file{texinfo.tex} (or
  @file{texinfo.cnf}, @pxref{Preparing for TeX,,Preparing for @TeX{}}).
  
@@ -186,7 +197,25 @@ diff -Nru texinfo-4.5.orig/doc/texinfo.txi texinfo-4.5/doc/texinfo.txi
  @TeX{}}, for other ways to specify @code{@@pagesizes} that do not
  require changing the source file.
  
-@@ -14751,7 +14751,7 @@
+@@ -14658,7 +14658,7 @@
+ 
+ @menu
+ * makeinfo advantages::         @code{makeinfo} provides better error checking.
+-* Invoking makeinfo::           How to run @code{makeinfo} from a shell.
++* makeinfo::                    How to run @code{makeinfo} from a shell.
+ * makeinfo options::            Specify fill-column and other options.
+ * Pointer Validation::          How to check that pointers point somewhere.
+ * makeinfo in Emacs::           How to run @code{makeinfo} from Emacs.
+@@ -14690,7 +14690,7 @@
+ @code{makeinfo}.
+ 
+ 
+-@node Invoking makeinfo
++@node makeinfo
+ @subsection Running @code{makeinfo} from a Shell
+ @pindex makeinfo
+ 
+@@ -15383,7 +15383,7 @@
                                   located in other directories.
  * Installing Dir Entries::      How to specify what menu entry to add
                                   to the Info directory.
@@ -195,25 +224,7 @@ diff -Nru texinfo-4.5.orig/doc/texinfo.txi texinfo-4.5/doc/texinfo.txi
  @end menu
  
  
-@@ -14998,7 +14998,7 @@
- @@dircategory Texinfo documentation system
- @@direntry
- * Texinfo: (texinfo).           The GNU documentation format.
--* install-info: (texinfo)Invoking install-info. @dots{}
-+* install-info: (texinfo)install-info. @dots{}
- @dots{}
- @@end direntry
- @end smallexample
-@@ -15009,7 +15009,7 @@
- INFO-DIR-SECTION Texinfo documentation system
- START-INFO-DIR-ENTRY
- * Texinfo: (texinfo).           The GNU documentation format.
--* install-info: (texinfo)Invoking install-info. @dots{}
-+* install-info: (texinfo)install-info. @dots{}
- @dots{}
- END-INFO-DIR-ENTRY
- @end smallexample
-@@ -15052,7 +15052,7 @@
+@@ -15689,7 +15689,7 @@
  traditional @command{man} system.
  
  
@@ -222,30 +233,12 @@ diff -Nru texinfo-4.5.orig/doc/texinfo.txi texinfo-4.5/doc/texinfo.txi
  @subsection Invoking @command{install-info}
  @pindex install-info
  
-@@ -17675,7 +17675,7 @@
- command and you can use the @kbd{M-x Info-validate} command.@refill
+@@ -16187,7 +16187,7 @@
  
- @menu
--* makeinfo Preferred::          @code{makeinfo} finds errors.
-+* makeinfo::			@code{makeinfo} finds errors.
- * Debugging with Info::         How to catch errors with Info formatting.
- * Debugging with TeX::          How to catch errors with @TeX{} formatting.
- * Using texinfo-show-structure::  How to use @code{texinfo-show-structure}.
-@@ -17683,7 +17683,7 @@
- * Running Info-Validate::       How to find badly referenced nodes.
- @end menu
+ In standard Texinfo, node names may not contain @@-commands.
+ @command{makeinfo} has an option @option{--commands-in-node-names}
+-which partially supports it (@pxref{Invoking makeinfo}), but it is not
++which partially supports it (@pxref{makeinfo}), but it is not
+ robust and not recommended.
  
--@node makeinfo Preferred, Debugging with Info, Catching Mistakes, Catching Mistakes
-+@node makeinfo, Debugging with Info, Catching Mistakes, Catching Mistakes
- @ifinfo
- @heading @code{makeinfo} Find Errors
- @end ifinfo
-@@ -17702,7 +17702,7 @@
- cannot use @code{makeinfo}, or your problem is very puzzling, then you
- may want to use the tools described in this appendix.@refill
- 
--@node Debugging with Info, Debugging with TeX, makeinfo Preferred, Catching Mistakes
-+@node Debugging with Info, Debugging with TeX, makeinfo, Catching Mistakes
- @comment  node-name,  next,  previous,  up
- @section Catching Errors with Info Formatting
- @cindex Catching errors with Info formatting
+ Thus, @command{makeinfo} also does not fully implement this part of
