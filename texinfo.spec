@@ -22,6 +22,7 @@ Patch6:		%{name}-danish.patch
 URL:		http://texinfo.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gettext-devel
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	zlib-devel
 Requires:	info = %{version}
@@ -143,6 +144,9 @@ gzip -9nf ChangeLog INTRODUCTION NEWS README info/README
 
 %find_lang %{name}
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
 
@@ -151,9 +155,6 @@ gzip -9nf ChangeLog INTRODUCTION NEWS README info/README
 
 %post -n info
 /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
