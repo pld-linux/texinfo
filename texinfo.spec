@@ -1,7 +1,9 @@
 Summary:	Tools needed to create Texinfo format documentation files
 Summary(de):	Tools zum Erstellen von texinfo-Dokumentationsdateien
+Summary(es):	Formateador texinfo y lector de archivos info
 Summary(fr):	Outils créant des documentations au format texinfo
 Summary(pl):	Narzêdzia potrzebne przy tworzeniu dokumentacji w formacie texinfo
+Summary(pt_BR):	Formatador texinfo e leitor de arquivos info
 Summary(tr):	texinfo biçimleyici ve info okuyucu
 Name:		texinfo
 Version:	4.0f
@@ -52,6 +54,21 @@ reicht es, ein Dokument zu schreiben (und später zu aktualisieren).
 Das GNU-Projekt benutzt texinfo für den größten Teil seiner
 Dokumentation.
 
+%description -l es
+Texinfo es un sistema de documentación que puede producir tanto,
+información online como salida impresa a partir de un único archivo
+fuente. Generalmente, tenía que escribir dos documentos por separado:
+uno para la ayuda u otro tipo de información online, y otro para un
+manual u otro tipo de trabajos impresos. Usando Texinfo, basta con
+escribir un único documento fuente. El día que sea necesaria una
+revisión del trabajo, sólo tendrá que revisar un único documento. El
+Proyecto GNU usa el formato de archivo Texinfo para la mayoría de su
+documentación.
+
+Instale Texinfo si quiere un sistema de documentación para producir
+tanto documentación online como impresa a partir del mismo archivo
+fuente y si va a escribir documentación para el Proyecto GNU.
+
 %description -l fr
 Texinfo est un système de documentation capable de produire de la
 documentation online ou imprimée à partir d'un seul fichier.
@@ -71,8 +88,23 @@ dokumentacjê tylko w jednej postaci ¼ród³owej. Podczas modyfikacji
 dokumentacji modyfikujesz w takim razie tylko jeden dokument.
 Wiêkszo¶æ projektów GNU u¿ywa do dokumentowania formatu Texinfo.
 
+%description -l pt_BR
+O texinfo é um sistema de documentação que pode produzir tanto
+informação on-line como saída impressa a partir de um único
+arquivo-fonte. Geralmente, você teria que escrever dois documentos
+separados: um para ajuda on-line ou outro tipo de informação on-line,
+e outro para um manual ou outro tipo de trabalho impresso. Usando o
+Texinfo, basta escrever um único documento-fonte. Quando houver
+necessidade de revisão, é preciso apenas revisar um único
+documento-fonte. O projeto GNU usa o formato de arquivo texinfo para a
+maioria da sua documentação.
+
+Instale o Texinfo se você quiser um sistema de documentação para
+produzir tanto documentação on-line como impressa a partir do mesmo
+arquivo-fonte y se for escrever documentação para o Projeto GNU.
+
 %description -l tr
-GNU projesi, belgelemesinin büyük bölümünde texinfo dosyalarýný
+[6~GNU projesi, belgelemesinin büyük bölümünde texinfo dosyalarýný
 kullanýr. Bu paket, texinfo dosyalarýndan info dosyalarýnýn
 türetilmesini saðlayan araçlarla birlikte, tüm bu araçlar için bir
 emacs arayüzü de sunar.
@@ -80,8 +112,10 @@ emacs arayüzü de sunar.
 %package -n info
 Summary:	A stand-alone TTY-based reader for GNU texinfo documentation
 Summary(de):	Ein TTY-basiertes Leseprogramm für GNU info-Dokumentation
+Summary(es):	Lector basado en tty para documentos texinfo GNU
 Summary(fr):	un lecteur de documentations info
 Summary(pl):	Samodzielny, terminalowy czytnik dokumentów GNU texinfo
+Summary(pt_BR):	Leitor baseado em tty para documentos texinfo GNU
 Summary(tr):	GNU texinfo belgeleri için tty tabanlý görüntüleyici
 Group:		Applications/System
 Group(cs):	Aplikace/Systém
@@ -101,21 +135,27 @@ The GNU project uses the texinfo file format for much of its
 documentation. This package includes a standalone browser program to
 view these files.
 
-%description -l de -n info
+%description -n info -l de
 Das GNU-Projekt benutzt das texinfo-Dateiformat für den Großteil
 seiner Dokumentation. Dieses Paket enthält ein selbständiges
 Browser-Programm zum Einsehen dieser Dateien.
 
-%description -l fr -n info
+%description -n info -l es
+%description -n info -l fr
 Le projet GNU utilise le format de fichier texinfo pour la plupart de
 sa documentation. Ce paquetage contient un navigateur pour visualiser
 ces fichiers.
 
-%description -l pl -n info
+%description -n info -l pl
 Projekty GNU u¿ywaj± formatu texinfo do tworzenia dokumentacji. Pakiet
 ten zawiera samodzieln± przegl±darkê tych¿e plików.
 
-%description -l tr -n info
+%description -n info -l pt_BR
+O projeto GNU usa o formato de arquivos texinfo para a maioria de sua
+documentação. Este pacote inclui um browser para visualização destes
+arquivos.
+
+%description -n info -l tr
 Bu pakette, info biçimindeki dosyalarý okumak için bir görüntüleyici
 bulunur.
 
