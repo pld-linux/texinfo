@@ -23,7 +23,7 @@ BuildRequires:	ncurses-devel >= 5.0
 Prereq:		/usr/sbin/fix-info-dir
 Requires:	info = %{version}
 Requires:	mktemp
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Texinfo is a documentation system that can produce both online information
@@ -73,7 +73,7 @@ Summary(pl):	Samodzielny, bazuj±cy na terminalu czytnik dokumentów GNU texinfo
 Summary(tr):	GNU texinfo belgeleri için tty tabanlý görüntüleyici
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
-Requires:	mktemp
+Prereq:		mktemp
 
 %description -n info
 The GNU project uses the texinfo file format for much of its documentation.
