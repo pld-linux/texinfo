@@ -1,5 +1,19 @@
---- texinfo-4.0f/util/install-info.c.orig	Sat Feb  9 14:35:16 2002
-+++ texinfo-4.0f/util/install-info.c	Sat Feb  9 14:37:13 2002
+diff -ur texinfo-4.1-/util/Makefile.am texinfo-4.1/util/Makefile.am
+--- texinfo-4.1-/util/Makefile.am	Mon Feb 25 17:23:45 2002
++++ texinfo-4.1/util/Makefile.am	Sat Mar  9 15:55:11 2002
+@@ -7,7 +7,7 @@
+ 
+ localedir = $(datadir)/locale
+ INCLUDES = -I$(top_srcdir)/lib -I../intl -DLOCALEDIR=\"$(localedir)\"
+-LDADD = ../lib/libtxi.a @LIBINTL@
++LDADD = ../lib/libtxi.a @LIBINTL@ -lz
+ 
+ # Most of these are for fun.  The only one that's really supported is texi2dvi.
+ EXTRA_DIST = README deref.c fix-info-dir fixfonts \
+Only in texinfo-4.1/util: Makefile.am.orig
+diff -ur texinfo-4.1-/util/install-info.c texinfo-4.1/util/install-info.c
+--- texinfo-4.1-/util/install-info.c	Sat Jan 19 02:12:29 2002
++++ texinfo-4.1/util/install-info.c	Sat Mar  9 15:54:50 2002
 @@ -19,6 +19,7 @@
  
  #include "system.h"
@@ -158,14 +172,3 @@
  
    xexit (0);
  }
---- texinfo-4.0f/util/Makefile.am~	Sat Feb  9 15:15:46 2002
-+++ texinfo-4.0f/util/Makefile.am	Sat Feb  9 15:15:46 2002
-@@ -7,7 +7,7 @@
- 
- localedir = $(datadir)/locale
- INCLUDES = -I$(top_srcdir)/lib -I../intl -DLOCALEDIR=\"$(localedir)\"
--LDADD = ../lib/libtxi.a @INTLLIBS@
-+LDADD = ../lib/libtxi.a @INTLLIBS@ -lz
- 
- # Most of these are for fun.  The only one that's really supported is texi2dvi.
- EXTRA_DIST = README deref.c fix-info-dir fixfonts \

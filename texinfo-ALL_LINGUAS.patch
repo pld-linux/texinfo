@@ -1,10 +1,11 @@
---- texinfo-4.0g/configure.ac~	Tue Feb 19 22:17:15 2002
-+++ texinfo-4.0g/configure.ac	Tue Feb 19 22:17:15 2002
+diff -ur texinfo-4.1-/configure.ac texinfo-4.1/configure.ac
+--- texinfo-4.1-/configure.ac	Mon Mar  4 16:54:57 2002
++++ texinfo-4.1/configure.ac	Sat Mar  9 16:04:07 2002
 @@ -107,6 +107,7 @@
  AC_SUBST(TERMLIBS)
  
  dnl i18n support.
 +ALL_LINGUAS="cs da de_AT de eo fr he hr ja nl no ru sv"
- AM_GNU_GETTEXT
+ AM_GNU_GETTEXT()
  
  AC_CONFIG_FILES([Makefile          \
