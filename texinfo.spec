@@ -9,7 +9,7 @@ Summary(tr):	texinfo biçimleyici ve info okuyucu
 Summary(uk):	¶ÎÓÔÒÕÍÅÎÔÉ ÄÌÑ ÓÔ×ÏÒÅÎÎÑ ÆÁÊÌ¦× ÄÏËÕÍÅÎÔÁÃ¦§ ÆÏÒÍÁÔÕ Texinfo
 Name:		texinfo
 Version:	4.7
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Publishing
 Source0:	ftp://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.bz2
@@ -18,6 +18,7 @@ Source1:	info.desktop
 Patch0:		%{name}-fix.patch
 Patch1:		%{name}-info.patch
 Patch2:		%{name}-pl.po-update.patch
+Patch3:		%{name}-segfault.patch
 URL:		http://texinfo.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1.8
@@ -181,6 +182,7 @@ Narzêdzie do konwersji plików texinfo na dvi.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 # nb was added but outdated no not removed
 sed -i -e '/^no$/d' po/LINGUAS
