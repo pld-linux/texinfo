@@ -8,7 +8,7 @@ Summary(ru):	Инструменты для создания файлов документации формата Texinfo
 Summary(tr):	texinfo biГimleyici ve info okuyucu
 Summary(uk):	╤нструменти для створення файл╕в документац╕╖ формату Texinfo
 Name:		texinfo
-Version:	4.3
+Version:	4.5
 Release:	1
 License:	GPL
 Group:		Applications/Publishing
