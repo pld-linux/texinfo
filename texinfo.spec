@@ -20,9 +20,7 @@ Patch7:		texinfo-fix-info-dir.patch
 URL:		http://texinfo.org/
 BuildRequires:	zlib-devel
 BuildRequires:	ncurses-devel >= 5.0
-Prereq:		/usr/sbin/fix-info-dir
 Requires:	info = %{version}
-Requires:	mktemp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -74,6 +72,7 @@ Summary(tr):	GNU texinfo belgeleri için tty tabanlý görüntüleyici
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
 Prereq:		mktemp
+Prereq:		textutils
 
 %description -n info
 The GNU project uses the texinfo file format for much of its documentation.
@@ -142,13 +141,13 @@ touch $RPM_BUILD_ROOT%{_infodir}/dir
 %find_lang %{name}
 
 %post
-%{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+[ -x /usr/sbin/fix-info-dir ] && /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %postun
-%{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+[ -x /usr/sbin/fix-info-dir ] && /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %post -n info
-[ "$1" = 2 ] && %{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -170,7 +169,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/info
 %attr(755,root,root) /sbin/install-info
-%attr(755,root,root) %{_sbindir}/fix-info-dir
+%attr(755,root,root) /usr/sbin/fix-info-dir
 %attr(755,root,root) %{_sbindir}/install-info
 
 %{_applnkdir}/Utilities/info.desktop
