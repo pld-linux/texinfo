@@ -202,14 +202,14 @@ rm -f util/install-info
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_applnkdir}/Help,%{_sbindir},/sbin}
+install -d $RPM_BUILD_ROOT{%{_desktopdir}/Help,%{_sbindir},/sbin}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 mv -f $RPM_BUILD_ROOT%{_bindir}/install-info $RPM_BUILD_ROOT%{_sbindir}
 ln -sf %{_sbindir}/install-info $RPM_BUILD_ROOT/sbin/install-info
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Help
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 %find_lang %{name}
 
@@ -245,7 +245,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) /sbin/install-info
 %attr(755,root,root) %{_sbindir}/install-info
 
-%{_applnkdir}/Help/info.desktop
+%{_desktopdir}/info.desktop
 
 %{_infodir}/info.info*
 %{_infodir}/info-stnd.info*
