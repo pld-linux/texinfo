@@ -5,7 +5,7 @@ Summary(pl):	Narzêdzia potrzebne przy tworzeniu dokumentacji w formacie texinfo
 Summary(tr):	texinfo biçimleyici ve info okuyucu
 Name:		texinfo
 Version:	4.0b
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Publishing
 Group(de):	Applikationen/Publizieren
@@ -26,7 +26,6 @@ BuildRequires:	gettext-devel
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	zlib-devel
 Requires:	info = %{version}
-Requires:	tetex
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -107,6 +106,21 @@ ten zawiera samodzieln± przegl±darkê tych¿e plików.
 Bu pakette, info biçimindeki dosyalarý okumak için bir görüntüleyici
 bulunur.
 
+%package texi2dvi
+Summary:	Texinfo to dvi conversion tool
+Summary(pl):	Narzêdzie do konwersji texinfo na dvi
+Group:		Applications/Publishing
+Group(de):	Applikationen/Publizieren
+Group(pl):	Aplikacje/Publikowanie
+Requires:	%{name} = %{version}
+Requires:	tetex
+
+%description texi2dvi
+Texinfo to dvi conversion tool.
+
+%description texi2dvi -l pl
+Narzêdzie do konwersji plików texinfo na dvi.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -159,19 +173,18 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz info/*.gz
+%doc *.gz
 %attr(755,root,root) %{_bindir}/makeinfo
-%attr(755,root,root) %{_bindir}/texi2dvi
 %attr(755,root,root) %{_bindir}/texindex
 
 %{_infodir}/texinfo*
 %{_mandir}/man1/makeinfo.1*
-%{_mandir}/man1/texi2dvi.1*
 %{_mandir}/man1/texindex.1*
 %{_mandir}/man5/texinfo.5*
 
 %files -n info -f texinfo.lang
 %defattr(644,root,root,755)
+%doc info/*.gz
 %attr(755,root,root) %{_bindir}/info
 %attr(755,root,root) /sbin/install-info
 %attr(755,root,root) %{_sbindir}/install-info
@@ -184,3 +197,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/info.1*
 %{_mandir}/man1/install-info.1*
 %{_mandir}/man5/info.5*
+
+%files texi2dvi
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/texi2dvi
+%{_mandir}/man1/texi2dvi.1*
