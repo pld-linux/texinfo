@@ -74,6 +74,7 @@ Summary(pl):	Samodzielny, terminalowy czytnik dokumentów GNU texinfo
 Summary(tr):	GNU texinfo belgeleri için tty tabanlý görüntüleyici
 Group:		Utilities/System
 Group(pl):	Narzêdzia/System
+Prereq:		fix-info-dir
 
 %description -n info
 The GNU project uses the texinfo file format for much of its
