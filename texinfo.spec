@@ -88,8 +88,9 @@ bulunur.
 %build
 CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 ./configure \
-	--prefix=/usr
-make 
+	--prefix=/usr \
+	--without-included-gettext
+make
 rm util/install-info
 make -C util LIBS=-lz
 
@@ -151,6 +152,8 @@ rm -rf $RPM_BUILD_ROOT
 - removed man group from man pages,
 - more locales (cs , de_AT, nl, no, ru),
 - gzipping %doc
+- added --without-included-gettext to ./configure parameters (smaler binary)
+- added texinfo-info.patch,
 - added /sbin/fix-info-dir.
 
 * Fri Oct  9 1998 Ziemek Borowski <ziembor@faq-bot.ceu.edu.pl>
