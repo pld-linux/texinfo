@@ -106,7 +106,7 @@ make -C util
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{/etc/X11/applnk/Utilities,%{_sbindir},/sbin}
+install -d $RPM_BUILD_ROOT{/usr/X11R6/share/applnk/Utilities,%{_sbindir},/sbin}
 
 make install DESTDIR=$RPM_BUILD_ROOT
 
@@ -118,7 +118,7 @@ ln -sf ../../../etc/info-dir $RPM_BUILD_ROOT%{_infodir}/dir
 mv -f $RPM_BUILD_ROOT%{_bindir}/install-info $RPM_BUILD_ROOT%{_sbindir}
 ln -s %{_sbindir}/install-info $RPM_BUILD_ROOT/sbin/install-info
 
-install %{SOURCE2} $RPM_BUILD_ROOT/etc/X11/applnk/Utilities
+install %{SOURCE2} $RPM_BUILD_ROOT/usr/X11R6/share/applnk/Utilities
 
 gzip -9nf $RPM_BUILD_ROOT%{_infodir}/*info* \
 	ChangeLog INTRODUCTION NEWS README info/README
@@ -158,7 +158,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n info -f texinfo.lang
 %defattr(644,root,root,755)
-/etc/X11/applnk/Utilities/info.desktop
+/usr/X11R6/share/applnk/Utilities/info.desktop
 %config(noreplace) %verify(not mtime size md5) /etc/info-dir
 %config %{_infodir}/dir
 %attr(755,root,root) %{_bindir}/info
