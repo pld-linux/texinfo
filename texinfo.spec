@@ -9,7 +9,7 @@ Summary(tr):	texinfo biГimleyici ve info okuyucu
 Summary(uk):	╤нструменти для створення файл╕в документац╕╖ формату Texinfo
 Name:		texinfo
 Version:	4.6
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Publishing
 Source0:	ftp://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.bz2
@@ -23,7 +23,7 @@ URL:		http://texinfo.org/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
 BuildRequires:	gettext-devel
-BuildRequires:	gettext-autopoint
+BuildRequires:	gettext-autopoint >= 0.12.1
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	zlib-devel
 Requires:	info = %{version}
