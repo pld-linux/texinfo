@@ -8,6 +8,7 @@ Version:	3.12f
 Release:	5
 Copyright:	GPL
 Group:		Applications/Publishing
+Group(pl):	Aplikacje/Publikowanie
 Source:		ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
 Source1:	info-dir
 Source2:	info.wmconfig
@@ -52,6 +53,7 @@ Summary(fr):	Lecteur autonome de documents texinfo pour terminal.
 Summary(pl):	Samodzielny, bazuj±cy na terminalu czytnik dokumentów GNU texinfo
 Summary(tr):	GNU texinfo belgeleri için tty tabanlý görüntüleyici
 Group:		Utilities/System
+Group(pl):	Narzêdzia/System
 Prereq:		bash
 Requires:	%{name} = %{version}
 
