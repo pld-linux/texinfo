@@ -5,11 +5,11 @@ Summary(pl):	Narzêdzia potrzebne przy tworzeniu dokumentacji w formacie texinfo
 Summary(tr):	texinfo biçimleyici ve info okuyucu
 Name:		texinfo
 Version:	4.0
-Release:	6
+Release:	7
 License:	GPL
 Group:		Applications/Publishing
 Group(pl):	Aplikacje/Publikowanie
-Source:		ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
+Source0:	ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
 Source1:	info.desktop
 Patch1:		texinfo-fix.patch
 Patch3:		texinfo-zlib.patch
@@ -66,8 +66,8 @@ Bu paket, texinfo dosyalarýndan info dosyalarýnýn türetilmesini saðlayan
 araçlarla birlikte, tüm bu araçlar için bir emacs arayüzü de sunar.
 
 %package -n info
-Summary:	A stand-alone TTY-based reader for GNU texinfo documentation.
-Summary(de):	Ein TTY-basiertes Leseprogramm für GNU info-Dokumentation.
+Summary:	A stand-alone TTY-based reader for GNU texinfo documentation
+Summary(de):	Ein TTY-basiertes Leseprogramm für GNU info-Dokumentation
 Summary(fr):	un lecteur de documentations info
 Summary(pl):	Samodzielny, bazuj±cy na terminalu czytnik dokumentów GNU texinfo
 Summary(tr):	GNU texinfo belgeleri için tty tabanlý görüntüleyici
@@ -147,19 +147,7 @@ touch $RPM_BUILD_ROOT%{_infodir}/dir
 %postun
 %{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%pre -n info
-if [ -e /usr/info ] && [ ! -L /usr/info ]; then
-	cp -af /usr/info %{_infodir} 
-fi
-
 %post -n info
-if [ -e /usr/info ] && [ ! -L /usr/info ]; then
-	rm -rf /usr/info
-	ln -sf %{_infodir} /usr/info
-fi
-if [ -L %{_infodir}/dir ]; then
-	rm -f %{_infodir}/dir
-fi
 /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %clean
