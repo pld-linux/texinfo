@@ -1,7 +1,7 @@
-Summary:	texinfo formatter and info reader
-Summary(de):	texinfo-Formatier- und Leseprogramm
-Summary(fr):	Formatteur texinfo et lecteur pour info.
-Summary(pl):	Texinfo -- formatter plików texinfo
+Summary:	Tools needed to create Texinfo format documentation files
+Summary(de):	Tools zum Erstellen von texinfo-Dokumentationsdateien
+Summary(fr):	Outils créant des documentations au format texinfo
+Summary(pl):	Narzêdzia potrzebne przy tworzeniu dokumentacji w formacie texinfo
 Summary(tr):	texinfo biçimleyici ve info okuyucu
 Name:		texinfo
 Version:	3.12s
@@ -26,25 +26,55 @@ Buildroot:	/tmp/%{name}-%{version}-root
 %define		_sysconfdir	/etc
 
 %description
-The GNU project uses the texinfo file format for much of its documentation. 
-This package includes the tools necessary to create .info files from .texinfo 
-source files, as well as an emacs interface to all these tools.
+Texinfo is a documentation system that can produce both online information
+and printed output from a single source file. Normally, you'd have to write
+two separate documents: one for online help or other online information and
+the other for a typeset manual or other printed work. Using Texinfo, you
+only need to write one source document. Then when the work needs revision,
+you only have to revise one source document. The GNU Project uses the
+Texinfo file format for most of its documentation.
+
+Install texinfo if you want a documentation system for producing both online
+and print documentation from the same source file and/or if you are going to
+write documentation for the GNU Project.
 
 %description -l de
-Das GNU-Projekt verwendet das Dateiformtat 'texinfo' für den Großteil der
-Dokumentation. Dieses Paket enthält Tools zum Erstellen von .info-Dateien aus
-.texinfo-Quelldateien und eine emacs-Schnittstelle für diese Tools.
+Texinfo ist ein Dokumentationssystem, das sowohl Online-Information und
+gedruckte Ausgabe von einer einzigen Source-Datei erzeugen kann.
+Normalerweise würden Sie zwei verschiedene Dokumente schreiben, eins für
+Onlinehilfe und eins für ein gedrucktes Handbuch. Mit Texinfo reicht es, ein
+Dokument zu schreiben (und später zu aktualisieren). Das GNU-Projekt benutzt
+texinfo für den größten Teil seiner Dokumentation.
+
+Installieren Sie texinfo, wenn Sie ein Dokumentationssystem für Online- und
+gedruckte Dokumentation brauchen, oder wenn Sie Dokumentationen für das
+GNU-Projekt schreiben wollen.
 
 %description -l fr
-Le projet GBU utilise le format de fichier texinfo pour la plupart de sa
-documentation. Ce paquetage contient les outils pour créer des fichiers .info
-à partir des fichiers sources .texinfo, ainsi qu'une interface emacs pour tous
-ces outils.
+Texinfo est un système de documentation capable de produire de la
+documentation online ou imprimée à partir d'un seul fichier. 
+Habituellement, il faut écrire deux documents : l'un orienté hypertexte,
+l'autre axé sur une présentation de type PAO. En utilisant texinfo, vous
+n'avez plus besoin que d'un seul fichier source. Le projet GNU utilie le
+format de fichier Texinfo pour la plupart de ses documentations.
+
+Vous devriez installer texinfo si vous compter écrire des documents en ligne
+et sur papier à partir du même fichier ou si vous désirez écrire une
+documentation pour le projet GNU.
 
 %description -l pl
-Projekty GNU u¿ywaj± formatu texinfo do tworzenia dokumentacji. W pakiecie 
-tym znajduj± siê narzêdzia potrzebne do tworzenia plików info ze ¼ród³owych 
-*.texinfo, a tak¿e interface dla GNU Emacs. 
+Texinfo jest systemem dokumentowania umo¿liwiaj±cym wyprodukowanie zarówno
+dokumentacji online jak i postaci do wydruku z pojedynczego pliku
+¼ród³owego. bardzo czêsto piszê siedwie dokumentacje: jedna do przegl±dania
+online i inna do przyszykowanai wysokiej jako¶ci postaci drukowane. U¿ywaj±c
+Texinfo do powy¿szego potzrebujesz przygotowaæ dokumentacjê tylko w jednej
+postaci ¼ród³owej. Podczas modyfikacji dokumentacji modyfikujesz w takim
+razie tylko jeden dokument. Wiêkszo¶æ projektów GNU u¿ywa do dukumentowania
+formatu Texinfo.
+
+Zainstaluj Texinfo je¿eli potzrebujesz sporz±dzaæ dokumentacjê która bêdzie
+przegl±dana zarówno online jak i bêdzie drukowan lub je¿eli zamierzasz pisaæ
+dokumentacjê do projektów GNU.
 
 %description -l tr
 GNU projesi, belgelemesinin büyük bölümünde texinfo dosyalarýný kullanýr.
@@ -52,9 +82,9 @@ Bu paket, texinfo dosyalarýndan info dosyalarýnýn türetilmesini saðlayan
 araçlarla birlikte, tüm bu araçlar için bir emacs arayüzü de sunar.
 
 %package -n info
-Summary:	standalone tty based reader for GNU texinfo documents
-Summary(de):	Unabhängiges tty-basiertes Leseprogramm für GNU-texinfo-Dokumente
-Summary(fr):	Lecteur autonome de documents texinfo pour terminal.
+Summary:	A stand-alone TTY-based reader for GNU texinfo documentation.
+Summary(de):	Ein TTY-basiertes Leseprogramm für GNU info-Dokumentation.
+Summary(fr):	un lecteur de documentations info
 Summary(pl):	Samodzielny, bazuj±cy na terminalu czytnik dokumentów GNU texinfo
 Summary(tr):	GNU texinfo belgeleri için tty tabanlý görüntüleyici
 Group:		Utilities/System
