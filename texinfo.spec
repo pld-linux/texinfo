@@ -7,7 +7,7 @@ Summary(pt_BR):	Formatador texinfo e leitor de arquivos info
 Summary(tr):	texinfo biçimleyici ve info okuyucu
 Name:		texinfo
 Version:	4.0f
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Publishing
 Group(cs):	Aplikace/Publikování
