@@ -1,0 +1,20 @@
+--- texinfo-3.12/util/install-info.c.fix	Thu Sep 24 14:59:11 1998
++++ texinfo-3.12/util/install-info.c	Thu Sep 24 15:01:09 1998
+@@ -1019,7 +1019,7 @@
+         break;
+ 
+       filled += nread;
+-      if (filled == data_size)
++      if (filled >= data_size - 1)
+         {
+           data_size *= 2;
+           data = (char *) xrealloc (data, data_size);
+@@ -1061,7 +1061,7 @@
+     {
+       if (lineflag)
+         {
+-          if (filled == lines_allocated)
++          if (filled == lines_allocated - 1)
+             {
+               lines_allocated *= 2;
+               lines = (struct line_data *) xrealloc (lines, lines_allocated * sizeof (struct line_data));

@@ -1,0 +1,40 @@
+--- texinfo-3.12f/info/terminal.c.gafton	Fri Mar 12 00:25:17 1999
++++ texinfo-3.12f/info/terminal.c	Fri Mar 12 00:31:04 1999
+@@ -560,18 +560,7 @@
+   BC = tgetstr ("pc", &buffer);
+   PC = BC ? *BC : 0;
+ 
+-#if defined (TIOCGETP)
+-  {
+-    struct sgttyb sg;
+-
+-    if (ioctl (fileno (stdout), TIOCGETP, &sg) != -1)
+-      ospeed = sg.sg_ospeed;
+-    else
+-      ospeed = B9600;
+-  }
+-#else
+   ospeed = B9600;
+-#endif /* !TIOCGETP */
+ 
+   term_cr = tgetstr ("cr", &buffer);
+   term_clreol = tgetstr ("ce", &buffer);
+@@ -642,18 +631,6 @@
+ /*               How to Read Characters From the Terminal           */
+ /*                                                                  */
+ /* **************************************************************** */
+-
+-#if defined (TIOCGETC)
+-/* A buffer containing the terminal interrupt characters upon entry
+-   to Info. */
+-struct tchars original_tchars;
+-#endif
+-
+-#if defined (TIOCGLTC)
+-/* A buffer containing the local terminal mode characters upon entry
+-   to Info. */
+-struct ltchars original_ltchars;
+-#endif
+ 
+ #if defined (HAVE_TERMIOS_H)
+ struct termios original_termios, ttybuff;

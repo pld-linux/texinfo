@@ -1,0 +1,11 @@
+--- texinfo-3.12f/util/install-info.c.gafton	Thu Mar 11 23:23:47 1999
++++ texinfo-3.12f/util/install-info.c	Thu Mar 11 23:24:09 1999
+@@ -547,7 +547,7 @@
+     compression_program = &local_compression_program;
+ 
+   if (data[0] == '\x1f' && data[1] == '\x8b')
+-#ifdef STRIP_DOT_EXE
++#if STRIP_DOT_EXE
+     /* An explicit .exe yields a better diagnostics from popen below
+        if they don't have gzip installed.  */
+     *compression_program = "gzip.exe";
