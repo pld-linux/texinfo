@@ -8,17 +8,14 @@ Summary(ru):	Инструменты для создания файлов документации формата Texinfo
 Summary(tr):	texinfo biГimleyici ve info okuyucu
 Summary(uk):	╤нструменти для створення файл╕в документац╕╖ формату Texinfo
 Name:		texinfo
-Version:	4.7
-Release:	2
+Version:	4.8
+Release:	1
 License:	GPL
 Group:		Applications/Publishing
 Source0:	ftp://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.bz2
-# Source0-md5:	c2fa2ef957f0d728f821ae9b2362ef4e
+# Source0-md5:	6ba369bbfe4afaa56122e65b3ee3a68c
 Source1:	info.desktop
-Patch0:		%{name}-fix.patch
-Patch1:		%{name}-info.patch
-Patch2:		%{name}-pl.po-update.patch
-Patch3:		%{name}-segfault.patch
+Patch0:		%{name}-info.patch
 URL:		http://texinfo.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
@@ -180,17 +177,13 @@ NarzЙdzie do konwersji plikСw texinfo na dvi.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
 
 # nb was added but outdated no not removed
 sed -i -e '/^no$/d' po/LINGUAS
 
-rm -f po/stamp-po
-
 %build
-%{__autopoint}
+# don't touch - too fresh m4 macros required (newer than in gettext 0.14.1)
+#%%{__autopoint}
 %{__aclocal} -I m4
 %{__autoconf}
 %{__automake}
@@ -257,4 +250,6 @@ rm -rf $RPM_BUILD_ROOT
 %files texi2dvi
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/texi2dvi
+# already in tetex (required by -texi2dvi)
+#%attr(755,root,root) %{_bindir}/texi2pdf
 %{_mandir}/man1/texi2dvi.1*
