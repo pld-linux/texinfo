@@ -1,0 +1,64 @@
+--- texinfo-4.2/configure.ac~	Tue May  7 06:49:03 2002
++++ texinfo-4.2/configure.ac	Tue May  7 06:49:03 2002
+@@ -3,11 +3,10 @@
+ dnl
+ AC_PREREQ(2.52)dnl Minimum Autoconf version required.
+ dnl
+-AC_INIT([GNU Texinfo], [4.2])
++AC_INIT([src/defun.h])
++AM_INIT_AUTOMAKE(texinfo, 4.2)
+ AC_CONFIG_SRCDIR([makeinfo/makeinfo.c])
+-AM_CONFIG_HEADER(config.h:config.in)dnl Keep filename to 8.3 for MS-DOS.
+-AM_INIT_AUTOMAKE
+-dnl
++AM_CONFIG_HEADER(config.h:config.in)
+ AM_CONDITIONAL(TEXINFO_MAINT, test -n "$TEXINFO_MAINT")
+ 
+ dnl Checks for programs.
+@@ -20,7 +19,7 @@
+ AC_MINIX
+ 
+ # Needed on sysV68 for sigblock, sigsetmask.  But check for it in libc first.
+-AC_CHECK_FUNC(sigblock, , AC_CHECK_LIB(bsd, sigblock))
++AC_CHECK_FUNC(sigblock, [], AC_CHECK_LIB(bsd, sigblock))
+ 
+ dnl Checks for header files.
+ dnl Do not use <ncurses/termcap.h> unless we're linking with ncurses.
+@@ -119,7 +119,7 @@
+ 
+ dnl i18n support.
+ ALL_LINGUAS="cs da de_AT de eo fr he hr ja nl no ru sv"
+-AM_GNU_GETTEXT()
++AM_GNU_GETTEXT
+ 
+ AC_CONFIG_FILES([Makefile          \
+            doc/Makefile            \
+--- texinfo-4.2/acinclude.m4~	Tue May  7 07:05:14 2002
++++ texinfo-4.2/acinclude.m4	Tue May  7 07:05:14 2002
+@@ -3,7 +3,7 @@
+ 
+ #serial 3
+ 
+-AC_DEFUN(jm_CHECK_DECLARATION,
++AC_DEFUN([jm_CHECK_DECLARATION],
+ [
+   AC_REQUIRE([AC_HEADER_STDC])dnl
+   test -z "$ac_cv_header_memory_h" && AC_CHECK_HEADERS(memory.h)
+@@ -34,7 +34,7 @@
+ 
+ dnl jm_CHECK_DECLARATIONS(INCLUDES, FUNCTION... [, ACTION-IF-DECLARED
+ dnl                       [, ACTION-IF-NOT-DECLARED]])
+-AC_DEFUN(jm_CHECK_DECLARATIONS,
++AC_DEFUN([jm_CHECK_DECLARATIONS],
+ [
+   for jm_func in $2
+   do
+@@ -52,7 +52,7 @@
+ dnl This is just a wrapper function to encapsulate this kludge.
+ dnl Putting it in a separate file like this helps share it between
+ dnl different packages.
+-AC_DEFUN(txi_CHECK_DECLS,
++AC_DEFUN([txi_CHECK_DECLS],
+ [
+   headers='
+ #include <stdio.h>
