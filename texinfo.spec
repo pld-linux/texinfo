@@ -144,10 +144,10 @@ gzip -9nf ChangeLog INTRODUCTION NEWS README info/README
 %find_lang %{name}
 
 %post
-%fix_info_dir
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
 
 %postun
-%fix_info_dir
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
 
 %post -n info
 /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
