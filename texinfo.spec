@@ -4,8 +4,8 @@ Summary(fr):	Outils créant des documentations au format texinfo
 Summary(pl):	Narzêdzia potrzebne przy tworzeniu dokumentacji w formacie texinfo
 Summary(tr):	texinfo biçimleyici ve info okuyucu
 Name:		texinfo
-Version:	3.12s
-Release:	3
+Version:	4.0
+Release:	1
 Copyright:	GPL
 Group:		Applications/Publishing
 Group(pl):	Aplikacje/Publikowanie
@@ -18,12 +18,11 @@ Patch5:		texinfo-version.texi.patch
 Patch6:		texinfo-DESTDIR.patch
 Patch7:		texinfo-fix-info-dir.patch
 BuildRequires:	zlib-devel
+BuildRequires:	ncurses-devel
 Prereq:		/usr/sbin/fix-info-dir
 Requires:	info = %{version}
 Requires:	mktemp
 Buildroot:	/tmp/%{name}-%{version}-root
-
-%define		_sysconfdir	/etc
 
 %description
 Texinfo is a documentation system that can produce both online information
@@ -130,14 +129,14 @@ autoconf
 LDFLAGS="-s -lz"; export LDFLAGS
 %configure \
 	--without-included-gettext
+make -C doc distclean-aminfo
 make
 rm util/install-info
 make -C util 
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{/usr/X11R6/share/applnk/Utilities,%{_sbindir}} \
-	$RPM_BUILD_ROOT{/sbin,%{_sysconfdir}}
+install -d $RPM_BUILD_ROOT{/usr/X11R6/share/applnk/Utilities,%{_sbindir},/sbin}
 
 make install DESTDIR=$RPM_BUILD_ROOT
 
@@ -148,8 +147,11 @@ ln -s %{_sbindir}/install-info $RPM_BUILD_ROOT/sbin/install-info
 
 install %{SOURCE1} $RPM_BUILD_ROOT/usr/X11R6/share/applnk/Utilities
 
-gzip -9nf $RPM_BUILD_ROOT%{_infodir}/*info* \
+gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/*info*,%{_mandir}/man?/*} \
 	ChangeLog INTRODUCTION NEWS README info/README
+
+rm -f $RPM_BUILD_ROOT%{_infodir}/dir
+touch $RPM_BUILD_ROOT%{_infodir}/dir
 
 %find_lang %{name}
 
@@ -185,6 +187,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/texindex
 
 %{_infodir}/texinfo*
+%{_mandir}/man1/makeinfo.1*
+%{_mandir}/man1/texi2dvi.1*
+%{_mandir}/man1/texindex.1*
+%{_mandir}/man5/texinfo.5*
 
 %files -n info -f texinfo.lang
 %defattr(644,root,root,755)
@@ -198,3 +204,7 @@ rm -rf $RPM_BUILD_ROOT
 %ghost %{_infodir}/dir
 %{_infodir}/info.info*
 %{_infodir}/info-stnd.info*
+
+%{_mandir}/man1/info.1*
+%{_mandir}/man1/install-info.1*
+%{_mandir}/man5/info.5*
