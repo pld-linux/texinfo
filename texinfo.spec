@@ -152,13 +152,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_infodir}/info.info*
 %attr(755,root,root) /sbin/install-info
 %attr(755,root,root) /sbin/fix-info-dir
-%lang(cs)    /usr/share/locale/cs/LC_MESSAGES/texinfo.mo
-%lang(de)    /usr/share/locale/de/LC_MESSAGES/texinfo.mo
-%lang(de_AT) /usr/share/locale/de_AT/LC_MESSAGES/texinfo.mo
-%lang(fr)    /usr/share/locale/fr/LC_MESSAGES/texinfo.mo
-%lang(nl)    /usr/share/locale/nl/LC_MESSAGES/texinfo.mo
-%lang(no)    /usr/share/locale/no/LC_MESSAGES/texinfo.mo
-%lang(ru)    /usr/share/locale/ru/LC_MESSAGES/texinfo.mo
+%lang(cs)    %{_datadir}/locale/cs/LC_MESSAGES/texinfo.mo
+%lang(de)    %{_datadir}/locale/de/LC_MESSAGES/texinfo.mo
+%lang(de_AT) %{_datadir}/locale/de_AT/LC_MESSAGES/texinfo.mo
+%lang(fr)    %{_datadir}/locale/fr/LC_MESSAGES/texinfo.mo
+%lang(nl)    %{_datadir}/locale/nl/LC_MESSAGES/texinfo.mo
+%lang(no)    %{_datadir}/locale/no/LC_MESSAGES/texinfo.mo
+%lang(ru)    %{_datadir}/locale/ru/LC_MESSAGES/texinfo.mo
 
 %changelog
 * Thu Apr  1 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
