@@ -5,7 +5,7 @@ Summary(pl):	Narzêdzia potrzebne przy tworzeniu dokumentacji w formacie texinfo
 Summary(tr):	texinfo biçimleyici ve info okuyucu
 Name:		texinfo
 Version:	4.0
-Release:	5
+Release:	6
 License:	GPL
 Group:		Applications/Publishing
 Group(pl):	Aplikacje/Publikowanie
@@ -24,8 +24,6 @@ Prereq:		/usr/sbin/fix-info-dir
 Requires:	info = %{version}
 Requires:	mktemp
 Buildroot:	/tmp/%{name}-%{version}-root
-
-%define		_applnkdir	/usr/X11R6/share/applnk
 
 %description
 Texinfo is a documentation system that can produce both online information
