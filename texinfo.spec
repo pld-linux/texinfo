@@ -57,13 +57,13 @@ documentations.
 
 %description -l pl
 Texinfo jest systemem dokumentowania umo¿liwiaj±cym wyprodukowanie
-zarówno dokumentacji online jak i postaci do wydruku z pojedynczego
-pliku ¼ród³owego. bardzo czêsto piszê siedwie dokumentacje: jedna do
-przegl±dania online i inna do przyszykowanai wysokiej jako¶ci postaci
-drukowane. U¿ywaj±c Texinfo do powy¿szego potzrebujesz przygotowaæ
+zarówno dokumentacji online jak i w postaci do wydruku z pojedynczego
+pliku ¼ród³owego. Bardzo czêsto pisze siê dwie dokumentacje: jedn± do
+przegl±dania online i drug± do przyszykowania wysokiej jako¶ci postaci
+drukowanej. U¿ywaj±c Texinfo do powy¿szego potrzebujesz przygotowaæ
 dokumentacjê tylko w jednej postaci ¼ród³owej. Podczas modyfikacji
 dokumentacji modyfikujesz w takim razie tylko jeden dokument.
-Wiêkszo¶æ projektów GNU u¿ywa do dukumentowania formatu Texinfo.
+Wiêkszo¶æ projektów GNU u¿ywa do dokumentowania formatu Texinfo.
 
 %description -l tr
 GNU projesi, belgelemesinin büyük bölümünde texinfo dosyalarýný
@@ -116,7 +116,7 @@ bulunur.
 %patch6 -p1
 
 %build
-ln -s version.texi doc/version2.texi
+ln -sf version.texi doc/version2.texi
 gettextize --copy --force
 aclocal
 autoconf
@@ -135,7 +135,7 @@ install -d $RPM_BUILD_ROOT{%{_applnkdir}/Utilities,%{_sbindir},/sbin}
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 mv -f $RPM_BUILD_ROOT%{_bindir}/install-info $RPM_BUILD_ROOT%{_sbindir}
-ln -s %{_sbindir}/install-info $RPM_BUILD_ROOT/sbin/install-info
+ln -sf %{_sbindir}/install-info $RPM_BUILD_ROOT/sbin/install-info
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Utilities
 

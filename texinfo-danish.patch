@@ -9030,8 +9030,8 @@ diff -Nru texinfo-4.0/configure.in texinfo-4.0.new/configure.in
  AC_SUBST(TERMLIBS)
  
  dnl Set of available languages and i18n macros.
--ALL_LINGUAS="cs de de_AT eo fr nl no ru"
-+ALL_LINGUAS="cs da de de_AT eo fr nl no ru"
+-ALL_LINGUAS="cs de de_AT eo fr ja nl no ru"
++ALL_LINGUAS="cs da de de_AT eo fr ja nl no ru"
  AM_GNU_GETTEXT
  
  AC_OUTPUT([Makefile             \
