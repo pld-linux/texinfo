@@ -1,5 +1,16 @@
---- texinfo-3.12s/util/install-info.c.wiget	Wed Sep  8 17:37:16 1999
-+++ texinfo-3.12s/util/install-info.c	Wed Sep  8 18:01:09 1999
+--- texinfo-3.12f/util/Makefile.in.zlib	Wed Mar 17 18:36:17 1999
++++ texinfo-3.12f/util/Makefile.in	Wed Mar 17 18:36:25 1999
+@@ -102,7 +102,7 @@
+ DEFS = @DEFS@ -I. -I$(srcdir) -I..
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lz
+ install_info_SOURCES = install-info.c
+ install_info_OBJECTS =  install-info.o
+ install_info_LDADD = $(LDADD)
+--- texinfo-4.0/util/install-info.c.zlib	Tue Nov  9 18:34:37 1999
++++ texinfo-4.0/util/install-info.c	Tue Nov  9 18:40:58 1999
 @@ -19,6 +19,7 @@
  
  #include "system.h"
@@ -113,8 +124,9 @@
 -         switch back to text mode.  */
 -      f = freopen (*opened_filename, "r", f);
 -#endif
-       *is_pipe = 0;
+-      *is_pipe = 0;
 -    }
++  *is_pipe = 0;
  
    return f;
  }
@@ -157,14 +169,3 @@
  
    xexit (0);
  }
---- texinfo-3.12s/util/Makefile.in.wiget	Thu Aug 19 23:30:56 1999
-+++ texinfo-3.12s/util/Makefile.in	Wed Sep  8 17:37:16 1999
-@@ -104,7 +104,7 @@
- DEFS = @DEFS@ -I. -I$(srcdir) -I..
- CPPFLAGS = @CPPFLAGS@
- LDFLAGS = @LDFLAGS@
--LIBS = @LIBS@
-+LIBS = @LIBS@ -lz
- install_info_SOURCES = install-info.c
- install_info_OBJECTS =  install-info.o
- install_info_LDADD = $(LDADD)
