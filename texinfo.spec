@@ -21,6 +21,7 @@ URL:		http://texinfo.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
+BuildRequires:	gettext-autopoint
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	zlib-devel
 Requires:	info = %{version}
@@ -182,7 +183,7 @@ Narzêdzie do konwersji plików texinfo na dvi.
 %build
 rm -f missing m4/{codeset,gettext,glibc21,iconv,isc-posix,lcmessage,progtest}.m4
 ln -sf version.texi doc/version2.texi
-%{__gettextize}
+%{__autopoint}
 %{__aclocal} -I m4
 %{__autoconf}
 %{__automake}
