@@ -5,7 +5,7 @@ Summary(pl):	Texinfo -- formatter plików texinfo
 Summary(tr):	texinfo biçimleyici ve info okuyucu
 Name:		texinfo
 Version:	3.12h
-Release:	1
+Release:	2
 Copyright:	GPL
 Group:		Applications/Publishing
 Group(pl):	Aplikacje/Publikowanie
@@ -114,6 +114,9 @@ install %{SOURCE2} $RPM_BUILD_ROOT/etc/X11/wmconfig/info
 
 gzip -9nf $RPM_BUILD_ROOT%{_infodir}/*info* \
 	ChangeLog INTRODUCTION NEWS README info/README
+
+%find_lang %{name}
+
 %post
 /sbin/install-info %{_infodir}/texinfo.gz /etc/info-dir
 
@@ -143,7 +146,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_infodir}/info-stnd.info*
 %{_infodir}/texinfo*
 
-%files -n info
+%files -n info -f texinfo.lang
 %defattr(644,root,root,755)
 %config(missingok) /etc/X11/wmconfig/info
 %config(noreplace) %verify(not mtime size md5) /etc/info-dir
@@ -152,15 +155,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_infodir}/info.info*
 %attr(755,root,root) /sbin/install-info
 %attr(755,root,root) /sbin/fix-info-dir
-%lang(cs)    %{_datadir}/locale/cs/LC_MESSAGES/texinfo.mo
-%lang(de)    %{_datadir}/locale/de/LC_MESSAGES/texinfo.mo
-%lang(de_AT) %{_datadir}/locale/de_AT/LC_MESSAGES/texinfo.mo
-%lang(fr)    %{_datadir}/locale/fr/LC_MESSAGES/texinfo.mo
-%lang(nl)    %{_datadir}/locale/nl/LC_MESSAGES/texinfo.mo
-%lang(no)    %{_datadir}/locale/no/LC_MESSAGES/texinfo.mo
-%lang(ru)    %{_datadir}/locale/ru/LC_MESSAGES/texinfo.mo
 
 %changelog
+* Sun Jun 06 1999 Jan Rêkorajski <baggins@pld.org.pl>
+  [3.12h-2]
+- added find_lang macro
+
 * Thu Apr  1 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [3.12f-5]
 - removed man group from man pages,
