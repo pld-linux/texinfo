@@ -242,3 +242,18 @@ diff -Nru texinfo-4.0/doc/info-stnd.texi texinfo-4.0.new/doc/info-stnd.texi
  @end direntry
  
  @ifinfo
+diff -Nru texinfo-4.0/doc/info.texi texinfo-4.0.new/doc/info.texi
+--- texinfo-4.0/doc/info.texi	Mon Apr 19 23:37:23 1999
++++ texinfo-4.0.new/doc/info.texi	Fri Oct  1 13:06:51 1999
+@@ -5,9 +5,9 @@
+ @comment %**end of header
+ @comment $Id$
+ 
+-@dircategory Texinfo documentation system
++@dircategory Texinfo documentation system:
+ @direntry
+-* Info: (info).                 Documentation browsing system.
++* Info: (info).				Documentation browsing system
+ @end direntry
+ 
+ @ifinfo
