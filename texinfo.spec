@@ -4,10 +4,12 @@ Summary(es):	Formateador texinfo y lector de archivos info
 Summary(fr):	Outils crИant des documentations au format texinfo
 Summary(pl):	NarzЙdzia potrzebne przy tworzeniu dokumentacji w formacie texinfo
 Summary(pt_BR):	Formatador texinfo e leitor de arquivos info
+Summary(ru):	Инструменты для создания файлов документации формата Texinfo
 Summary(tr):	texinfo biГimleyici ve info okuyucu
+Summary(uk):	╤нструменти для створення файл╕в документац╕╖ формату Texinfo
 Name:		texinfo
-Version:	4.1
-Release:	1
+Version:	4.2
+Release:	5
 License:	GPL
 Group:		Applications/Publishing
 Source0:	ftp://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.gz
@@ -15,9 +17,10 @@ Source1:	info.desktop
 Patch0:		%{name}-fix.patch
 Patch1:		%{name}-zlib.patch
 Patch2:		%{name}-info.patch
-Patch3:		%{name}-version.texi.patch
-Patch4:		%{name}-fileextension.patch
-Patch5:		%{name}-ALL_LINGUAS.patch
+Patch3:		%{name}-fileextension.patch
+Patch4:		%{name}-ALL_LINGUAS.patch
+Patch5:		%{name}-ac_fixes.patch
+Patch6:		%{name}-am_fixes.patch
 URL:		http://texinfo.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -91,15 +94,23 @@ necessidade de revisЦo, И preciso apenas revisar um Зnico
 documento-fonte. O projeto GNU usa o formato de arquivo texinfo para a
 maioria da sua documentaГЦo.
 
-Instale o Texinfo se vocЙ quiser um sistema de documentaГЦo para
-produzir tanto documentaГЦo on-line como impressa a partir do mesmo
-arquivo-fonte y se for escrever documentaГЦo para o Projeto GNU.
+%description -l ru
+Проект GNU использует формат texinfo для большинства документации,
+созданной в его рамках. Этот пакет включает инструменты, необходимые
+для создания файлов .info из исходных файлов .texinfo и интерфейс к
+emacs для всех этих инструментов.
 
 %description -l tr
 [6~GNU projesi, belgelemesinin bЭyЭk bЖlЭmЭnde texinfo dosyalarЩnЩ
 kullanЩr. Bu paket, texinfo dosyalarЩndan info dosyalarЩnЩn
 tЭretilmesini saПlayan araГlarla birlikte, tЭm bu araГlar iГin bir
 emacs arayЭzЭ de sunar.
+
+%description -l uk
+Проект GNU використову╓ формат texinfo для б╕льшост╕ документац╕╖,
+створено╖ в його рамках. Цей пакет м╕стить ╕нструменти, потр╕бн╕ для
+створення файл╕в .info з вх╕дних файл╕в .texinfo та ╕нтерфейс до emacs
+для вс╕х цих ╕нструмент╕в.
 
 %package -n info
 Summary:	A stand-alone TTY-based reader for GNU texinfo documentation
@@ -108,7 +119,9 @@ Summary(es):	Lector basado en tty para documentos texinfo GNU
 Summary(fr):	un lecteur de documentations info
 Summary(pl):	Samodzielny, terminalowy czytnik dokumentСw GNU texinfo
 Summary(pt_BR):	Leitor baseado em tty para documentos texinfo GNU
+Summary(ru):	Программа для просмотра документов в формате GNU texinfo на текстовой консоли
 Summary(tr):	GNU texinfo belgeleri iГin tty tabanlЩ gЖrЭntЭleyici
+Summary(uk):	Програма для перегляду документ╕в в формат╕ GNU texinfo на текстовому терм╕нал╕
 Group:		Applications/System
 Prereq:		fix-info-dir
 Obsoletes:	info-install
@@ -137,9 +150,19 @@ O projeto GNU usa o formato de arquivos texinfo para a maioria de sua
 documentaГЦo. Este pacote inclui um browser para visualizaГЦo destes
 arquivos.
 
+%description -n info -l ru
+Проект GNU использует формат texinfo для большинства документации,
+созданной в его рамках. Этот пакет включает программу для просмотра
+документов в формате GNU texinfo на текстовой консоли.
+
 %description -n info -l tr
 Bu pakette, info biГimindeki dosyalarЩ okumak iГin bir gЖrЭntЭleyici
 bulunur.
+
+%description -n info -l uk
+Проект GNU використову╓ формат texinfo для б╕льшост╕ документац╕╖,
+створено╖ в його рамках. Цей пакет м╕стить програму для перегляду
+документ╕в в формат╕ GNU texinfo на текстовому терм╕нал╕.
 
 %package texi2dvi
 Summary:	Texinfo to dvi conversion tool
@@ -162,13 +185,15 @@ NarzЙdzie do konwersji plikСw texinfo na dvi.
 %patch3 -p1
 %patch4 -p1
 %patch5 -p1
+%patch6 -p1
 
 %build
+rm -f missing m4/{codeset,gettext,glibc21,iconv,isc-posix,lcmessage,progtest}.m4
 ln -sf version.texi doc/version2.texi
-#gettextize --copy --force
-#aclocal
-autoconf
-automake -a -c -f
+%{__gettextize}
+%{__aclocal} -I m4
+%{__autoconf}
+%{__automake}
 %configure \
 	--without-included-gettext
 %{__make} -C doc maintainer-clean-aminfo
@@ -187,8 +212,6 @@ ln -sf %{_sbindir}/install-info $RPM_BUILD_ROOT/sbin/install-info
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Help
 
-gzip -9nf AUTHORS ChangeLog INTRODUCTION NEWS README TODO
-
 %find_lang %{name}
 
 %clean
@@ -205,7 +228,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS ChangeLog INTRODUCTION NEWS README TODO
 %attr(755,root,root) %{_bindir}/makeinfo
 %attr(755,root,root) %{_bindir}/texindex
 %{_datadir}/texinfo
@@ -217,7 +240,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n info -f texinfo.lang
 %defattr(644,root,root,755)
-%doc info/*.gz
+%doc info/README
 %attr(755,root,root) %{_bindir}/info
 %attr(755,root,root) %{_bindir}/infokey
 %attr(755,root,root) /sbin/install-info
