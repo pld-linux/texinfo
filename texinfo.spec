@@ -21,7 +21,7 @@ Patch2:		%{name}-pl.po-update.patch
 Patch3:		%{name}-segfault.patch
 URL:		http://texinfo.org/
 BuildRequires:	autoconf >= 2.59
-BuildRequires:	automake >= 1.8
+BuildRequires:	automake >= 1:1.8
 BuildRequires:	gettext-devel
 BuildRequires:	gettext-autopoint >= 0.14.1
 BuildRequires:	ncurses-devel >= 5.0
