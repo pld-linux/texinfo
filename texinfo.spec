@@ -257,6 +257,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc info/*.gz
 %attr(755,root,root) %{_bindir}/info
+%attr(755,root,root) %{_bindir}/infokey
 %attr(755,root,root) /sbin/install-info
 %attr(755,root,root) %{_sbindir}/install-info
 
