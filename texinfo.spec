@@ -106,31 +106,31 @@ make install prefix=$RPM_BUILD_ROOT/usr
 install util/fix-info-dir $RPM_BUILD_ROOT/sbin
 
 install %{SOURCE1} $RPM_BUILD_ROOT/etc/info-dir
-ln -sf ../../../etc/info-dir $RPM_BUILD_ROOT/usr/share/info/dir
+ln -sf ../../../etc/info-dir $RPM_BUILD_ROOT%{_infodir}/dir
 
 mv -f $RPM_BUILD_ROOT/usr/bin/install-info $RPM_BUILD_ROOT/sbin
 
 install %{SOURCE2} $RPM_BUILD_ROOT/etc/X11/wmconfig/info
 
-gzip -9nf $RPM_BUILD_ROOT/usr/share/info/*info* \
+gzip -9nf $RPM_BUILD_ROOT%{_infodir}/*info* \
 	ChangeLog INTRODUCTION NEWS README info/README
 %post
-/sbin/install-info /usr/info/texinfo.gz /etc/info-dir
+/sbin/install-info %{_infodir}/texinfo.gz /etc/info-dir
 
 %preun
 if [ "$1" = "0" ]; then
-	/sbin/install-info --delete /usr/share/info/texinfo.gz /etc/info-dir
+	/sbin/install-info --delete %{_infodir}/texinfo.gz /etc/info-dir
 fi
 
 %pre -n info
-if [ -e /usr/info ] && [ ! -L /usr/info ]; then
-	mv -f /usr/info/* /usr/share/info
+if [ -e %{_infodir} ] && [ ! -L /usr/info ]; then
+	mv -f %{_infodir}/* %{_infodir}
 fi
 
 %post -n info
-if [ -e /usr/info ] && [ ! -L /usr/info ]; then
-	rm -rf /usr/info/
-	ln -sf /usr/share/info /usr/info
+if [ -e %{_infodir} ] && [ ! -L /usr/info ]; then
+	rm -rf %{_infodir}/
+	ln -sf %{_infodir} %{_infodir}
 fi
 
 %clean
@@ -140,16 +140,16 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc {ChangeLog,INTRODUCTION,NEWS,README,info/README}.gz
 %attr(755,root,root) /usr/bin/*
-/usr/share/info/info-stnd.info*
-/usr/share/info/texinfo*
+%{_infodir}/info-stnd.info*
+%{_infodir}/texinfo*
 
 %files -n info
 %defattr(644,root,root,755)
 %config(missingok) /etc/X11/wmconfig/info
 %config(noreplace) %verify(not mtime size md5) /etc/info-dir
-%config /usr/share/info/dir
+%config %{_infodir}/dir
 %attr(755,root,root) /usr/bin/info
-/usr/share/info/info.info*
+%{_infodir}/info.info*
 %attr(755,root,root) /sbin/install-info
 %attr(755,root,root) /sbin/fix-info-dir
 %lang(cs)    /usr/share/locale/cs/LC_MESSAGES/texinfo.mo
@@ -193,7 +193,7 @@ rm -rf $RPM_BUILD_ROOT
 - added buildroot
 
 * Sun Nov 09 1997 Donnie Barnes <djb@redhat.com>
-- moved /usr/info/dir to /etc/info-dir and made /usr/info/dir a
+- moved %{_infodir}/dir to /etc/info-dir and made /usr/info/dir a
   symlink to /etc/info-dir.
 
 * Wed Oct 29 1997 Donnie Barnes <djb@redhat.com>
