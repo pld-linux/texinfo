@@ -4,8 +4,8 @@ Summary(fr):	Formatteur texinfo et lecteur pour info.
 Summary(pl):	Texinfo -- formatter plików texinfo
 Summary(tr):	texinfo biçimleyici ve info okuyucu
 Name:		texinfo
-Version:	3.12f
-Release:	6
+Version:	3.12h
+Release:	1
 Copyright:	GPL
 Group:		Applications/Publishing
 Group(pl):	Aplikacje/Publikowanie
