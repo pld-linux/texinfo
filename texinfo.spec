@@ -13,6 +13,7 @@ Release:	3
 License:	GPL
 Group:		Applications/Publishing
 Source0:	ftp://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.bz2
+# Source0-md5: 980c6be74b31c3257cda25fab0f74ed1
 Source1:	info.desktop
 Source2:	%{name}-pl.po
 Patch0:		%{name}-fix.patch
