@@ -10,19 +10,6 @@ Version:	4.0g
 Release:	1
 License:	GPL
 Group:		Applications/Publishing
-Group(cs):	Aplikace/Publikování
-Group(da):	Programmer/Udgivelse
-Group(de):	Applikationen/Publizieren
-Group(es):	Aplicaciones/Edición
-Group(fr):	Applications/Edition
-Group(it):	Applicazioni/Publishing
-Group(ja):	¥¢¥×¥ê¥±¡¼¥·¥ç¥ó/¥Ñ¥Ö¥ê¥Ã¥·¥ó¥°
-Group(no):	Applikasjoner/Publisering
-Group(pl):	Aplikacje/Publikowanie
-Group(pt):	Aplicações/Publicação
-Group(pt_BR):	Aplicações/Editoração
-Group(ru):	ğÒÉÌÏÖÅÎÉÑ/éÚÄÁÔÅÌØÓÔ×Ï
-Group(sv):	Tillämpningar/Publicering
 Source0:	ftp://alpha.gnu.org/pub/gnu/%{name}-%{version}.tar.gz
 Source1:	info.desktop
 Patch0:		%{name}-fix.patch
@@ -123,19 +110,6 @@ Summary(pl):	Samodzielny, terminalowy czytnik dokumentów GNU texinfo
 Summary(pt_BR):	Leitor baseado em tty para documentos texinfo GNU
 Summary(tr):	GNU texinfo belgeleri için tty tabanlı görüntüleyici
 Group:		Applications/System
-Group(cs):	Aplikace/Systém
-Group(da):	Programmer/System
-Group(de):	Applikationen/System
-Group(es):	Aplicaciones/Sistema
-Group(fr):	Applications/Système
-Group(it):	Applicazioni/Sistema
-Group(ja):	¥¢¥×¥ê¥±¡¼¥·¥ç¥ó/¥·¥¹¥Æ¥à
-Group(no):	Applikasjoner/System
-Group(pl):	Aplikacje/System
-Group(pt):	Aplicações/Sistema
-Group(pt_BR):	Aplicações/Sistema
-Group(ru):	ğÒÉÌÏÖÅÎÉÑ/óÉÓÔÅÍÁ
-Group(sv):	Tillämpningar/System
 Prereq:		fix-info-dir
 Obsoletes:	info-install
 
@@ -171,19 +145,6 @@ bulunur.
 Summary:	Texinfo to dvi conversion tool
 Summary(pl):	Narzêdzie do konwersji texinfo na dvi
 Group:		Applications/Publishing
-Group(cs):	Aplikace/Publikování
-Group(da):	Programmer/Udgivelse
-Group(de):	Applikationen/Publizieren
-Group(es):	Aplicaciones/Edición
-Group(fr):	Applications/Edition
-Group(it):	Applicazioni/Publishing
-Group(ja):	¥¢¥×¥ê¥±¡¼¥·¥ç¥ó/¥Ñ¥Ö¥ê¥Ã¥·¥ó¥°
-Group(no):	Applikasjoner/Publisering
-Group(pl):	Aplikacje/Publikowanie
-Group(pt):	Aplicações/Publicação
-Group(pt_BR):	Aplicações/Editoração
-Group(ru):	ğÒÉÌÏÖÅÎÉÑ/éÚÄÁÔÅÌØÓÔ×Ï
-Group(sv):	Tillämpningar/Publicering
 Requires:	%{name} = %{version}
 Requires:	tetex
 
