@@ -5,8 +5,8 @@ Summary(pl):	Narzêdzia potrzebne przy tworzeniu dokumentacji w formacie texinfo
 Summary(tr):	texinfo biçimleyici ve info okuyucu
 Name:		texinfo
 Version:	4.0
-Release:	2
-Copyright:	GPL
+Release:	5
+License:	GPL
 Group:		Applications/Publishing
 Group(pl):	Aplikacje/Publikowanie
 Source:		ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
@@ -17,12 +17,15 @@ Patch4:		texinfo-info.patch
 Patch5:		texinfo-version.texi.patch
 Patch6:		texinfo-DESTDIR.patch
 Patch7:		texinfo-fix-info-dir.patch
+URL:		http://texinfo.org/
 BuildRequires:	zlib-devel
 BuildRequires:	ncurses-devel >= 5.0
 Prereq:		/usr/sbin/fix-info-dir
 Requires:	info = %{version}
 Requires:	mktemp
 Buildroot:	/tmp/%{name}-%{version}-root
+
+%define		_applnkdir	/usr/X11R6/share/applnk
 
 %description
 Texinfo is a documentation system that can produce both online information
@@ -33,47 +36,31 @@ only need to write one source document. Then when the work needs revision,
 you only have to revise one source document. The GNU Project uses the
 Texinfo file format for most of its documentation.
 
-Install texinfo if you want a documentation system for producing both online
-and print documentation from the same source file and/or if you are going to
-write documentation for the GNU Project.
-
 %description -l de
 Texinfo ist ein Dokumentationssystem, das sowohl Online-Information und
 gedruckte Ausgabe von einer einzigen Source-Datei erzeugen kann.
 Normalerweise würden Sie zwei verschiedene Dokumente schreiben, eins für
-Onlinehilfe und eins für ein gedrucktes Handbuch. Mit Texinfo reicht es, ein
-Dokument zu schreiben (und später zu aktualisieren). Das GNU-Projekt benutzt
-texinfo für den größten Teil seiner Dokumentation.
-
-Installieren Sie texinfo, wenn Sie ein Dokumentationssystem für Online- und
-gedruckte Dokumentation brauchen, oder wenn Sie Dokumentationen für das
-GNU-Projekt schreiben wollen.
+Onlinehilfe und eins für ein gedrucktes Handbuch. Mit Texinfo reicht es,
+ein Dokument zu schreiben (und später zu aktualisieren). Das GNU-Projekt
+benutzt texinfo für den größten Teil seiner Dokumentation.
 
 %description -l fr
 Texinfo est un système de documentation capable de produire de la
-documentation online ou imprimée à partir d'un seul fichier. 
+documentation online ou imprimée à partir d'un seul fichier.
 Habituellement, il faut écrire deux documents : l'un orienté hypertexte,
 l'autre axé sur une présentation de type PAO. En utilisant texinfo, vous
 n'avez plus besoin que d'un seul fichier source. Le projet GNU utilie le
 format de fichier Texinfo pour la plupart de ses documentations.
 
-Vous devriez installer texinfo si vous compter écrire des documents en ligne
-et sur papier à partir du même fichier ou si vous désirez écrire une
-documentation pour le projet GNU.
-
 %description -l pl
 Texinfo jest systemem dokumentowania umo¿liwiaj±cym wyprodukowanie zarówno
 dokumentacji online jak i postaci do wydruku z pojedynczego pliku
 ¼ród³owego. bardzo czêsto piszê siedwie dokumentacje: jedna do przegl±dania
-online i inna do przyszykowanai wysokiej jako¶ci postaci drukowane. U¿ywaj±c
-Texinfo do powy¿szego potzrebujesz przygotowaæ dokumentacjê tylko w jednej
-postaci ¼ród³owej. Podczas modyfikacji dokumentacji modyfikujesz w takim
-razie tylko jeden dokument. Wiêkszo¶æ projektów GNU u¿ywa do dukumentowania
-formatu Texinfo.
-
-Zainstaluj Texinfo je¿eli potzrebujesz sporz±dzaæ dokumentacjê która bêdzie
-przegl±dana zarówno online jak i bêdzie drukowan lub je¿eli zamierzasz pisaæ
-dokumentacjê do projektów GNU.
+online i inna do przyszykowanai wysokiej jako¶ci postaci drukowane.
+U¿ywaj±c Texinfo do powy¿szego potzrebujesz przygotowaæ dokumentacjê tylko
+w jednej postaci ¼ród³owej. Podczas modyfikacji dokumentacji modyfikujesz w
+takim razie tylko jeden dokument. Wiêkszo¶æ projektów GNU u¿ywa do
+dukumentowania formatu Texinfo.
 
 %description -l tr
 GNU projesi, belgelemesinin büyük bölümünde texinfo dosyalarýný kullanýr.
@@ -90,13 +77,13 @@ Group:		Utilities/System
 Group(pl):	Narzêdzia/System
 
 %description -n info
-The GNU project uses the texinfo file format for much of its documentation. 
+The GNU project uses the texinfo file format for much of its documentation.
 This package includes a standalone browser program to view these files.
 
 %description -l de -n info
 Das GNU-Projekt benutzt das texinfo-Dateiformat für den Großteil seiner
-Dokumentation. Dieses Paket enthält ein selbständiges Browser-Programm 
-zum Einsehen dieser Dateien. 
+Dokumentation. Dieses Paket enthält ein selbständiges Browser-Programm zum
+Einsehen dieser Dateien.
 
 %description -l fr -n info
 Le projet GNU utilise le format de fichier texinfo pour la plupart de sa
@@ -104,8 +91,8 @@ documentation. Ce paquetage contient un navigateur pour visualiser ces
 fichiers.
 
 %description -l pl -n info
-Projekty GNU u¿ywaj± formatu texinfo do tworzenia dokumentacji.
-Pakiet ten zawiera samodzieln± przegl±darkê tych¿e plików.
+Projekty GNU u¿ywaj± formatu texinfo do tworzenia dokumentacji. Pakiet ten
+zawiera samodzieln± przegl±darkê tych¿e plików.
 
 %description -l tr -n info
 Bu pakette, info biçimindeki dosyalarý okumak için bir görüntüleyici
@@ -136,7 +123,7 @@ make -C util
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{/usr/X11R6/share/applnk/Utilities,%{_sbindir},/sbin}
+install -d $RPM_BUILD_ROOT{%{_applnkdir}/Utilities,%{_sbindir},/sbin}
 
 make install DESTDIR=$RPM_BUILD_ROOT
 
@@ -145,7 +132,7 @@ install util/fix-info-dir $RPM_BUILD_ROOT%{_sbindir}
 mv -f $RPM_BUILD_ROOT%{_bindir}/install-info $RPM_BUILD_ROOT%{_sbindir}
 ln -s %{_sbindir}/install-info $RPM_BUILD_ROOT/sbin/install-info
 
-install %{SOURCE1} $RPM_BUILD_ROOT/usr/X11R6/share/applnk/Utilities
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Utilities
 
 gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/*info*,%{_mandir}/man?/*} \
 	ChangeLog INTRODUCTION NEWS README info/README
@@ -156,10 +143,10 @@ touch $RPM_BUILD_ROOT%{_infodir}/dir
 %find_lang %{name}
 
 %post
-/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+%{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %postun
-/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+%{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %pre -n info
 if [ -e /usr/info ] && [ ! -L /usr/info ]; then
@@ -199,7 +186,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_sbindir}/fix-info-dir
 %attr(755,root,root) %{_sbindir}/install-info
 
-/usr/X11R6/share/applnk/Utilities/info.desktop
+%{_applnkdir}/Utilities/info.desktop
 
 %ghost %{_infodir}/dir
 %{_infodir}/info.info*
