@@ -5,7 +5,7 @@ Summary(pl):	Narzêdzia potrzebne przy tworzeniu dokumentacji w formacie texinfo
 Summary(tr):	texinfo biçimleyici ve info okuyucu
 Name:		texinfo
 Version:	4.0
-Release:	7
+Release:	8
 License:	GPL
 Group:		Applications/Publishing
 Group(pl):	Aplikacje/Publikowanie
@@ -148,7 +148,7 @@ touch $RPM_BUILD_ROOT%{_infodir}/dir
 %{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %post -n info
-/usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+[ "$1" = 2 ] && %{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
