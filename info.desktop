@@ -6,7 +6,8 @@ info group "Utilities/Misc"
 Name=info
 Name[pl]=info
 Comment=GNU Info Page Reader
-Comment=GNU przegl±darka stron info
+Comment[pl]=GNU przegl±darka stron info
 Exec=/usr/X11R6/bin/xterm -e /usr/bin/info
+Icon=gnome-info.png
 Terminal=0
 Type=Application
