@@ -19,6 +19,7 @@ Patch3:		texinfo-zlib.patch
 Patch4:		texinfo-info.patch
 Patch5:		texinfo-version.texi.patch
 Patch6:		texinfo-DESTDIR.patch
+BuildPrereq:	zlib-devel
 Prereq:		/sbin/install-info
 Requires:	info = %{version}
 Buildroot:	/tmp/%{name}-%{version}-root
