@@ -111,16 +111,16 @@ autoconf
 LDFLAGS="-s -lz"; export LDFLAGS
 %configure \
 	--without-included-gettext
-make -C doc distclean-aminfo
+%{__make} -C doc distclean-aminfo
 make
 rm util/install-info
-make -C util 
+%{__make} -C util 
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_applnkdir}/Utilities,%{_sbindir},/sbin}
 
-make install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 mv -f $RPM_BUILD_ROOT%{_bindir}/install-info $RPM_BUILD_ROOT%{_sbindir}
 ln -s %{_sbindir}/install-info $RPM_BUILD_ROOT/sbin/install-info
