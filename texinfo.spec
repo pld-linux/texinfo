@@ -11,7 +11,7 @@ Group:		Applications/Publishing
 Group(pl):	Aplikacje/Publikowanie
 Source:		ftp://prep.ai.mit.edu/pub/gnu/%{name}-%{version}.tar.gz
 Source1:	info-dir
-Source2:	info.wmconfig
+Source2:	info.desktop
 Patch0:		texinfo-exe.patch
 Patch1:		texinfo-fix.patch
 Patch2:		texinfo-alpha-tioc.patch
@@ -106,7 +106,7 @@ make -C util
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{/etc/X11/wmconfig,%{_sbindir},/sbin}
+install -d $RPM_BUILD_ROOT{/etc/X11/applnk/Utilities,%{_sbindir},/sbin}
 
 make install DESTDIR=$RPM_BUILD_ROOT
 
@@ -118,7 +118,7 @@ ln -sf ../../../etc/info-dir $RPM_BUILD_ROOT%{_infodir}/dir
 mv -f $RPM_BUILD_ROOT%{_bindir}/install-info $RPM_BUILD_ROOT%{_sbindir}
 ln -s %{_sbindir}/install-info $RPM_BUILD_ROOT/sbin/install-info
 
-install %{SOURCE2} $RPM_BUILD_ROOT/etc/X11/wmconfig/info
+install %{SOURCE2} $RPM_BUILD_ROOT/etc/X11/applnk/Utilities
 
 gzip -9nf $RPM_BUILD_ROOT%{_infodir}/*info* \
 	ChangeLog INTRODUCTION NEWS README info/README
@@ -158,7 +158,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n info -f texinfo.lang
 %defattr(644,root,root,755)
-/etc/X11/wmconfig/info
+/etc/X11/applnk/Utilities/info.desktop
 %config(noreplace) %verify(not mtime size md5) /etc/info-dir
 %config %{_infodir}/dir
 %attr(755,root,root) %{_bindir}/info
@@ -168,66 +168,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_sbindir}/install-info
 
 %changelog
-* Sun Jun 06 1999 Jan Rêkorajski <baggins@pld.org.pl>
-  [3.12h-2]
-- added find_lang macro
-
-* Thu Apr  1 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [3.12f-5]
-- removed man group from man pages,
-- more locales (cs , de_AT, nl, no, ru),
-- gzipping %doc
-- added --without-included-gettext to ./configure parameters (smaler binary)
-- added texinfo-info.patch,
-- added /sbin/fix-info-dir.
-
-* Fri Oct  9 1998 Ziemek Borowski <ziembor@faq-bot.ceu.edu.pl>
-  [3.12-5]
-- more restricted permision to binaries,
-- added texinfo-3.12-fix.patch,
-- fixed spec Polish translation. 
-
-* Tue Oct 06 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
-- added pl translation,
-- restricted ELF binaries permissions,
-- minor modifications of the spec file.
-
-* Thu May 07 1998 Prospector System <bugs@redhat.com>
-- translations modified for de, fr, tr
-
-* Sun Apr 12 1998 Cristian Gafton <gafton@redhat.com>
-- added %clean
-- manhattan build
-
-* Wed Mar 04 1998 Cristian Gafton <gafton@redhat.com>
-- upgraded to version 3.12
-- added buildroot
-
-* Sun Nov 09 1997 Donnie Barnes <djb@redhat.com>
-- moved %{_infodir}/dir to /etc/info-dir and made /usr/info/dir a
-  symlink to /etc/info-dir.
-
-* Wed Oct 29 1997 Donnie Barnes <djb@redhat.com>
-- added wmconfig entry for info
-
-* Wed Oct 01 1997 Donnie Barnes <djb@redhat.com>
-- stripped /sbin/install-info
-
-* Mon Sep 22 1997 Erik Troan <ewt@redhat.com>
-- added info-dir to filelist
-
-* Sun Sep 14 1997 Erik Troan <ewt@redhat.com>
-- added patch from sopwith to let install-info understand gzip'ed info files
-- use skeletal dir file from texinfo tarball (w/ bash entry to reduce
-  dependency chain) instead (and install-info command everywhere else)
-- patches install-info to handle .gz names correctly
-
-* Tue Jun 03 1997 Erik Troan <ewt@redhat.com>
-- built against glibc
-
-* Tue Feb 25 1997 Erik Troan <ewt@redhat.com>
-- patched install-info.c for glibc.
-- added %{_bindir}/install-info to the filelist
-
-* Tue Feb 18 1997 Michael Fulbright <msf@redhat.com>
-- upgraded to version 3.9.
+* Wed Jul  7 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [3.12h-3]
+- based on RH spec,
+- spec rewrited by PLD team,
+- pl translation by Ziemek Borowski <ziembor@faq-bot.ceu.edu.pl>.
