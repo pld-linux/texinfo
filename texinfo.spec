@@ -5,21 +5,25 @@ Summary(pl):	Narzêdzia potrzebne przy tworzeniu dokumentacji w formacie texinfo
 Summary(tr):	texinfo biçimleyici ve info okuyucu
 Name:		texinfo
 Version:	4.0
-Release:	16
+Release:	20
 License:	GPL
 Group:		Applications/Publishing
 Group(de):	Applikationen/Publizieren
 Group(pl):	Aplikacje/Publikowanie
 Source0:	ftp://ftp.gnu.org/pub/gnu/texinfo/%{name}-%{version}.tar.gz
 Source1:	info.desktop
-Patch1:		%{name}-fix.patch
-Patch3:		%{name}-zlib.patch
-Patch4:		%{name}-info.patch
-Patch5:		%{name}-version.texi.patch
-Patch6:		%{name}-DESTDIR.patch
+Patch0:		%{name}-fix.patch
+Patch1:		%{name}-zlib.patch
+Patch2:		%{name}-info.patch
+Patch3:		%{name}-version.texi.patch
+Patch4:		%{name}-DESTDIR.patch
+Patch5:		%{name}-fileextension.patch
+Patch6:		%{name}-danish.patch
 URL:		http://texinfo.org/
-BuildRequires:	zlib-devel
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	ncurses-devel >= 5.0
+BuildRequires:	zlib-devel
 Requires:	info = %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -103,18 +107,20 @@ bulunur.
 
 %prep
 %setup -q
-%patch1 -p1
-%patch3 -p1 
+%patch0 -p1
+%patch1 -p1 
+%patch2 -p1
+%patch3 -p1
 %patch4 -p1
 %patch5 -p1
 %patch6 -p1
 
 %build
 ln -s version.texi doc/version2.texi
-automake
 gettextize --copy --force
 aclocal
 autoconf
+automake -a -c
 %configure \
 	--without-included-gettext
 %{__make} -C doc distclean-aminfo
@@ -151,7 +157,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {ChangeLog,INTRODUCTION,NEWS,README,info/README}.gz
+%doc *.gz info/*.gz
 %attr(755,root,root) %{_bindir}/makeinfo
 %attr(755,root,root) %{_bindir}/texi2dvi
 %attr(755,root,root) %{_bindir}/texindex
