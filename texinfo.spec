@@ -6,8 +6,8 @@ Summary(pl):	Narzêdzia potrzebne przy tworzeniu dokumentacji w formacie texinfo
 Summary(pt_BR):	Formatador texinfo e leitor de arquivos info
 Summary(tr):	texinfo biçimleyici ve info okuyucu
 Name:		texinfo
-Version:	4.0f
-Release:	3
+Version:	4.0g
+Release:	1
 License:	GPL
 Group:		Applications/Publishing
 Group(cs):	Aplikace/Publikování
@@ -30,6 +30,7 @@ Patch1:		%{name}-zlib.patch
 Patch2:		%{name}-info.patch
 Patch3:		%{name}-version.texi.patch
 Patch4:		%{name}-fileextension.patch
+Patch5:		%{name}-ALL_LINGUAS.patch
 URL:		http://texinfo.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -199,6 +200,7 @@ Narzêdzie do konwersji plików texinfo na dvi.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+%patch5 -p1
 
 %build
 ln -sf version.texi doc/version2.texi
@@ -224,7 +226,7 @@ ln -sf %{_sbindir}/install-info $RPM_BUILD_ROOT/sbin/install-info
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Help
 
-gzip -9nf ChangeLog INTRODUCTION NEWS README info/README
+gzip -9nf AUTHORS ChangeLog INTRODUCTION NEWS README TODO
 
 %find_lang %{name}
 
