@@ -157,7 +157,7 @@ Narzêdzie do konwersji plików texinfo na dvi.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1 
+%patch1 -p1
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
@@ -174,7 +174,7 @@ automake -a -c
 %{__make} -C doc distclean-aminfo
 %{__make}
 rm -f util/install-info
-%{__make} -C util 
+%{__make} -C util
 
 %install
 rm -rf $RPM_BUILD_ROOT
