@@ -148,7 +148,6 @@ Das GNU-Projekt benutzt das texinfo-Dateiformat für den Großteil
 seiner Dokumentation. Dieses Paket enthält ein selbständiges
 Browser-Programm zum Einsehen dieser Dateien.
 
-%description -n info -l es
 %description -n info -l fr
 Le projet GNU utilise le format de fichier texinfo pour la plupart de
 sa documentation. Ce paquetage contient un navigateur pour visualiser
