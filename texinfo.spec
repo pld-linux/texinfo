@@ -112,7 +112,7 @@ LDFLAGS="-s -lz"; export LDFLAGS
 %configure \
 	--without-included-gettext
 %{__make} -C doc distclean-aminfo
-make
+%{__make}
 rm util/install-info
 %{__make} -C util 
 
