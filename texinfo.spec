@@ -166,10 +166,3 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) /sbin/install-info
 %attr(755,root,root) %{_sbindir}/fix-info-dir
 %attr(755,root,root) %{_sbindir}/install-info
-
-%changelog
-* Wed Jul  7 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [3.12h-3]
-- based on RH spec,
-- spec rewrited by PLD team,
-- pl translation by Ziemek Borowski <ziembor@faq-bot.ceu.edu.pl>.
