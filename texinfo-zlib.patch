@@ -1,16 +1,18 @@
---- texinfo-3.12f/util/Makefile.in.zlib	Wed Mar 17 18:36:17 1999
-+++ texinfo-3.12f/util/Makefile.in	Wed Mar 17 18:36:25 1999
-@@ -102,7 +102,7 @@
- DEFS = @DEFS@ -I. -I$(srcdir) -I..
- CPPFLAGS = @CPPFLAGS@
- LDFLAGS = @LDFLAGS@
--LIBS = @LIBS@
-+LIBS = @LIBS@ -lz
- install_info_SOURCES = install-info.c
- install_info_OBJECTS =  install-info.o
- install_info_LDADD = $(LDADD)
---- texinfo-4.0/util/install-info.c.zlib	Tue Nov  9 18:34:37 1999
-+++ texinfo-4.0/util/install-info.c	Tue Nov  9 18:40:58 1999
+diff -Nru texinfo-4.0/util/Makefile.am texinfo-4.0.new/util/Makefile.am
+--- texinfo-4.0/util/Makefile.am	Sat Jul 17 00:00:26 1999
++++ texinfo-4.0.new/util/Makefile.am	Thu Oct 12 21:33:37 2000
+@@ -7,7 +7,7 @@
+ 
+ localedir = $(datadir)/locale
+ INCLUDES = -I$(top_srcdir)/lib -I../intl -DLOCALEDIR=\"$(localedir)\"
+-LDADD = ../lib/libtxi.a @INTLLIBS@
++LDADD = ../lib/libtxi.a -lz @INTLLIBS@
+ 
+ # Most of these are just for fun.  The only one that's really supported
+ # is texi2dvi.
+diff -Nru texinfo-4.0/util/install-info.c texinfo-4.0.new/util/install-info.c
+--- texinfo-4.0/util/install-info.c	Thu Oct 12 21:34:07 2000
++++ texinfo-4.0.new/util/install-info.c	Thu Oct 12 21:33:06 2000
 @@ -19,6 +19,7 @@
  
  #include "system.h"
