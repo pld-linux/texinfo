@@ -184,6 +184,7 @@ Narzêdzie do konwersji plików texinfo na dvi.
 
 cp %{SOURCE2} po/pl.po
 echo pl >> po/LINGUAS
+rm -f po/stamp-po
 
 %build
 rm -f missing m4/{codeset,gettext,glibc21,iconv,isc-posix,lcmessage,progtest}.m4
