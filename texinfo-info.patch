@@ -1,6 +1,5 @@
-diff -Nru texinfo-3.12f/doc/info-stnd.texi texinfo-3.12f.new/doc/info-stnd.texi
---- texinfo-3.12f/doc/info-stnd.texi	Fri Mar  5 20:55:59 1999
-+++ texinfo-3.12f.new/doc/info-stnd.texi	Fri Apr  2 09:49:27 1999
+--- texinfo-3.12h/doc/info-stnd.texi	Mon Mar 22 21:01:11 1999
++++ texinfo-3.12h.new/doc/info-stnd.texi	Wed May 12 20:24:26 1999
 @@ -10,9 +10,9 @@
  
  @include version.texi
@@ -8,14 +7,13 @@ diff -Nru texinfo-3.12f/doc/info-stnd.texi texinfo-3.12f.new/doc/info-stnd.texi
 -@dircategory Texinfo documentation system
 +@dircategory Texinfo documentation system:
  @direntry
--* info program: (info-stnd).    Standalone Info-reading program.
-+* info program: (info-stnd)		Standalone Info-reading program
+-* standalone info program: (info-stnd).    Standalone Info-reading program.
++* standalone info program: (info-stnd)	Standalone Info-reading program
  @end direntry
  
  @ifinfo
-diff -Nru texinfo-3.12f/doc/info.texi texinfo-3.12f.new/doc/info.texi
---- texinfo-3.12f/doc/info.texi	Wed Jan 20 22:33:25 1999
-+++ texinfo-3.12f.new/doc/info.texi	Fri Apr  2 09:50:02 1999
+--- texinfo-3.12h/doc/info.texi	Sat Mar 20 18:30:24 1999
++++ texinfo-3.12h.new/doc/info.texi	Wed May 12 20:25:30 1999
 @@ -5,9 +5,9 @@
  @comment %**end of header
  @comment $Id$
@@ -28,9 +26,8 @@ diff -Nru texinfo-3.12f/doc/info.texi texinfo-3.12f.new/doc/info.texi
  @end direntry
  
  @ifinfo
-diff -Nru texinfo-3.12f/doc/texinfo.txi texinfo-3.12f.new/doc/texinfo.txi
---- texinfo-3.12f/doc/texinfo.txi	Fri Mar  5 23:53:51 1999
-+++ texinfo-3.12f.new/doc/texinfo.txi	Fri Apr  2 09:56:53 1999
+--- texinfo-3.12h/doc/texinfo.txi	Wed Mar 31 22:15:52 1999
++++ texinfo-3.12h.new/doc/texinfo.txi	Wed May 12 20:44:59 1999
 @@ -26,13 +26,13 @@
  @c Before release, run C-u C-c C-u C-a (texinfo-all-menus-update with a
  @c prefix arg).  This updates the node pointers, which texinfmt.el needs.
@@ -80,7 +77,7 @@ diff -Nru texinfo-3.12f/doc/texinfo.txi texinfo-3.12f.new/doc/texinfo.txi
  * Debugging with Info::         How to catch errors with Info formatting.
  * Debugging with TeX::          How to catch errors with @TeX{} formatting.
  * Using texinfo-show-structure::  How to use @code{texinfo-show-structure}.
-@@ -2206,7 +2206,7 @@
+@@ -2204,7 +2204,7 @@
  you must run the @code{texindex} command after first running the
  @code{tex} typesetting command; and then you must run the @code{tex}
  command again.  Or else run the @code{texi2dvi} command which
@@ -89,18 +86,18 @@ diff -Nru texinfo-3.12f/doc/texinfo.txi texinfo-3.12f.new/doc/texinfo.txi
  
  Often, when you are writing a document, you want to typeset and print
  only part of a file to see what it will look like.  You can use the
-@@ -3748,8 +3748,8 @@
+@@ -3787,8 +3787,8 @@
  
  You need to include the @code{@@set@dots{}contentsaftertitlepage}
  commands early in the document (just after @code{@@setfilename}, for
 -example).  Or, if you're using @command{texi2dvi} (@pxref{Format with
 -texi2dvi}), you can use its @option{--texinfo} option to specify this
-+example).  Or, if you're using @command{texi2dvi} (@pxref{texi2dvi}),
++example).  Or, if you're using @command{texi2dvi} (@pxref{texi2dvi}), 
 +you can use its @option{--texinfo} option to specify this
  without altering the source file at all.  For example:
  @example
  texi2dvi --texinfo=@@setshortcontentsaftertitlepage foo.texi
-@@ -12356,8 +12356,8 @@
+@@ -12420,8 +12420,8 @@
  
  @menu
  * Use TeX::                     Use @TeX{} to format for hardcopy.
@@ -111,7 +108,7 @@ diff -Nru texinfo-3.12f/doc/texinfo.txi texinfo-3.12f.new/doc/texinfo.txi
  * Print with lpr::              How to print.
  * Within Emacs::                How to format and print from an Emacs shell.
  * Texinfo Mode Printing::       How to format and print in Texinfo mode.
-@@ -12372,7 +12372,7 @@
+@@ -12436,7 +12436,7 @@
                                  of pages and how to print scaled up output.
  @end menu
  
@@ -120,7 +117,7 @@ diff -Nru texinfo-3.12f/doc/texinfo.txi texinfo-3.12f.new/doc/texinfo.txi
  @section Use @TeX{}
  
  The typesetting program called @TeX{} is used for formatting a Texinfo
-@@ -12397,7 +12397,7 @@
+@@ -12461,7 +12461,7 @@
  
  
  
@@ -129,7 +126,7 @@ diff -Nru texinfo-3.12f/doc/texinfo.txi texinfo-3.12f.new/doc/texinfo.txi
  @section Format with @code{tex} and @code{texindex}
  @cindex Shell formatting with @code{tex} and @code{texindex}
  @cindex Formatting with @code{tex} and @code{texindex}
-@@ -12418,7 +12418,7 @@
+@@ -12482,7 +12482,7 @@
  @pindex texindex
  The @code{tex} formatting command itself does not sort the indices; it
  writes an output file of unsorted index data.  (The @code{texi2dvi}
@@ -138,7 +135,7 @@ diff -Nru texinfo-3.12f/doc/texinfo.txi texinfo-3.12f.new/doc/texinfo.txi
  Format with @code{texi2dvi}}.)  To generate a printed index after
  running the @code{tex} command, you first need a sorted index to work
  from.  The @code{texindex} command sorts indices.  (The source file
-@@ -12492,7 +12492,7 @@
+@@ -12556,7 +12556,7 @@
  
  @pindex texi2dvi
  Alternatively, it's a one-step process: run @code{texi2dvi}
@@ -147,7 +144,7 @@ diff -Nru texinfo-3.12f/doc/texinfo.txi texinfo-3.12f.new/doc/texinfo.txi
  
  You need not run @code{texindex} each time after you run @code{tex}.  If
  you do not, on the next run, the @code{tex} formatting command will use
-@@ -12524,7 +12524,7 @@
+@@ -12588,7 +12588,7 @@
  (@pxref{Pointer Validation}).
  
  
@@ -156,7 +153,7 @@ diff -Nru texinfo-3.12f/doc/texinfo.txi texinfo-3.12f.new/doc/texinfo.txi
  @section Format with @code{texi2dvi}
  @pindex texi2dvi @r{(shell script)}
  
-@@ -12557,7 +12557,7 @@
+@@ -12621,7 +12621,7 @@
  For a list of other options, run @samp{texi2dvi --help}.
  
  
@@ -165,7 +162,7 @@ diff -Nru texinfo-3.12f/doc/texinfo.txi texinfo-3.12f.new/doc/texinfo.txi
  @section Shell Print Using @code{lpr -d}
  @pindex lpr @r{(DVI print command)}
  
-@@ -13029,7 +13029,7 @@
+@@ -13093,7 +13093,7 @@
  @xref{small}, for information about
  commands that make it easier to produce examples for a smaller manual.
  
@@ -174,7 +171,7 @@ diff -Nru texinfo-3.12f/doc/texinfo.txi texinfo-3.12f.new/doc/texinfo.txi
  @TeX{}}, for other ways to format with @code{@@smallbook} that do not
  require changing the source file.
  
-@@ -13058,7 +13058,7 @@
+@@ -13122,7 +13122,7 @@
  @end group
  @end example
  
@@ -183,7 +180,7 @@ diff -Nru texinfo-3.12f/doc/texinfo.txi texinfo-3.12f.new/doc/texinfo.txi
  @TeX{}}, for other ways to format with @code{@@afourpaper} that do not
  require changing the source file.
  
-@@ -13099,7 +13099,7 @@
+@@ -13163,7 +13163,7 @@
  margins, you must define a new command in @file{texinfo.tex} (or
  @file{texinfo.cnf}, @pxref{Preparing for TeX,,Preparing for @TeX{}}).
  
@@ -192,7 +189,7 @@ diff -Nru texinfo-3.12f/doc/texinfo.txi texinfo-3.12f.new/doc/texinfo.txi
  @TeX{}}, for other ways to specify @code{@@pagesizes} that do not
  require changing the source file.
  
-@@ -13847,7 +13847,7 @@
+@@ -13909,7 +13909,7 @@
                                    located in other directories.
  * Installing Dir Entries::      How to specify what menu entry to add
                                    to the Info directory.
@@ -201,7 +198,7 @@ diff -Nru texinfo-3.12f/doc/texinfo.txi texinfo-3.12f.new/doc/texinfo.txi
  @end menu
  
  @node Directory file, New Info File, Install an Info File, Install an Info File
-@@ -14078,7 +14078,7 @@
+@@ -14140,7 +14140,7 @@
  special CTRL-_ character that Info needs will be present.
  
  
@@ -210,25 +207,35 @@ diff -Nru texinfo-3.12f/doc/texinfo.txi texinfo-3.12f.new/doc/texinfo.txi
  @section Installing Info Directory Files
  
  When you install an Info file onto your system, you can use the program
-@@ -14099,7 +14099,7 @@
- @@dircategory Texinfo documentation system
+@@ -14158,10 +14158,10 @@
+ commands are used in this manual:
+ 
+ @smallexample
+-@@dircategory Texinfo documentation system
++@@dircategory Texinfo documentation system:
  @@direntry
- * Texinfo: (texinfo).           The GNU documentation format.
+-* Texinfo: (texinfo).           The GNU documentation format.
 -* install-info: (texinfo)Invoking install-info. @dots{}
++* Texinfo: (texinfo)			The GNU documentation format
 +* install-info: (texinfo)install-info	@dots{}
  @dots{}
  @@end direntry
  @end smallexample
-@@ -14110,7 +14110,7 @@
- INFO-DIR-SECTION Texinfo documentation system
+@@ -14169,10 +14169,10 @@
+ Here's what this produces in the Info file:
+ 
+ @smallexample
+-INFO-DIR-SECTION Texinfo documentation system
++INFO-DIR-SECTION Texinfo documentation system:
  START-INFO-DIR-ENTRY
- * Texinfo: (texinfo).           The GNU documentation format.
+-* Texinfo: (texinfo).           The GNU documentation format.
 -* install-info: (texinfo)Invoking install-info. @dots{}
-+* install-info: (texinfo)install-info	 @dots{}
++* Texinfo: (texinfo)			The GNU documentation format
++* install-info: (texinfo)install-info 	@dots{}
  @dots{}
  END-INFO-DIR-ENTRY
  @end smallexample
-@@ -14132,8 +14132,8 @@
+@@ -14194,8 +14194,8 @@
  specified categories.
  
  
@@ -239,7 +246,7 @@ diff -Nru texinfo-3.12f/doc/texinfo.txi texinfo-3.12f.new/doc/texinfo.txi
  
  @pindex install-info
  
-@@ -16660,7 +16660,7 @@
+@@ -16729,7 +16729,7 @@
  command and you can use the @kbd{M-x Info-validate} command.@refill
  
  @menu
@@ -248,7 +255,7 @@ diff -Nru texinfo-3.12f/doc/texinfo.txi texinfo-3.12f.new/doc/texinfo.txi
  * Debugging with Info::         How to catch errors with Info formatting.
  * Debugging with TeX::          How to catch errors with @TeX{} formatting.
  * Using texinfo-show-structure::  How to use @code{texinfo-show-structure}.
-@@ -16668,7 +16668,7 @@
+@@ -16737,7 +16737,7 @@
  * Running Info-Validate::       How to find badly referenced nodes.
  @end menu
  
@@ -257,7 +264,7 @@ diff -Nru texinfo-3.12f/doc/texinfo.txi texinfo-3.12f.new/doc/texinfo.txi
  @ifinfo
  @heading @code{makeinfo} Find Errors
  @end ifinfo
-@@ -16687,7 +16687,7 @@
+@@ -16756,7 +16756,7 @@
  cannot use @code{makeinfo}, or your problem is very puzzling, then you
  may want to use the tools described in this appendix.@refill
  
