@@ -202,7 +202,7 @@ rm -f util/install-info
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_desktopdir}/Help,%{_sbindir},/sbin}
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_sbindir},/sbin}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
