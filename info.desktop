@@ -3,8 +3,7 @@ info description "GNU Info Page Reader"
 info exec "xterm -e info &"
 info group "Utilities/Misc"
 [Desktop Entry]
-Name=info
-Name[pl]=info
+Name=Info
 Comment=GNU Info Page Reader
 Comment[pl]=GNU przeglądarka stron info
 Exec=/usr/X11R6/bin/xterm -e /usr/bin/info
