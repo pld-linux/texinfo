@@ -5,7 +5,7 @@ Summary(pl):	Narzêdzia potrzebne przy tworzeniu dokumentacji w formacie texinfo
 Summary(tr):	texinfo biçimleyici ve info okuyucu
 Name:		texinfo
 Version:	4.0b
-Release:	6
+Release:	7
 License:	GPL
 Group:		Applications/Publishing
 Group(de):	Applikationen/Publizieren
@@ -149,14 +149,14 @@ rm -f util/install-info
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_applnkdir}/Utilities,%{_sbindir},/sbin}
+install -d $RPM_BUILD_ROOT{%{_applnkdir}/Help,%{_sbindir},/sbin}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 mv -f $RPM_BUILD_ROOT%{_bindir}/install-info $RPM_BUILD_ROOT%{_sbindir}
 ln -sf %{_sbindir}/install-info $RPM_BUILD_ROOT/sbin/install-info
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Utilities
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Help
 
 gzip -9nf ChangeLog INTRODUCTION NEWS README info/README
 
@@ -192,7 +192,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) /sbin/install-info
 %attr(755,root,root) %{_sbindir}/install-info
 
-%{_applnkdir}/Utilities/info.desktop
+%{_applnkdir}/Help/info.desktop
 
 %{_infodir}/info.info*
 %{_infodir}/info-stnd.info*
