@@ -4,22 +4,26 @@ Summary(fr):	Outils créant des documentations au format texinfo
 Summary(pl):	Narzêdzia potrzebne przy tworzeniu dokumentacji w formacie texinfo
 Summary(tr):	texinfo biçimleyici ve info okuyucu
 Name:		texinfo
-Version:	4.0b
-Release:	7
+Version:	4.0f
+Release:	1
 License:	GPL
 Group:		Applications/Publishing
-Group(de):	Applikationen/Publizieren
+Group(cs):	Aplikace/Publikování
+Group(de):	Anwendungen/Publizieren
+Group(es):	Aplicaciones/Edición
+Group(fr):	Applications/Edition
+Group(ja):	¥¢¥×¥ê¥±¡¼¥·¥ç¥ó/¥Ñ¥Ö¥ê¥Ã¥·¥ó¥°
 Group(pl):	Aplikacje/Publikowanie
+Group(pt):	Aplicações/Publicação
+Group(pt_BR):	Aplicações/Editoração
+Group(ru):	ğÒÉÌÏÖÅÎÉÑ/éÚÄÁÔÅÌØÓÔ×Ï
 Source0:	ftp://alpha.gnu.org/pub/gnu/%{name}-%{version}.tar.gz
 Source1:	info.desktop
 Patch0:		%{name}-fix.patch
 Patch1:		%{name}-zlib.patch
 Patch2:		%{name}-info.patch
 Patch3:		%{name}-version.texi.patch
-Patch4:		%{name}-DESTDIR.patch
-Patch5:		%{name}-fileextension.patch
-Patch6:		%{name}-danish.patch
-Patch7:		%{name}-cpp_macros.patch
+Patch4:		%{name}-fileextension.patch
 URL:		http://texinfo.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -80,8 +84,15 @@ Summary(fr):	un lecteur de documentations info
 Summary(pl):	Samodzielny, terminalowy czytnik dokumentów GNU texinfo
 Summary(tr):	GNU texinfo belgeleri için tty tabanlı görüntüleyici
 Group:		Applications/System
-Group(de):	Applikationen/System
+Group(cs):	Aplikace/Systém
+Group(de):	Anwendungen/System
+Group(es):	Aplicaciones/Sistema
+Group(fr):	Applications/Système
+Group(ja):	¥¢¥×¥ê¥±¡¼¥·¥ç¥ó/¥·¥¹¥Æ¥à
 Group(pl):	Aplikacje/System
+Group(pt):	Aplicações/Sistema
+Group(pt_BR):	Aplicações/Sistema
+Group(ru):	ğÒÉÌÏÖÅÎÉÑ/óÉÓÔÅÍÁ
 Prereq:		fix-info-dir
 Obsoletes:	info-install
 
@@ -112,8 +123,15 @@ bulunur.
 Summary:	Texinfo to dvi conversion tool
 Summary(pl):	Narzêdzie do konwersji texinfo na dvi
 Group:		Applications/Publishing
-Group(de):	Applikationen/Publizieren
+Group(cs):	Aplikace/Publikování
+Group(de):	Anwendungen/Publizieren
+Group(es):	Aplicaciones/Edición
+Group(fr):	Applications/Edition
+Group(ja):	¥¢¥×¥ê¥±¡¼¥·¥ç¥ó/¥Ñ¥Ö¥ê¥Ã¥·¥ó¥°
 Group(pl):	Aplikacje/Publikowanie
+Group(pt):	Aplicações/Publicação
+Group(pt_BR):	Aplicações/Editoração
+Group(ru):	ğÒÉÌÏÖÅÎÉÑ/éÚÄÁÔÅÌØÓÔ×Ï
 Requires:	%{name} = %{version}
 Requires:	tetex
 
@@ -130,9 +148,6 @@ Narzêdzie do konwersji plików texinfo na dvi.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
-%patch5 -p1
-%patch6 -p1
-%patch7 -p1
 
 %build
 ln -sf version.texi doc/version2.texi
