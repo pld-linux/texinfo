@@ -13,6 +13,7 @@ Release:	5
 License:	GPL
 Group:		Applications/Publishing
 Source0:	ftp://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	41a97498d34ddbf245df40a95977be7f
 Source1:	info.desktop
 Patch0:		%{name}-fix.patch
 Patch1:		%{name}-zlib.patch
