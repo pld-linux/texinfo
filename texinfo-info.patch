@@ -17,22 +17,23 @@ diff -ur texinfo-4.1-/doc/info-stnd.texi texinfo-4.1/doc/info-stnd.texi
  @ifinfo
 Only in texinfo-4.1/doc: info-stnd.texi.orig
 Only in texinfo-4.1/doc: info-stnd.texi.rej
-diff -ur texinfo-4.1-/doc/info.texi texinfo-4.1/doc/info.texi
---- texinfo-4.1-/doc/info.texi	Sat Feb  9 01:54:34 2002
-+++ texinfo-4.1/doc/info.texi	Sat Mar  9 15:55:55 2002
-@@ -8,9 +8,9 @@
+Only in texinfo-4.1/doc: info.texi.orig
+Only in texinfo-4.1/doc: texinfo.txi.orig
+--- texinfo-4.2/doc/info.texi.orig	Mon Mar 18 10:00:32 2002
++++ texinfo-4.2/doc/info.texi	Tue May  7 06:41:06 2002
+@@ -8,9 +8,10 @@
  @comment %**end of header
  @comment $Id$
  
 -@dircategory Texinfo documentation system
 +@dircategory Texinfo documentation system:
  @direntry
--* Info: (info).                 Documentation browsing system.
-+* Info: (info).				Documentation browsing system
+-* Info: (info).         How to use the documentation browsing system.
++* Info: (info).				How to use the documentation
++					browsing system
  @end direntry
  
  @ifinfo
-Only in texinfo-4.1/doc: info.texi.orig
 diff -ur texinfo-4.1-/doc/texinfo.txi texinfo-4.1/doc/texinfo.txi
 --- texinfo-4.1-/doc/texinfo.txi	Mon Mar  4 15:52:53 2002
 +++ texinfo-4.1/doc/texinfo.txi	Sat Mar  9 15:55:55 2002
@@ -94,17 +95,17 @@ diff -ur texinfo-4.1-/doc/texinfo.txi texinfo-4.1/doc/texinfo.txi
  
  Often, when you are writing a document, you want to typeset and print
  only part of a file to see what it will look like.  You can use the
-@@ -3891,8 +3891,8 @@
+@@ -3970,8 +3970,8 @@
  
  You need to include the @code{@@set@dots{}contentsaftertitlepage}
  commands early in the document (just after @code{@@setfilename}, for
--example).  Or, if you're using @command{texi2dvi} (@pxref{Format with
--texi2dvi}), you can use its @option{--texinfo} option to specify this
-+example).  Or, if you're using @command{texi2dvi} (@pxref{texi2dvi}),
-+you can use its @option{--texinfo} option to specify this
- without altering the source file at all.  For example:
+-example).  We recommend using @command{texi2dvi} (@pxref{Format with
+-texi2dvi}) to specify this without altering the source file at all.  For
++example).  We recommend using @command{texi2dvi} (@pxref{(texinfo)texi2dvi})
++to specify this without altering the source file at all.  For
+ example:
  @example
- texi2dvi --texinfo=@@setshortcontentsaftertitlepage foo.texi
+ texi2dvi --texinfo=@@setcontentsaftertitlepage foo.texi
 @@ -12680,8 +12680,7 @@
  
  If some macro feature causes errors when producing the printed version
@@ -254,4 +255,3 @@ diff -ur texinfo-4.1-/doc/texinfo.txi texinfo-4.1/doc/texinfo.txi
  @comment  node-name,  next,  previous,  up
  @section Catching Errors with Info Formatting
  @cindex Catching errors with Info formatting
-Only in texinfo-4.1/doc: texinfo.txi.orig
