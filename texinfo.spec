@@ -16,7 +16,6 @@ Patch3:		texinfo-zlib.patch
 Patch4:		texinfo-info.patch
 Patch5:		texinfo-version.texi.patch
 Patch6:		texinfo-DESTDIR.patch
-Patch7:		texinfo-fix-info-dir.patch
 URL:		http://texinfo.org/
 BuildRequires:	zlib-devel
 BuildRequires:	ncurses-devel >= 5.0
@@ -102,7 +101,6 @@ bulunur.
 %patch4 -p1
 %patch5 -p1
 %patch6 -p1
-%patch7 -p1 
 
 %build
 ln -s version.texi doc/version2.texi
@@ -124,7 +122,6 @@ install -d $RPM_BUILD_ROOT{%{_applnkdir}/Utilities,%{_sbindir},/sbin}
 
 make install DESTDIR=$RPM_BUILD_ROOT
 
-
 mv -f $RPM_BUILD_ROOT%{_bindir}/install-info $RPM_BUILD_ROOT%{_sbindir}
 ln -s %{_sbindir}/install-info $RPM_BUILD_ROOT/sbin/install-info
 
@@ -132,7 +129,6 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Utilities
 
 gzip -9nf $RPM_BUILD_ROOT{%{_infodir}/*info*,%{_mandir}/man?/*} \
 	ChangeLog INTRODUCTION NEWS README info/README
-
 
 %find_lang %{name}
 
