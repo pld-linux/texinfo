@@ -8,18 +8,17 @@ Summary(ru):	Инструменты для создания файлов документации формата Texinfo
 Summary(tr):	texinfo biГimleyici ve info okuyucu
 Summary(uk):	╤нструменти для створення файл╕в документац╕╖ формату Texinfo
 Name:		texinfo
-Version:	4.5
-Release:	3
+Version:	4.6
+Release:	1
 License:	GPL
 Group:		Applications/Publishing
 Source0:	ftp://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.bz2
-# Source0-md5: 980c6be74b31c3257cda25fab0f74ed1
+# Source0-md5:	d6a771de9e05efd8c1c9152f8b8686d6
 Source1:	info.desktop
 Source2:	%{name}-pl.po
 Patch0:		%{name}-fix.patch
 Patch1:		%{name}-zlib.patch
 Patch2:		%{name}-info.patch
-Patch3:		%{name}-free.patch
 URL:		http://texinfo.org/
 BuildRequires:	autoconf >= 2.54
 BuildRequires:	automake
@@ -182,7 +181,6 @@ NarzЙdzie do konwersji plikСw texinfo na dvi.
 %patch0 -p1
 #%patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 cp %{SOURCE2} po/pl.po
 echo pl >> po/LINGUAS
