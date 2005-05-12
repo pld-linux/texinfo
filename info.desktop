@@ -7,5 +7,5 @@ Icon=gnome-info.png
 Terminal=true
 Type=Application
 Encoding=UTF-8
-Categories=X-Help;
+Categories=ConsoleOnly;X-Help;
 # vi: encoding=utf-8
