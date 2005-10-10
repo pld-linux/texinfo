@@ -166,7 +166,7 @@ Summary:	Texinfo to dvi conversion tool
 Summary(pl):	Narzêdzie do konwersji texinfo na dvi
 Group:		Applications/Publishing
 Requires:	%{name} = %{version}-%{release}
-Requires:	tetex
+Requires:	tetex-format-plain
 
 %description texi2dvi
 Texinfo to dvi conversion tool.
