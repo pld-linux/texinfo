@@ -9,7 +9,7 @@ Summary(tr):	texinfo biГimleyici ve info okuyucu
 Summary(uk):	╤нструменти для створення файл╕в документац╕╖ формату Texinfo
 Name:		texinfo
 Version:	4.8
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Publishing
 Source0:	ftp://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.bz2
@@ -250,6 +250,5 @@ rm -rf $RPM_BUILD_ROOT
 %files texi2dvi
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/texi2dvi
-# already in tetex (required by -texi2dvi)
-#%attr(755,root,root) %{_bindir}/texi2pdf
+%attr(755,root,root) %{_bindir}/texi2pdf
 %{_mandir}/man1/texi2dvi.1*
