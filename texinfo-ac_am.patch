@@ -1,0 +1,24 @@
+diff -ur texinfo-4.8.orig/Makefile.am texinfo-4.8.patched/Makefile.am
+--- texinfo-4.8.orig/Makefile.am	Wed Dec 15 19:14:56 2004
++++ texinfo-4.8.patched/Makefile.am	Thu Dec 29 00:34:13 2005
+@@ -11,7 +11,7 @@
+ # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ 
+ # Be sure we're using the right version of Automake.
+-AUTOMAKE_OPTIONS = 1.8 readme-alpha
++AUTOMAKE_OPTIONS = 1.7 readme-alpha
+ 
+ # Additional files to distribute.
+ EXTRA_DIST = ChangeLog.46 INSTALL.generic INTRODUCTION README.dev \
+diff -ur texinfo-4.8.orig/configure.ac texinfo-4.8.patched/configure.ac
+--- texinfo-4.8.orig/configure.ac	Fri Dec 31 19:00:48 2004
++++ texinfo-4.8.patched/configure.ac	Thu Dec 29 00:28:18 2005
+@@ -9,7 +9,7 @@
+ # WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+ # implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ #
+-AC_PREREQ(2.59)# Minimum Autoconf version required.
++AC_PREREQ(2.57)# Minimum Autoconf version required.
+ #
+ AC_INIT([GNU Texinfo], [4.8])
+ AC_CONFIG_HEADERS(config.h:config.in)# Keep filename to 8.3 for MS-DOS.
