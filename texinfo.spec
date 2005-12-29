@@ -8,27 +8,23 @@ Summary(ru):	Инструменты для создания файлов документации формата Texinfo
 Summary(tr):	texinfo biГimleyici ve info okuyucu
 Summary(uk):	╤нструменти для створення файл╕в документац╕╖ формату Texinfo
 Name:		texinfo
-Version:	4.2
-Release:	5
+Version:	4.8
+Release:	2
 License:	GPL
 Group:		Applications/Publishing
-Source0:	ftp://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	41a97498d34ddbf245df40a95977be7f
+Source0:	ftp://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.bz2
+# Source0-md5:	6ba369bbfe4afaa56122e65b3ee3a68c
 Source1:	info.desktop
-Patch0:		%{name}-fix.patch
-Patch1:		%{name}-zlib.patch
-Patch2:		%{name}-info.patch
-Patch3:		%{name}-fileextension.patch
-Patch4:		%{name}-ALL_LINGUAS.patch
-Patch5:		%{name}-ac_fixes.patch
-Patch6:		%{name}-am_fixes.patch
+Patch0:		%{name}-info.patch
+Patch1:		%{name}-ac_am.patch
 URL:		http://texinfo.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	ncurses-devel >= 5.0
+BuildRequires:	sed >= 4.0
 BuildRequires:	zlib-devel
-Requires:	info = %{version}
+Requires:	info = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -124,7 +120,7 @@ Summary(ru):	Программа для просмотра документов в формате GNU texinfo на текстов
 Summary(tr):	GNU texinfo belgeleri iГin tty tabanlЩ gЖrЭntЭleyici
 Summary(uk):	Програма для перегляду документ╕в в формат╕ GNU texinfo на текстовому терм╕нал╕
 Group:		Applications/System
-Prereq:		fix-info-dir
+PreReq:		fix-info-dir
 Obsoletes:	info-install
 
 %description -n info
@@ -169,8 +165,8 @@ bulunur.
 Summary:	Texinfo to dvi conversion tool
 Summary(pl):	NarzЙdzie do konwersji texinfo na dvi
 Group:		Applications/Publishing
-Requires:	%{name} = %{version}
-Requires:	tetex
+Requires:	%{name} = %{version}-%{release}
+Requires:	tetex-format-plain
 
 %description texi2dvi
 Texinfo to dvi conversion tool.
@@ -182,36 +178,31 @@ NarzЙdzie do konwersji plikСw texinfo na dvi.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
-%patch5 -p1
-%patch6 -p1
+
+# nb was added but outdated no not removed
+sed -i -e '/^no$/d' po/LINGUAS
 
 %build
-rm -f missing m4/{codeset,gettext,glibc21,iconv,isc-posix,lcmessage,progtest}.m4
-ln -sf version.texi doc/version2.texi
-%{__gettextize}
+# don't touch - too fresh m4 macros required (newer than in gettext 0.14.1)
+#%%{__autopoint}
 %{__aclocal} -I m4
 %{__autoconf}
 %{__automake}
-%configure \
-	--without-included-gettext
-%{__make} -C doc maintainer-clean-aminfo
+%configure
+
 %{__make}
-rm -f util/install-info
-%{__make} -C util
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_applnkdir}/Help,%{_sbindir},/sbin}
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_sbindir},/sbin}
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 mv -f $RPM_BUILD_ROOT%{_bindir}/install-info $RPM_BUILD_ROOT%{_sbindir}
 ln -sf %{_sbindir}/install-info $RPM_BUILD_ROOT/sbin/install-info
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Help
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 %find_lang %{name}
 
@@ -247,16 +238,18 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) /sbin/install-info
 %attr(755,root,root) %{_sbindir}/install-info
 
-%{_applnkdir}/Help/info.desktop
+%{_desktopdir}/info.desktop
 
 %{_infodir}/info.info*
 %{_infodir}/info-stnd.info*
 
 %{_mandir}/man1/info.1*
+%{_mandir}/man1/infokey.1*
 %{_mandir}/man1/install-info.1*
 %{_mandir}/man5/info.5*
 
 %files texi2dvi
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/texi2dvi
+%attr(755,root,root) %{_bindir}/texi2pdf
 %{_mandir}/man1/texi2dvi.1*
