@@ -167,7 +167,8 @@ Summary(pl):	Narzêdzie do konwersji texinfo na dvi
 Group:		Applications/Publishing
 Requires:	%{name} = %{version}-%{release}
 Requires:	tetex-fonts-latex
-Requires:	tetex-format-pdfetex
+# R: tetex 3.0 to avoid texi2pdf file conflict with tetex 2.0
+Requires:	tetex-format-pdfetex >= 1:3.0
 Requires:	tetex-format-plain
 
 %description texi2dvi
