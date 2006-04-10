@@ -16,6 +16,7 @@ Source0:	ftp://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.bz2
 # Source0-md5:	6ba369bbfe4afaa56122e65b3ee3a68c
 Source1:	info.desktop
 Patch0:		%{name}-info.patch
+Patch1:		%{name}-CVE-2005-3011.patch
 URL:		http://texinfo.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
@@ -180,6 +181,7 @@ Narzêdzie do konwersji plików texinfo na dvi.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p2
 
 # nb was added but outdated no not removed
 sed -i -e '/^no$/d' po/LINGUAS
