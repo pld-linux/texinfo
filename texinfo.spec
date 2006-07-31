@@ -182,6 +182,7 @@ Narzêdzie do konwersji plików texinfo na dvi.
 %setup -q
 %patch0 -p1
 %patch1 -p2
+sed '/TERMLIB_VARIANTS=/s/="/="tinfo /' -i configure.ac
 
 # nb was added but outdated no not removed
 sed -i -e '/^no$/d' po/LINGUAS
