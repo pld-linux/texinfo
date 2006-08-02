@@ -17,11 +17,12 @@ Source0:	ftp://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.bz2
 Source1:	info.desktop
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-CVE-2005-3011.patch
+Patch2:		%{name}-as_needed-fix.patch
 URL:		http://texinfo.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
-BuildRequires:	gettext-devel
 BuildRequires:	gettext-autopoint >= 0.14.1
+BuildRequires:	gettext-devel
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	sed >= 4.0
 BuildRequires:	zlib-devel
@@ -121,7 +122,7 @@ Summary(ru):	Программа для просмотра документов в формате GNU texinfo на текстов
 Summary(tr):	GNU texinfo belgeleri iГin tty tabanlЩ gЖrЭntЭleyici
 Summary(uk):	Програма для перегляду документ╕в в формат╕ GNU texinfo на текстовому терм╕нал╕
 Group:		Applications/System
-PreReq:		fix-info-dir
+Requires:	fix-info-dir
 Obsoletes:	info-install
 
 %description -n info
@@ -182,7 +183,7 @@ NarzЙdzie do konwersji plikСw texinfo na dvi.
 %setup -q
 %patch0 -p1
 %patch1 -p2
-sed '/TERMLIB_VARIANTS=/s/="/="tinfo /' -i configure.ac
+%patch2 -p1
 
 # nb was added but outdated no not removed
 sed -i -e '/^no$/d' po/LINGUAS
