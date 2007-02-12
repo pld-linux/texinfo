@@ -1,12 +1,12 @@
 Summary:	Tools needed to create Texinfo format documentation files
-Summary(de):	Tools zum Erstellen von texinfo-Dokumentationsdateien
-Summary(es):	Formateador texinfo y lector de archivos info
-Summary(fr):	Outils crИant des documentations au format texinfo
-Summary(pl):	NarzЙdzia potrzebne przy tworzeniu dokumentacji w formacie texinfo
-Summary(pt_BR):	Formatador texinfo e leitor de arquivos info
-Summary(ru):	Инструменты для создания файлов документации формата Texinfo
-Summary(tr):	texinfo biГimleyici ve info okuyucu
-Summary(uk):	╤нструменти для створення файл╕в документац╕╖ формату Texinfo
+Summary(de.UTF-8):   Tools zum Erstellen von texinfo-Dokumentationsdateien
+Summary(es.UTF-8):   Formateador texinfo y lector de archivos info
+Summary(fr.UTF-8):   Outils crц╘ant des documentations au format texinfo
+Summary(pl.UTF-8):   Narzд≥dzia potrzebne przy tworzeniu dokumentacji w formacie texinfo
+Summary(pt_BR.UTF-8):   Formatador texinfo e leitor de arquivos info
+Summary(ru.UTF-8):   п≤п╫я│я┌я─я┐п╪п╣п╫я┌я▀ п╢п╩я▐ я│п╬п╥п╢п╟п╫п╦я▐ я└п╟п╧п╩п╬п╡ п╢п╬п╨я┐п╪п╣п╫я┌п╟я├п╦п╦ я└п╬я─п╪п╟я┌п╟ Texinfo
+Summary(tr.UTF-8):   texinfo biц╖imleyici ve info okuyucu
+Summary(uk.UTF-8):   п├п╫я│я┌я─я┐п╪п╣п╫я┌п╦ п╢п╩я▐ я│я┌п╡п╬я─п╣п╫п╫я▐ я└п╟п╧п╩я√п╡ п╢п╬п╨я┐п╪п╣п╫я┌п╟я├я√я≈ я└п╬я─п╪п╟я┌я┐ Texinfo
 Name:		texinfo
 Version:	4.8
 Release:	4
@@ -39,88 +39,88 @@ document. Then when the work needs revision, you only have to revise
 one source document. The GNU Project uses the Texinfo file format for
 most of its documentation.
 
-%description -l de
+%description -l de.UTF-8
 Texinfo ist ein Dokumentationssystem, das sowohl Online-Information
 und gedruckte Ausgabe von einer einzigen Source-Datei erzeugen kann.
-Normalerweise wЭrden Sie zwei verschiedene Dokumente schreiben, eins
-fЭr Onlinehilfe und eins fЭr ein gedrucktes Handbuch. Mit Texinfo
-reicht es, ein Dokument zu schreiben (und spДter zu aktualisieren).
-Das GNU-Projekt benutzt texinfo fЭr den grЖъten Teil seiner
+Normalerweise wц╪rden Sie zwei verschiedene Dokumente schreiben, eins
+fц╪r Onlinehilfe und eins fц╪r ein gedrucktes Handbuch. Mit Texinfo
+reicht es, ein Dokument zu schreiben (und spц╓ter zu aktualisieren).
+Das GNU-Projekt benutzt texinfo fц╪r den grц╤ц÷ten Teil seiner
 Dokumentation.
 
-%description -l es
-Texinfo es un sistema de documentaciСn que puede producir tanto,
-informaciСn online como salida impresa a partir de un Зnico archivo
-fuente. Generalmente, tenМa que escribir dos documentos por separado:
-uno para la ayuda u otro tipo de informaciСn online, y otro para un
+%description -l es.UTF-8
+Texinfo es un sistema de documentaciцЁn que puede producir tanto,
+informaciцЁn online como salida impresa a partir de un ц╨nico archivo
+fuente. Generalmente, tenц╜a que escribir dos documentos por separado:
+uno para la ayuda u otro tipo de informaciцЁn online, y otro para un
 manual u otro tipo de trabajos impresos. Usando Texinfo, basta con
-escribir un Зnico documento fuente. El dМa que sea necesaria una
-revisiСn del trabajo, sСlo tendrА que revisar un Зnico documento. El
-Proyecto GNU usa el formato de archivo Texinfo para la mayorМa de su
-documentaciСn.
+escribir un ц╨nico documento fuente. El dц╜a que sea necesaria una
+revisiцЁn del trabajo, sцЁlo tendrц║ que revisar un ц╨nico documento. El
+Proyecto GNU usa el formato de archivo Texinfo para la mayorц╜a de su
+documentaciцЁn.
 
-Instale Texinfo si quiere un sistema de documentaciСn para producir
-tanto documentaciСn online como impresa a partir del mismo archivo
-fuente y si va a escribir documentaciСn para el Proyecto GNU.
+Instale Texinfo si quiere un sistema de documentaciцЁn para producir
+tanto documentaciцЁn online como impresa a partir del mismo archivo
+fuente y si va a escribir documentaciцЁn para el Proyecto GNU.
 
-%description -l fr
-Texinfo est un systХme de documentation capable de produire de la
-documentation online ou imprimИe Ю partir d'un seul fichier.
-Habituellement, il faut Иcrire deux documents : l'un orientИ
-hypertexte, l'autre axИ sur une prИsentation de type PAO. En utilisant
+%description -l fr.UTF-8
+Texinfo est un systц╗me de documentation capable de produire de la
+documentation online ou imprimц╘e ц═ partir d'un seul fichier.
+Habituellement, il faut ц╘crire deux documents : l'un orientц╘
+hypertexte, l'autre axц╘ sur une prц╘sentation de type PAO. En utilisant
 texinfo, vous n'avez plus besoin que d'un seul fichier source. Le
 projet GNU utilie le format de fichier Texinfo pour la plupart de ses
 documentations.
 
-%description -l pl
-Texinfo jest systemem dokumentowania umo©liwiaj╠cym wyprodukowanie
-zarСwno dokumentacji online jak i w postaci do wydruku z pojedynczego
-pliku ╪rСdЁowego. Bardzo czЙsto pisze siЙ dwie dokumentacje: jedn╠ do
-przegl╠dania online i drug╠ do przyszykowania wysokiej jako╤ci postaci
-drukowanej. U©ywaj╠c Texinfo do powy©szego potrzebujesz przygotowaФ
-dokumentacjЙ tylko w jednej postaci ╪rСdЁowej. Podczas modyfikacji
+%description -l pl.UTF-8
+Texinfo jest systemem dokumentowania umoе╪liwiajд┘cym wyprodukowanie
+zarцЁwno dokumentacji online jak i w postaci do wydruku z pojedynczego
+pliku е╨rцЁdе┌owego. Bardzo czд≥sto pisze siд≥ dwie dokumentacje: jednд┘ do
+przeglд┘dania online i drugд┘ do przyszykowania wysokiej jakoе⌡ci postaci
+drukowanej. Uе╪ywajд┘c Texinfo do powyе╪szego potrzebujesz przygotowaд┤
+dokumentacjд≥ tylko w jednej postaci е╨rцЁdе┌owej. Podczas modyfikacji
 dokumentacji modyfikujesz w takim razie tylko jeden dokument.
-WiЙkszo╤Ф projektСw GNU u©ywa do dokumentowania formatu Texinfo.
+Wiд≥kszoе⌡д┤ projektцЁw GNU uе╪ywa do dokumentowania formatu Texinfo.
 
-%description -l pt_BR
-O texinfo И um sistema de documentaГЦo que pode produzir tanto
-informaГЦo on-line como saМda impressa a partir de um Зnico
-arquivo-fonte. Geralmente, vocЙ teria que escrever dois documentos
-separados: um para ajuda on-line ou outro tipo de informaГЦo on-line,
+%description -l pt_BR.UTF-8
+O texinfo ц╘ um sistema de documentaц╖цёo que pode produzir tanto
+informaц╖цёo on-line como saц╜da impressa a partir de um ц╨nico
+arquivo-fonte. Geralmente, vocц╙ teria que escrever dois documentos
+separados: um para ajuda on-line ou outro tipo de informaц╖цёo on-line,
 e outro para um manual ou outro tipo de trabalho impresso. Usando o
-Texinfo, basta escrever um Зnico documento-fonte. Quando houver
-necessidade de revisЦo, И preciso apenas revisar um Зnico
+Texinfo, basta escrever um ц╨nico documento-fonte. Quando houver
+necessidade de revisцёo, ц╘ preciso apenas revisar um ц╨nico
 documento-fonte. O projeto GNU usa o formato de arquivo texinfo para a
-maioria da sua documentaГЦo.
+maioria da sua documentaц╖цёo.
 
-%description -l ru
-Проект GNU использует формат texinfo для большинства документации,
-созданной в его рамках. Этот пакет включает инструменты, необходимые
-для создания файлов .info из исходных файлов .texinfo и интерфейс к
-emacs для всех этих инструментов.
+%description -l ru.UTF-8
+п÷я─п╬п╣п╨я┌ GNU п╦я│п©п╬п╩я▄п╥я┐п╣я┌ я└п╬я─п╪п╟я┌ texinfo п╢п╩я▐ п╠п╬п╩я▄я┬п╦п╫я│я┌п╡п╟ п╢п╬п╨я┐п╪п╣п╫я┌п╟я├п╦п╦,
+я│п╬п╥п╢п╟п╫п╫п╬п╧ п╡ п╣пЁп╬ я─п╟п╪п╨п╟я┘. п╜я┌п╬я┌ п©п╟п╨п╣я┌ п╡п╨п╩я▌я┤п╟п╣я┌ п╦п╫я│я┌я─я┐п╪п╣п╫я┌я▀, п╫п╣п╬п╠я┘п╬п╢п╦п╪я▀п╣
+п╢п╩я▐ я│п╬п╥п╢п╟п╫п╦я▐ я└п╟п╧п╩п╬п╡ .info п╦п╥ п╦я│я┘п╬п╢п╫я▀я┘ я└п╟п╧п╩п╬п╡ .texinfo п╦ п╦п╫я┌п╣я─я└п╣п╧я│ п╨
+emacs п╢п╩я▐ п╡я│п╣я┘ я█я┌п╦я┘ п╦п╫я│я┌я─я┐п╪п╣п╫я┌п╬п╡.
 
-%description -l tr
-[6~GNU projesi, belgelemesinin bЭyЭk bЖlЭmЭnde texinfo dosyalarЩnЩ
-kullanЩr. Bu paket, texinfo dosyalarЩndan info dosyalarЩnЩn
-tЭretilmesini saПlayan araГlarla birlikte, tЭm bu araГlar iГin bir
-emacs arayЭzЭ de sunar.
+%description -l tr.UTF-8
+[6~GNU projesi, belgelemesinin bц╪yц╪k bц╤lц╪mц╪nde texinfo dosyalarд╠nд╠
+kullanд╠r. Bu paket, texinfo dosyalarд╠ndan info dosyalarд╠nд╠n
+tц╪retilmesini saд÷layan araц╖larla birlikte, tц╪m bu araц╖lar iц╖in bir
+emacs arayц╪zц╪ de sunar.
 
-%description -l uk
-Проект GNU використову╓ формат texinfo для б╕льшост╕ документац╕╖,
-створено╖ в його рамках. Цей пакет м╕стить ╕нструменти, потр╕бн╕ для
-створення файл╕в .info з вх╕дних файл╕в .texinfo та ╕нтерфейс до emacs
-для вс╕х цих ╕нструмент╕в.
+%description -l uk.UTF-8
+п÷я─п╬п╣п╨я┌ GNU п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я■ я└п╬я─п╪п╟я┌ texinfo п╢п╩я▐ п╠я√п╩я▄я┬п╬я│я┌я√ п╢п╬п╨я┐п╪п╣п╫я┌п╟я├я√я≈,
+я│я┌п╡п╬я─п╣п╫п╬я≈ п╡ п╧п╬пЁп╬ я─п╟п╪п╨п╟я┘. п╕п╣п╧ п©п╟п╨п╣я┌ п╪я√я│я┌п╦я┌я▄ я√п╫я│я┌я─я┐п╪п╣п╫я┌п╦, п©п╬я┌я─я√п╠п╫я√ п╢п╩я▐
+я│я┌п╡п╬я─п╣п╫п╫я▐ я└п╟п╧п╩я√п╡ .info п╥ п╡я┘я√п╢п╫п╦я┘ я└п╟п╧п╩я√п╡ .texinfo я┌п╟ я√п╫я┌п╣я─я└п╣п╧я│ п╢п╬ emacs
+п╢п╩я▐ п╡я│я√я┘ я├п╦я┘ я√п╫я│я┌я─я┐п╪п╣п╫я┌я√п╡.
 
 %package -n info
 Summary:	A stand-alone TTY-based reader for GNU texinfo documentation
-Summary(de):	Ein TTY-basiertes Leseprogramm fЭr GNU info-Dokumentation
-Summary(es):	Lector basado en tty para documentos texinfo GNU
-Summary(fr):	un lecteur de documentations info
-Summary(pl):	Samodzielny, terminalowy czytnik dokumentСw GNU texinfo
-Summary(pt_BR):	Leitor baseado em tty para documentos texinfo GNU
-Summary(ru):	Программа для просмотра документов в формате GNU texinfo на текстовой консоли
-Summary(tr):	GNU texinfo belgeleri iГin tty tabanlЩ gЖrЭntЭleyici
-Summary(uk):	Програма для перегляду документ╕в в формат╕ GNU texinfo на текстовому терм╕нал╕
+Summary(de.UTF-8):   Ein TTY-basiertes Leseprogramm fц╪r GNU info-Dokumentation
+Summary(es.UTF-8):   Lector basado en tty para documentos texinfo GNU
+Summary(fr.UTF-8):   un lecteur de documentations info
+Summary(pl.UTF-8):   Samodzielny, terminalowy czytnik dokumentцЁw GNU texinfo
+Summary(pt_BR.UTF-8):   Leitor baseado em tty para documentos texinfo GNU
+Summary(ru.UTF-8):   п÷я─п╬пЁя─п╟п╪п╪п╟ п╢п╩я▐ п©я─п╬я│п╪п╬я┌я─п╟ п╢п╬п╨я┐п╪п╣п╫я┌п╬п╡ п╡ я└п╬я─п╪п╟я┌п╣ GNU texinfo п╫п╟ я┌п╣п╨я│я┌п╬п╡п╬п╧ п╨п╬п╫я│п╬п╩п╦
+Summary(tr.UTF-8):   GNU texinfo belgeleri iц╖in tty tabanlд╠ gц╤rц╪ntц╪leyici
+Summary(uk.UTF-8):   п÷я─п╬пЁя─п╟п╪п╟ п╢п╩я▐ п©п╣я─п╣пЁп╩я▐п╢я┐ п╢п╬п╨я┐п╪п╣п╫я┌я√п╡ п╡ я└п╬я─п╪п╟я┌я√ GNU texinfo п╫п╟ я┌п╣п╨я│я┌п╬п╡п╬п╪я┐ я┌п╣я─п╪я√п╫п╟п╩я√
 Group:		Applications/System
 Requires:	fix-info-dir
 Obsoletes:	info-install
@@ -130,42 +130,42 @@ The GNU project uses the texinfo file format for much of its
 documentation. This package includes a standalone browser program to
 view these files.
 
-%description -n info -l de
-Das GNU-Projekt benutzt das texinfo-Dateiformat fЭr den Groъteil
-seiner Dokumentation. Dieses Paket enthДlt ein selbstДndiges
+%description -n info -l de.UTF-8
+Das GNU-Projekt benutzt das texinfo-Dateiformat fц╪r den Groц÷teil
+seiner Dokumentation. Dieses Paket enthц╓lt ein selbstц╓ndiges
 Browser-Programm zum Einsehen dieser Dateien.
 
-%description -n info -l fr
+%description -n info -l fr.UTF-8
 Le projet GNU utilise le format de fichier texinfo pour la plupart de
 sa documentation. Ce paquetage contient un navigateur pour visualiser
 ces fichiers.
 
-%description -n info -l pl
-Projekty GNU u©ywaj╠ formatu texinfo do tworzenia dokumentacji. Pakiet
-ten zawiera samodzieln╠ przegl╠darkЙ tych©e plikСw.
+%description -n info -l pl.UTF-8
+Projekty GNU uе╪ywajд┘ formatu texinfo do tworzenia dokumentacji. Pakiet
+ten zawiera samodzielnд┘ przeglд┘darkд≥ tychе╪e plikцЁw.
 
-%description -n info -l pt_BR
+%description -n info -l pt_BR.UTF-8
 O projeto GNU usa o formato de arquivos texinfo para a maioria de sua
-documentaГЦo. Este pacote inclui um browser para visualizaГЦo destes
+documentaц╖цёo. Este pacote inclui um browser para visualizaц╖цёo destes
 arquivos.
 
-%description -n info -l ru
-Проект GNU использует формат texinfo для большинства документации,
-созданной в его рамках. Этот пакет включает программу для просмотра
-документов в формате GNU texinfo на текстовой консоли.
+%description -n info -l ru.UTF-8
+п÷я─п╬п╣п╨я┌ GNU п╦я│п©п╬п╩я▄п╥я┐п╣я┌ я└п╬я─п╪п╟я┌ texinfo п╢п╩я▐ п╠п╬п╩я▄я┬п╦п╫я│я┌п╡п╟ п╢п╬п╨я┐п╪п╣п╫я┌п╟я├п╦п╦,
+я│п╬п╥п╢п╟п╫п╫п╬п╧ п╡ п╣пЁп╬ я─п╟п╪п╨п╟я┘. п╜я┌п╬я┌ п©п╟п╨п╣я┌ п╡п╨п╩я▌я┤п╟п╣я┌ п©я─п╬пЁя─п╟п╪п╪я┐ п╢п╩я▐ п©я─п╬я│п╪п╬я┌я─п╟
+п╢п╬п╨я┐п╪п╣п╫я┌п╬п╡ п╡ я└п╬я─п╪п╟я┌п╣ GNU texinfo п╫п╟ я┌п╣п╨я│я┌п╬п╡п╬п╧ п╨п╬п╫я│п╬п╩п╦.
 
-%description -n info -l tr
-Bu pakette, info biГimindeki dosyalarЩ okumak iГin bir gЖrЭntЭleyici
+%description -n info -l tr.UTF-8
+Bu pakette, info biц╖imindeki dosyalarд╠ okumak iц╖in bir gц╤rц╪ntц╪leyici
 bulunur.
 
-%description -n info -l uk
-Проект GNU використову╓ формат texinfo для б╕льшост╕ документац╕╖,
-створено╖ в його рамках. Цей пакет м╕стить програму для перегляду
-документ╕в в формат╕ GNU texinfo на текстовому терм╕нал╕.
+%description -n info -l uk.UTF-8
+п÷я─п╬п╣п╨я┌ GNU п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐я■ я└п╬я─п╪п╟я┌ texinfo п╢п╩я▐ п╠я√п╩я▄я┬п╬я│я┌я√ п╢п╬п╨я┐п╪п╣п╫я┌п╟я├я√я≈,
+я│я┌п╡п╬я─п╣п╫п╬я≈ п╡ п╧п╬пЁп╬ я─п╟п╪п╨п╟я┘. п╕п╣п╧ п©п╟п╨п╣я┌ п╪я√я│я┌п╦я┌я▄ п©я─п╬пЁя─п╟п╪я┐ п╢п╩я▐ п©п╣я─п╣пЁп╩я▐п╢я┐
+п╢п╬п╨я┐п╪п╣п╫я┌я√п╡ п╡ я└п╬я─п╪п╟я┌я√ GNU texinfo п╫п╟ я┌п╣п╨я│я┌п╬п╡п╬п╪я┐ я┌п╣я─п╪я√п╫п╟п╩я√.
 
 %package texi2dvi
 Summary:	Texinfo to dvi conversion tool
-Summary(pl):	NarzЙdzie do konwersji texinfo na dvi
+Summary(pl.UTF-8):   Narzд≥dzie do konwersji texinfo na dvi
 Group:		Applications/Publishing
 Requires:	%{name} = %{version}-%{release}
 Requires:	tetex-fonts-latex
@@ -176,8 +176,8 @@ Requires:	tetex-format-plain
 %description texi2dvi
 Texinfo to dvi conversion tool.
 
-%description texi2dvi -l pl
-NarzЙdzie do konwersji plikСw texinfo na dvi.
+%description texi2dvi -l pl.UTF-8
+Narzд≥dzie do konwersji plikцЁw texinfo na dvi.
 
 %prep
 %setup -q
