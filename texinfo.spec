@@ -1,12 +1,12 @@
 Summary:	Tools needed to create Texinfo format documentation files
-Summary(de.UTF-8):   Tools zum Erstellen von texinfo-Dokumentationsdateien
-Summary(es.UTF-8):   Formateador texinfo y lector de archivos info
-Summary(fr.UTF-8):   Outils créant des documentations au format texinfo
-Summary(pl.UTF-8):   Narzędzia potrzebne przy tworzeniu dokumentacji w formacie texinfo
-Summary(pt_BR.UTF-8):   Formatador texinfo e leitor de arquivos info
-Summary(ru.UTF-8):   Инструменты для создания файлов документации формата Texinfo
-Summary(tr.UTF-8):   texinfo biçimleyici ve info okuyucu
-Summary(uk.UTF-8):   Інструменти для створення файлів документації формату Texinfo
+Summary(de.UTF-8):	Tools zum Erstellen von texinfo-Dokumentationsdateien
+Summary(es.UTF-8):	Formateador texinfo y lector de archivos info
+Summary(fr.UTF-8):	Outils créant des documentations au format texinfo
+Summary(pl.UTF-8):	Narzędzia potrzebne przy tworzeniu dokumentacji w formacie texinfo
+Summary(pt_BR.UTF-8):	Formatador texinfo e leitor de arquivos info
+Summary(ru.UTF-8):	Инструменты для создания файлов документации формата Texinfo
+Summary(tr.UTF-8):	texinfo biçimleyici ve info okuyucu
+Summary(uk.UTF-8):	Інструменти для створення файлів документації формату Texinfo
 Name:		texinfo
 Version:	4.8
 Release:	4
@@ -113,14 +113,14 @@ emacs arayüzü de sunar.
 
 %package -n info
 Summary:	A stand-alone TTY-based reader for GNU texinfo documentation
-Summary(de.UTF-8):   Ein TTY-basiertes Leseprogramm für GNU info-Dokumentation
-Summary(es.UTF-8):   Lector basado en tty para documentos texinfo GNU
-Summary(fr.UTF-8):   un lecteur de documentations info
-Summary(pl.UTF-8):   Samodzielny, terminalowy czytnik dokumentów GNU texinfo
-Summary(pt_BR.UTF-8):   Leitor baseado em tty para documentos texinfo GNU
-Summary(ru.UTF-8):   Программа для просмотра документов в формате GNU texinfo на текстовой консоли
-Summary(tr.UTF-8):   GNU texinfo belgeleri için tty tabanlı görüntüleyici
-Summary(uk.UTF-8):   Програма для перегляду документів в форматі GNU texinfo на текстовому терміналі
+Summary(de.UTF-8):	Ein TTY-basiertes Leseprogramm für GNU info-Dokumentation
+Summary(es.UTF-8):	Lector basado en tty para documentos texinfo GNU
+Summary(fr.UTF-8):	un lecteur de documentations info
+Summary(pl.UTF-8):	Samodzielny, terminalowy czytnik dokumentów GNU texinfo
+Summary(pt_BR.UTF-8):	Leitor baseado em tty para documentos texinfo GNU
+Summary(ru.UTF-8):	Программа для просмотра документов в формате GNU texinfo на текстовой консоли
+Summary(tr.UTF-8):	GNU texinfo belgeleri için tty tabanlı görüntüleyici
+Summary(uk.UTF-8):	Програма для перегляду документів в форматі GNU texinfo на текстовому терміналі
 Group:		Applications/System
 Requires:	fix-info-dir
 Obsoletes:	info-install
@@ -165,7 +165,7 @@ bulunur.
 
 %package texi2dvi
 Summary:	Texinfo to dvi conversion tool
-Summary(pl.UTF-8):   Narzędzie do konwersji texinfo na dvi
+Summary(pl.UTF-8):	Narzędzie do konwersji texinfo na dvi
 Group:		Applications/Publishing
 Requires:	%{name} = %{version}-%{release}
 Requires:	tetex-fonts-latex
