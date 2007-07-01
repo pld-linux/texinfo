@@ -1,0 +1,57 @@
+--- texinfo-4.9/po/pl.po.orig	2007-06-27 18:59:12.000000000 +0200
++++ texinfo-4.9/po/pl.po	2007-07-01 14:47:08.802114318 +0200
+@@ -1,14 +1,14 @@
+ # Polish translation for texinfo.
+ # Copyright (C) 2003, 2004 Free Software Foundation, Inc.
+ # This file is distributed under the same license as the texinfo package.
+-# Jakub Bogusz <qboosh@pld-linux.org>, 2003-2004.
++# Jakub Bogusz <qboosh@pld-linux.org>, 2003-2007.
+ #
+ msgid ""
+ msgstr ""
+-"Project-Id-Version: texinfo 4.7.90\n"
++"Project-Id-Version: texinfo 4.9\n"
+ "Report-Msgid-Bugs-To: bug-texinfo@gnu.org\n"
+ "POT-Creation-Date: 2007-06-27 09:59-0700\n"
+-"PO-Revision-Date: 2004-12-05 12:24+0100\n"
++"PO-Revision-Date: 2007-07-01 14:40+0200\n"
+ "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
+ "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+ "MIME-Version: 1.0\n"
+@@ -239,6 +239,10 @@
+ "This is free software: you are free to change and redistribute it.\n"
+ "There is NO WARRANTY, to the extent permitted by law.\n"
+ msgstr ""
++"Copyright (C) %s Free Software Foundation, Inc.\n"
++"Licencja GPLv3+: GNU GPL wersja 3 lub pó¼niejsza <http://www.gnu.org/licenses/gpl.html>\n"
++"To jest oprogramowanie wolnodostêpne: mo¿na je modyfikowaæ i rozpowszechniaæ.\n"
++"Nie ma ¯ADNEJ GWARANCJI w zakresie dopuszczalnym przez prawo.\n"
+ 
+ #: info/info.c:499
+ #, c-format
+@@ -3093,25 +3097,3 @@
+ #, c-format
+ msgid "entry %s follows an entry with a secondary name"
+ msgstr "wpis %s wyst±pi³ po wpisie z dodatkow± nazw±"
+-
+-#~ msgid ""
+-#~ "There is NO warranty.  You may redistribute this software\n"
+-#~ "under the terms of the GNU General Public License.\n"
+-#~ "For more information about these matters, see the files named COPYING.\n"
+-#~ msgstr ""
+-#~ "Autorzy nie daj± ¯ADNYCH gwarancji. Ten program mo¿na rozprowadzaæ\n"
+-#~ "zachowuj±c warunki Powszechnej Licencji Publicznej GNU (General Public\n"
+-#~ "License).\n"
+-#~ "Wiêcej informacji na ten temat mo¿na znale¼æ w plikach o nazwie COPYING.\n"
+-
+-#~ msgid ""
+-#~ "Copyright (C) %s Free Software Foundation, Inc.\n"
+-#~ "There is NO warranty.  You may redistribute this software\n"
+-#~ "under the terms of the GNU General Public License.\n"
+-#~ "For more information about these matters, see the files named COPYING.\n"
+-#~ msgstr ""
+-#~ "Copyright (C) %s Free Software Foundation, Inc.\n"
+-#~ "Autorzy nie daj± ¯ADNYCH gwarancji. Ten program mo¿na rozprowadzaæ\n"
+-#~ "zachowuj±c warunki Powszechnej Licencji Publicznej GNU (General Public\n"
+-#~ "License).\n"
+-#~ "Wiêcej informacji na ten temat mo¿na znale¼æ w plikach o nazwie COPYING.\n"
