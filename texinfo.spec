@@ -18,11 +18,12 @@ Source1:	info.desktop
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-CVE-2005-3011.patch
 Patch2:		%{name}-as_needed-fix.patch
+Patch3:		%{name}-pl.po-update.patch
 URL:		http://texinfo.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.8
-BuildRequires:	gettext-autopoint >= 0.14.1
-BuildRequires:	gettext-devel
+#BuildRequires:	gettext-autopoint >= 0.14.1
+BuildRequires:	gettext-devel >= 0.14.1
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	sed >= 4.0
 BuildRequires:	zlib-devel
@@ -184,9 +185,11 @@ Narzędzie do konwersji plików texinfo na dvi.
 %patch0 -p1
 %patch1 -p2
 %patch2 -p1
+%patch3 -p1
 
 # nb was added but outdated no not removed
 sed -i -e '/^no$/d' po/LINGUAS
+rm -f po/stamp-po
 
 %build
 # don't touch - too fresh m4 macros required (newer than in gettext 0.14.1)
