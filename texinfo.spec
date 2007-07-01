@@ -10,7 +10,7 @@ Summary(uk.UTF-8):	Інструменти для створення файлів
 Name:		texinfo
 Version:	4.9
 Release:	1
-License:	GPL v3
+License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	ftp://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.bz2
 # Source0-md5:	f4458e4b81e5469fa0815c35654141ab
