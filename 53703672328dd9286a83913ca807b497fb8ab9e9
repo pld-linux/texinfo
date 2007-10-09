@@ -1,0 +1,4 @@
+- release 20,
+- added automake, autoconf to BuildRequires (now texinfo ca be build in
+  automake 1.4b environment),
+- merged fileextension, danish rawhide patches.
