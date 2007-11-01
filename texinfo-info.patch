@@ -43,9 +43,9 @@
  @end direntry
  
  @titlepage
---- texinfo-4.8/doc/texinfo.txi.orig	2004-12-29 16:06:41.000000000 +0100
-+++ texinfo-4.8/doc/texinfo.txi	2005-01-08 00:19:43.541783216 +0100
-@@ -54,14 +54,14 @@
+--- texinfo-4.11/doc/texinfo.txi.orig	2007-07-29 16:55:43.000000000 +0200
++++ texinfo-4.11/doc/texinfo.txi	2007-11-01 01:47:07.995421306 +0100
+@@ -56,15 +56,15 @@
  @end quotation
  @end copying
  
@@ -56,18 +56,20 @@
 -* install-info: (texinfo)Invoking install-info. Update info/dir entries.
 -* texi2dvi: (texinfo)Format with texi2dvi.      Print Texinfo documents.
 -* texi2pdf: (texinfo)PDF Output.                PDF output for Texinfo.
+-* pdftexi2dvi: (texinfo)PDF Output.             PDF output for Texinfo.
 -* texindex: (texinfo)Format with tex/texindex.  Sort Texinfo index files.
 -* makeinfo: (texinfo)Invoking makeinfo.         Translate Texinfo source.
 +* Texinfo: (texinfo).			The GNU documentation format
 +* install-info: (texinfo)install-info.	Update info/dir entries
 +* texi2dvi: (texinfo)texi2dvi.		Print Texinfo documents
 +* texi2pdf: (texinfo)texi2pdf.		PDF output for Texinfo
++* pdftexi2dvi: (texinfo)pdftexi2dvi.    PDF output for Texinfo
 +* texindex: (texinfo)texindex.		Sort Texinfo index files
 +* makeinfo: (texinfo)makeinfo.		Translate Texinfo source
  @end direntry
  
  @c Before release, run C-u C-c C-u C-a (texinfo-all-menus-update with a
-@@ -556,8 +556,8 @@
+@@ -566,8 +566,8 @@
  Formatting and Printing Hardcopy
  
  * Use TeX::                     Use @TeX{} to format for hardcopy.
@@ -78,7 +80,7 @@
  * Print with lpr::              How to print.
  * Within Emacs::                How to format and print from an Emacs shell.
  * Texinfo Mode Printing::       How to format and print in Texinfo mode.
-@@ -570,7 +570,7 @@
+@@ -580,7 +580,7 @@
  * pagesizes::                   How to print with customized page sizes.
  * Cropmarks and Magnification:: How to print marks to indicate the size
                                   of pages and how to print scaled up output.
@@ -87,7 +89,7 @@
  * Obtaining TeX::               How to Obtain @TeX{}.
  
  Creating and Installing Info Files
-@@ -581,7 +581,7 @@
+@@ -591,7 +591,7 @@
  Creating an Info File
  
  * makeinfo advantages::         @code{makeinfo} provides better error checking.
@@ -96,7 +98,7 @@
  * makeinfo options::            Specify fill-column and other options.
  * Pointer Validation::          How to check that pointers point somewhere.
  * makeinfo in Emacs::           How to run @code{makeinfo} from Emacs.
-@@ -600,7 +600,7 @@
+@@ -610,7 +610,7 @@
                                   located in other directories.
  * Installing Dir Entries::      How to specify what menu entry to add
                                   to the Info directory.
@@ -105,16 +107,16 @@
  
  Generating HTML
  
-@@ -906,7 +906,7 @@
- viewable, among other design goals; for a discussion, see
- @uref{http://tug.org/TUGboat/Articles/tb22-3/tb72beebeI.pdf}.  Texinfo
- uses the @command{pdftex} program, a variant of @TeX{}, to output PDF;
--see @uref{http://tug.org/applications/pdftex}.  @xref{PDF Output}.
-+see @uref{http://tug.org/applications/pdftex}.  @xref{texi2pdf}.
+@@ -905,7 +905,7 @@
+ @uref{http://tug.org/TUGboat/Articles/tb22-3/tb72beebe-pdf.pdf} has
+ some background.  Texinfo uses the @command{pdftex} program, a variant
+ of @TeX{}, to output PDF; see
+-@uref{http://tug.org/applications/pdftex}.  @xref{PDF Output}.
++@uref{http://tug.org/applications/pdftex}.  @xref{texi2pdf}.
  
  @item XML
  @cindex XML output
-@@ -2438,7 +2438,7 @@
+@@ -2415,7 +2415,7 @@
  you must run the @code{texindex} command after first running the
  @code{tex} typesetting command; and then you must run the @code{tex}
  command again.  Or else run the @code{texi2dvi} command which
@@ -123,7 +125,7 @@
  
  Often, when you are writing a document, you want to typeset and print
  only part of a file to see what it will look like.  You can use the
-@@ -3645,8 +3645,8 @@
+@@ -3616,8 +3616,8 @@
  
  You need to include the @code{@@set@dots{}contentsaftertitlepage}
  commands early in the document (just after @code{@@setfilename}, for
@@ -134,7 +136,7 @@
  example:
  @example
  texi2dvi --texinfo=@@setcontentsaftertitlepage foo.texi
-@@ -13637,7 +13637,7 @@
+@@ -13968,7 +13968,7 @@
  problems with @TeX{}.  If you get macro-related errors when producing
  the printed version of a manual, try expanding the macros with
  @command{makeinfo} by invoking @command{texi2dvi} with the @samp{-E}
@@ -143,7 +145,7 @@
  
  @itemize @bullet
  @item
-@@ -13906,8 +13906,8 @@
+@@ -14237,8 +14237,8 @@
  
  @menu
  * Use TeX::                     Use @TeX{} to format for hardcopy.
@@ -154,7 +156,7 @@
  * Print with lpr::              How to print.
  * Within Emacs::                How to format and print from an Emacs shell.
  * Texinfo Mode Printing::       How to format and print in Texinfo mode.
-@@ -13920,7 +13920,7 @@
+@@ -14251,7 +14251,7 @@
  * pagesizes::                   How to print with customized page sizes.
  * Cropmarks and Magnification:: How to print marks to indicate the size
                                   of pages and how to print scaled up output.
@@ -163,7 +165,7 @@
  * Obtaining TeX::               How to Obtain @TeX{}.
  @end menu
  
-@@ -13939,7 +13939,7 @@
+@@ -14270,7 +14270,7 @@
  File}).
  
  
@@ -172,7 +174,7 @@
  @section Format with @code{tex} and @code{texindex}
  @cindex Shell formatting with @code{tex} and @code{texindex}
  @cindex Formatting with @code{tex} and @code{texindex}
-@@ -14036,7 +14036,7 @@
+@@ -14367,7 +14367,7 @@
  
  @pindex texi2dvi
  Alternatively, it's a one-step process: run @code{texi2dvi}
@@ -181,7 +183,7 @@
  
  You need not run @code{texindex} each time after you run @code{tex}.  If
  you do not, on the next run, the @code{tex} formatting command will use
-@@ -14068,7 +14068,7 @@
+@@ -14399,7 +14399,7 @@
  (@pxref{Pointer Validation}).
  
  
@@ -190,16 +192,16 @@
  @section Format with @code{texi2dvi}
  @pindex texi2dvi @r{(shell script)}
  
-@@ -14103,7 +14103,7 @@
- @pxref{Preparing for TeX,,Preparing for @TeX{}}).
+@@ -14436,7 +14436,7 @@
  
+ @opindex --pdf @r{(@command{texi2dvi})}
  With the @option{--pdf} option, @command{texi2dvi} produces PDF output
 -instead of DVI (@pxref{PDF Output}), by running @command{pdftex}
 +instead of DVI (@pxref{texi2pdf}), by running @command{pdftex}
  instead of @command{tex}.  Alternatively, the command
- @command{texi2pdf} is an abbreviation for running @samp{texi2dvi --pdf}.
- 
-@@ -14631,7 +14631,7 @@
+ @command{texi2pdf} is an abbreviation for running @samp{texi2dvi
+ --pdf}.  The command @command{pdftexi2dvi} is also supported as a
+@@ -15013,7 +15013,7 @@
  @xref{small}, for information about
  commands that make it easier to produce examples for a smaller manual.
  
@@ -208,7 +210,7 @@
  @TeX{}}, for other ways to format with @code{@@smallbook} that do not
  require changing the source file.
  
-@@ -14661,7 +14661,7 @@
+@@ -15043,7 +15043,7 @@
  @end group
  @end example
  
@@ -217,7 +219,7 @@
  @TeX{}}, for other ways to format for different paper sizes that do not
  require changing the source file.
  
-@@ -14707,7 +14707,7 @@
+@@ -15089,7 +15089,7 @@
  margins, you must define a new command in @file{texinfo.tex} (or
  @file{texinfo.cnf}, @pxref{Preparing for TeX,,Preparing for @TeX{}}).
  
@@ -226,7 +228,7 @@
  @TeX{}}, for other ways to specify @code{@@pagesizes} that do not
  require changing the source file.
  
-@@ -14776,7 +14776,7 @@
+@@ -15158,7 +15158,7 @@
  magnifications.  Be prepared to experiment.
  
  
@@ -235,16 +237,16 @@
  @section PDF Output
  @cindex PDF output
  
-@@ -14784,7 +14784,7 @@
+@@ -15166,7 +15166,7 @@
  The simplest way to generate PDF output from Texinfo source is to run
- the convenience script @command{texi2pdf}; this simply executes the
- @command{texi2dvi} script with the @option{--pdf} option
--(@pxref{Format with texi2dvi}).  If for some reason you want to
-+(@pxref{texi2dvi}).  If for some reason you want to
- process by hand, simply run the @command{pdftex} program instead of
- plain @command{tex}.  That is, run @samp{pdftex foo.texi} instead of
- @samp{tex foo.texi}.
-@@ -14888,7 +14888,7 @@
+ the convenience script @command{texi2pdf} (or @command{pdftexi2dvi});
+ this simply executes the @command{texi2dvi} script with the
+-@option{--pdf} option (@pxref{Format with texi2dvi}).  If for some
++@option{--pdf} option (@pxref{texi2dvi}).  If for some
+ reason you want to process the document by hand, simply run the
+ @command{pdftex} program instead of plain @command{tex}.  That is, run
+ @samp{pdftex foo.texi} instead of @samp{tex foo.texi}.
+@@ -15270,7 +15270,7 @@
  
  @menu
  * makeinfo advantages::         @code{makeinfo} provides better error checking.
@@ -253,7 +255,7 @@
  * makeinfo options::            Specify fill-column and other options.
  * Pointer Validation::          How to check that pointers point somewhere.
  * makeinfo in Emacs::           How to run @code{makeinfo} from Emacs.
-@@ -14920,7 +14920,7 @@
+@@ -15302,7 +15302,7 @@
  @code{makeinfo}.
  
  
@@ -262,7 +264,7 @@
  @subsection Running @code{makeinfo} from a Shell
  @pindex makeinfo
  
-@@ -15620,7 +15620,7 @@
+@@ -16019,7 +16019,7 @@
                                   located in other directories.
  * Installing Dir Entries::      How to specify what menu entry to add
                                   to the Info directory.
@@ -271,7 +273,7 @@
  @end menu
  
  
-@@ -15926,7 +15926,7 @@
+@@ -16330,7 +16330,7 @@
  traditional @command{man} system.
  
  
@@ -280,7 +282,7 @@
  @subsection Invoking @command{install-info}
  @pindex install-info
  
-@@ -16442,7 +16442,7 @@
+@@ -16862,7 +16862,7 @@
  
  In standard Texinfo, node names may not contain @@-commands.
  @command{makeinfo} has an option @option{--commands-in-node-names}
