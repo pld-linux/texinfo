@@ -8,22 +8,21 @@ Summary(ru.UTF-8):	Инструменты для создания файлов �
 Summary(tr.UTF-8):	texinfo biçimleyici ve info okuyucu
 Summary(uk.UTF-8):	Інструменти для створення файлів документації формату Texinfo
 Name:		texinfo
-Version:	4.9
+Version:	4.11
 Release:	1
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	ftp://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.bz2
-# Source0-md5:	f4458e4b81e5469fa0815c35654141ab
+# Source0-md5:	c6bf13df4fbeff8ce874aacd6a51e814
 Source1:	info.desktop
 Patch0:		%{name}-info.patch
-Patch1:		%{name}-CVE-2005-3011.patch
-Patch2:		%{name}-as_needed-fix.patch
-Patch3:		%{name}-pl.po-update.patch
+Patch1:		%{name}-as_needed-fix.patch
+Patch2:		%{name}-man.patch
 URL:		http://texinfo.org/
 BuildRequires:	autoconf >= 2.59
-BuildRequires:	automake >= 1:1.8
-#BuildRequires:	gettext-autopoint >= 0.14.1
-BuildRequires:	gettext-devel >= 0.14.1
+BuildRequires:	automake >= 1:1.9
+BuildRequires:	gettext-devel >= 0.16
+BuildRequires:	help2man
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	sed >= 4.0
 BuildRequires:	zlib-devel
@@ -183,18 +182,15 @@ Narzędzie do konwersji plików texinfo na dvi.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p2
+%patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 # nb was added but outdated no not removed
 sed -i -e '/^no$/d' po/LINGUAS
 rm -f po/stamp-po
 
 %build
-# don't touch - too fresh m4 macros required (newer than in gettext 0.14.1)
-#%%{__autopoint}
-%{__aclocal} -I m4
+%{__aclocal} -I gnulib/m4
 %{__autoconf}
 %{__automake}
 %configure
@@ -259,6 +255,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files texi2dvi
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/pdftexi2dvi
 %attr(755,root,root) %{_bindir}/texi2dvi
 %attr(755,root,root) %{_bindir}/texi2pdf
+%{_mandir}/man1/pdftexi2dvi.1*
 %{_mandir}/man1/texi2dvi.1*
+%{_mandir}/man1/texi2pdf.1*
