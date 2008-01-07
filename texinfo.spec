@@ -195,7 +195,7 @@ rm -f po/stamp-po
 %{__automake}
 %configure
 
-PATH="$PATH:../util" %{__make} -j1
+PATH="$PATH:../util" %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
