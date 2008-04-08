@@ -12,7 +12,7 @@ Version:	4.11
 Release:	1
 License:	GPL v3+
 Group:		Applications/Publishing
-Source0:	ftp://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.bz2
+Source0:	http://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.bz2
 # Source0-md5:	c6bf13df4fbeff8ce874aacd6a51e814
 Source1:	info.desktop
 Patch0:		%{name}-info.patch
