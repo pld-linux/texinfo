@@ -8,23 +8,21 @@ Summary(ru.UTF-8):	Инструменты для создания файлов �
 Summary(tr.UTF-8):	texinfo biçimleyici ve info okuyucu
 Summary(uk.UTF-8):	Інструменти для створення файлів документації формату Texinfo
 Name:		texinfo
-Version:	4.11
+Version:	4.12
 Release:	1
 License:	GPL v3+
 Group:		Applications/Publishing
-Source0:	http://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.bz2
-# Source0-md5:	c6bf13df4fbeff8ce874aacd6a51e814
+Source0:	http://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.lzma
+# Source0-md5:	81bcbc7b647f2741e7d84a842e47eeb5
 Source1:	info.desktop
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-as_needed-fix.patch
-Patch2:		%{name}-man.patch
 URL:		http://texinfo.org/
 BuildRequires:	autoconf >= 2.59
-BuildRequires:	automake >= 1:1.9
-BuildRequires:	gettext-devel >= 0.16
+BuildRequires:	automake >= 1:1.10.1
+BuildRequires:	gettext-devel >= 0.17
 BuildRequires:	help2man
 BuildRequires:	ncurses-devel >= 5.0
-BuildRequires:	sed >= 4.0
 BuildRequires:	zlib-devel
 Requires:	info = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -180,14 +178,10 @@ Texinfo to dvi conversion tool.
 Narzędzie do konwersji plików texinfo na dvi.
 
 %prep
-%setup -q
+%setup -q -c -T
+lzma -dc %{SOURCE0} | tar xf - -C ..
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
-
-# nb was added but outdated no not removed
-sed -i -e '/^no$/d' po/LINGUAS
-rm -f po/stamp-po
 
 %build
 %{__aclocal} -I gnulib/m4
@@ -214,10 +208,10 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p	/sbin/postshell
+%post	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-p	/sbin/postshell
+%postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %post -n info
