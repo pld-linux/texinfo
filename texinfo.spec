@@ -9,7 +9,7 @@ Summary(tr.UTF-8):	texinfo biçimleyici ve info okuyucu
 Summary(uk.UTF-8):	Інструменти для створення файлів документації формату Texinfo
 Name:		texinfo
 Version:	4.12
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.lzma
