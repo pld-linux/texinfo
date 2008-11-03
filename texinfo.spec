@@ -9,7 +9,7 @@ Summary(tr.UTF-8):	texinfo biçimleyici ve info okuyucu
 Summary(uk.UTF-8):	Інструменти для створення файлів документації формату Texinfo
 Name:		texinfo
 Version:	4.13a
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.lzma
@@ -17,6 +17,7 @@ Source0:	http://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.lzma
 Source1:	info.desktop
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-as_needed-fix.patch
+Patch2:		%{name}-segv.patch
 URL:		http://texinfo.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.10.1
@@ -182,6 +183,7 @@ Narzędzie do konwersji plików texinfo na dvi.
 lzma -dc %{SOURCE0} | tar xf - -C ..
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %{__aclocal} -I gnulib/m4
