@@ -9,7 +9,7 @@ Summary(tr.UTF-8):	texinfo biçimleyici ve info okuyucu
 Summary(uk.UTF-8):	Інструменти для створення файлів документації формату Texinfo
 Name:		texinfo
 Version:	4.13a
-Release:	3
+Release:	4
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.lzma
@@ -167,9 +167,16 @@ Summary:	Texinfo to dvi conversion tool
 Summary(pl.UTF-8):	Narzędzie do konwersji texinfo na dvi
 Group:		Applications/Publishing
 Requires:	%{name} = %{version}-%{release}
+%if "%{pld_release}" == "ti"
+Requires:	tetex-fonts-latex
+# R: tetex 3.0 to avoid texi2pdf file conflict with tetex 2.0
+Requires:	tetex-format-pdfetex >= 1:3.0
+Requires:	tetex-format-plain
+%else
 Requires:	texlive
 Requires:	texlive-fonts-latex
 Requires:	texlive-plain
+%endif
 
 %description texi2dvi
 Texinfo to dvi conversion tool.
