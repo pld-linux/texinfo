@@ -1,0 +1,7 @@
+- updated to 4.0,
+- added BuildRequires: ncurses-devel,
+- added fix info index entries for info, info-std (ne info patch),
+- added man pages,
+- removed using %{_sysconfdir} macro,
+- added woraroud for building correctly info pages (make distclean-aminfo in
+  doc dir on start building).
