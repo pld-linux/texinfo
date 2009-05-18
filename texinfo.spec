@@ -24,6 +24,7 @@ BuildRequires:	automake >= 1:1.10.1
 BuildRequires:	gettext-devel >= 0.17
 BuildRequires:	help2man
 BuildRequires:	ncurses-devel >= 5.0
+BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	zlib-devel
 Requires:	info = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -222,8 +223,8 @@ rm -rf $RPM_BUILD_ROOT
 %postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%post -n info
-/usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
+%post -n info -p /sbin/postshell
+-/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files
 %defattr(644,root,root,755)
