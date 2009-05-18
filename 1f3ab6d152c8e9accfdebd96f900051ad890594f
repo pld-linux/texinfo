@@ -1,0 +1,7 @@
+- upgraded to 3.12s
+- removed info-dir (not needed now)
+- removed texinfo-exe.patch texinfo-alpha-tioc.patch (integrated)
+- added texinfo-fix-info-dir.patch
+- added Requires: mktemp
+- used fix-info-dir in %post/%postun
+- info-dir now in %{_infodir}/dir
