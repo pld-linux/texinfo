@@ -1,0 +1,3 @@
+- texi2dvi moved to -texi2dvi subpackage (because only texi2dvi requires tetex)
+- info/README moved to %doc in info subpackage
+- release 3, STBR
