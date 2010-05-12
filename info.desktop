@@ -6,5 +6,5 @@ Exec=info
 Icon=gnome-info
 Terminal=true
 Type=Application
-Categories=ConsoleOnly;X-Help;
+Categories=ConsoleOnly;Utility;
 # vi: encoding=utf-8
