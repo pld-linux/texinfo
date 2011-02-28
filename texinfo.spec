@@ -9,7 +9,7 @@ Summary(tr.UTF-8):	texinfo biçimleyici ve info okuyucu
 Summary(uk.UTF-8):	Інструменти для створення файлів документації формату Texinfo
 Name:		texinfo
 Version:	4.13a
-Release:	5
+Release:	6
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.lzma
@@ -224,6 +224,9 @@ rm -rf $RPM_BUILD_ROOT
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %post -n info -p /sbin/postshell
+-/usr/sbin/fix-info-dir -c %{_infodir}
+
+%postun -n info -p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files
