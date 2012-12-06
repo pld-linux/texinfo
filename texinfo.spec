@@ -18,6 +18,7 @@ Source1:	info.desktop
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-as_needed-fix.patch
 Patch2:		%{name}-segv.patch
+Patch3:		%{name}-automake_1_12.patch
 URL:		http://texinfo.org/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.10.1
@@ -184,6 +185,7 @@ lzma -dc %{SOURCE0} | tar xf - -C ..
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %{__aclocal} -I gnulib/m4
