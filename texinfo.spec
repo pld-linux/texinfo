@@ -1,3 +1,4 @@
+%include	/usr/lib/rpm/macros.perl
 Summary:	Tools needed to create Texinfo format documentation files
 Summary(de.UTF-8):	Tools zum Erstellen von texinfo-Dokumentationsdateien
 Summary(es.UTF-8):	Formateador texinfo y lector de archivos info
@@ -8,24 +9,25 @@ Summary(ru.UTF-8):	Инструменты для создания файлов �
 Summary(tr.UTF-8):	texinfo biçimleyici ve info okuyucu
 Summary(uk.UTF-8):	Інструменти для створення файлів документації формату Texinfo
 Name:		texinfo
-Version:	4.13a
-Release:	7
+Version:	5.1
+Release:	1
 License:	GPL v3+
 Group:		Applications/Publishing
-Source0:	http://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.lzma
-# Source0-md5:	20b37e49464bd72df4c6cfba33340f87
+Source0:	http://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.xz
+# Source0-md5:	52ee905a3b705020d2a1b6ec36d53ca6
 Source1:	info.desktop
 Patch0:		%{name}-info.patch
-Patch1:		%{name}-as_needed-fix.patch
-Patch2:		%{name}-segv.patch
-Patch3:		%{name}-automake_1_12.patch
 URL:		http://texinfo.org/
-BuildRequires:	autoconf >= 2.59
-BuildRequires:	automake >= 1:1.10.1
-BuildRequires:	gettext-devel >= 0.17
+BuildRequires:	autoconf >= 2.69
+BuildRequires:	automake >= 1:1.12
+BuildRequires:	gettext-devel >= 0.18.2
 BuildRequires:	help2man
 BuildRequires:	ncurses-devel >= 5.0
+BuildRequires:	perl-modules >= 1:5.8.0
 BuildRequires:	rpm >= 4.4.9-56
+BuildRequires:	rpm-perlprov
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 BuildRequires:	zlib-devel
 Requires:	info = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -180,12 +182,8 @@ Texinfo to dvi conversion tool.
 Narzędzie do konwersji plików texinfo na dvi.
 
 %prep
-%setup -q -c -T -n %{name}-4.13
-lzma -dc %{SOURCE0} | tar xf - -C ..
+%setup -q
 %patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
 
 %build
 %{__aclocal} -I gnulib/m4
@@ -207,7 +205,14 @@ ln -sf %{_sbindir}/install-info $RPM_BUILD_ROOT/sbin/install-info
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
+%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{de.us-ascii,de}/LC_MESSAGES/texinfo_document.mo
+%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{es.us-ascii,es}/LC_MESSAGES/texinfo_document.mo
+%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{no.us-ascii,nb}/LC_MESSAGES/texinfo_document.mo
+%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{pt.us-ascii,pt}
+%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{pt_BR.us-ascii,pt_BR}
+
 %find_lang %{name}
+%find_lang texinfo_document
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -218,21 +223,25 @@ rm -rf $RPM_BUILD_ROOT
 %postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%post -n info -p /sbin/postshell
+%post	-n info -p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun -n info -p /sbin/postshell
+%postun	-n info -p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%files
+%files -f texinfo_document.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog INTRODUCTION NEWS README TODO
+%doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/makeinfo
+%attr(755,root,root) %{_bindir}/pod2texi
+%attr(755,root,root) %{_bindir}/texi2any
 %attr(755,root,root) %{_bindir}/texindex
 %{_datadir}/texinfo
 
 %{_infodir}/texinfo*
 %{_mandir}/man1/makeinfo.1*
+%{_mandir}/man1/pod2texi.1*
+%{_mandir}/man1/texi2any.1*
 %{_mandir}/man1/texindex.1*
 %{_mandir}/man5/texinfo.5*
 
