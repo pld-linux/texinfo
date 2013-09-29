@@ -9,18 +9,18 @@ Summary(ru.UTF-8):	Инструменты для создания файлов �
 Summary(tr.UTF-8):	texinfo biçimleyici ve info okuyucu
 Summary(uk.UTF-8):	Інструменти для створення файлів документації формату Texinfo
 Name:		texinfo
-Version:	5.1
+Version:	5.2
 Release:	1
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.xz
-# Source0-md5:	52ee905a3b705020d2a1b6ec36d53ca6
+# Source0-md5:	cb489df8a7ee9d10a236197aefdb32c5
 Source1:	info.desktop
 Patch0:		%{name}-info.patch
 URL:		http://texinfo.org/
 BuildRequires:	autoconf >= 2.69
-BuildRequires:	automake >= 1:1.12
-BuildRequires:	gettext-devel >= 0.18.2
+BuildRequires:	automake >= 1:1.14
+BuildRequires:	gettext-devel >= 0.18.3
 BuildRequires:	help2man
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	perl-modules >= 1:5.8.0
