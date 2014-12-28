@@ -20,7 +20,7 @@ Patch0:		%{name}-info.patch
 URL:		http://texinfo.org/
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.14
-BuildRequires:	gettext-devel >= 0.18.3
+BuildRequires:	gettext-tools >= 0.18.3
 BuildRequires:	help2man
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	perl-modules >= 1:5.8.0
