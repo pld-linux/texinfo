@@ -9,20 +9,21 @@ Summary(ru.UTF-8):	Инструменты для создания файлов �
 Summary(tr.UTF-8):	texinfo biçimleyici ve info okuyucu
 Summary(uk.UTF-8):	Інструменти для створення файлів документації формату Texinfo
 Name:		texinfo
-Version:	5.2
-Release:	3
+Version:	6.0
+Release:	1
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.xz
-# Source0-md5:	cb489df8a7ee9d10a236197aefdb32c5
+# Source0-md5:	02818e62a5b8ae0213a7ff572991bb50
 Source1:	info.desktop
 Patch0:		%{name}-info.patch
 URL:		http://texinfo.org/
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.14
-BuildRequires:	gettext-tools >= 0.18.3
+BuildRequires:	gettext-tools >= 0.19.4
 BuildRequires:	help2man
 BuildRequires:	ncurses-devel >= 5.0
+BuildRequires:	perl-Encode
 BuildRequires:	perl-modules >= 1:5.8.0
 BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	rpm-perlprov
@@ -205,11 +206,11 @@ ln -sf %{_sbindir}/install-info $RPM_BUILD_ROOT/sbin/install-info
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
+%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{ca.us-ascii,ca}/LC_MESSAGES/texinfo_document.mo
 %{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{de.us-ascii,de}/LC_MESSAGES/texinfo_document.mo
-%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{es.us-ascii,es}/LC_MESSAGES/texinfo_document.mo
 %{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{no.us-ascii,nb}/LC_MESSAGES/texinfo_document.mo
 %{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{pt.us-ascii,pt}
-%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{pt_BR.us-ascii,pt_BR}
+%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{pt_BR.us-ascii,pt_BR}/LC_MESSAGES/texinfo_document.mo
 
 %find_lang %{name}
 %find_lang texinfo_document
@@ -249,7 +250,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc info/README
 %attr(755,root,root) %{_bindir}/info
-%attr(755,root,root) %{_bindir}/infokey
 %attr(755,root,root) /sbin/install-info
 %attr(755,root,root) %{_sbindir}/install-info
 
@@ -259,7 +259,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_infodir}/info-stnd.info*
 
 %{_mandir}/man1/info.1*
-%{_mandir}/man1/infokey.1*
 %{_mandir}/man1/install-info.1*
 %{_mandir}/man5/info.5*
 
