@@ -9,12 +9,12 @@ Summary(ru.UTF-8):	Инструменты для создания файлов �
 Summary(tr.UTF-8):	texinfo biçimleyici ve info okuyucu
 Summary(uk.UTF-8):	Інструменти для створення файлів документації формату Texinfo
 Name:		texinfo
-Version:	6.0
+Version:	6.1
 Release:	1
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.xz
-# Source0-md5:	02818e62a5b8ae0213a7ff572991bb50
+# Source0-md5:	1d7ec1888fae00730693597852b00cde
 Source1:	info.desktop
 Patch0:		%{name}-info.patch
 URL:		http://texinfo.org/
@@ -190,7 +190,8 @@ Narzędzie do konwersji plików texinfo na dvi.
 %{__aclocal} -I gnulib/m4
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	--disable-static
 
 PATH="$PATH:../util" %{__make}
 
@@ -201,8 +202,11 @@ install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_sbindir},/sbin}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-mv -f $RPM_BUILD_ROOT%{_bindir}/install-info $RPM_BUILD_ROOT%{_sbindir}
+%{__mv} $RPM_BUILD_ROOT%{_bindir}/install-info $RPM_BUILD_ROOT%{_sbindir}
 ln -sf %{_sbindir}/install-info $RPM_BUILD_ROOT/sbin/install-info
+
+# perl module
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/texinfo/XSParagraph.la
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
@@ -238,7 +242,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/texi2any
 %attr(755,root,root) %{_bindir}/texindex
 %{_datadir}/texinfo
-
+%dir %{_libdir}/texinfo
+%attr(755,root,root) %{_libdir}/texinfo/XSParagraph.so
 %{_infodir}/texinfo*
 %{_mandir}/man1/makeinfo.1*
 %{_mandir}/man1/pod2texi.1*
@@ -248,16 +253,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n info -f texinfo.lang
 %defattr(644,root,root,755)
-%doc info/README
 %attr(755,root,root) %{_bindir}/info
 %attr(755,root,root) /sbin/install-info
 %attr(755,root,root) %{_sbindir}/install-info
-
 %{_desktopdir}/info.desktop
-
-%{_infodir}/info.info*
 %{_infodir}/info-stnd.info*
-
 %{_mandir}/man1/info.1*
 %{_mandir}/man1/install-info.1*
 %{_mandir}/man5/info.5*
