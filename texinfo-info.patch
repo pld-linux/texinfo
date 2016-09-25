@@ -102,17 +102,6 @@
  
  
  @node @code{@@settitle}
-@@ -2594,8 +2594,8 @@
- 
- You need to include the @code{@@set@dots{}contentsaftertitlepage}
- commands early in the document (just after @code{@@setfilename}, for
--example).  We recommend using @command{texi2dvi} (@pxref{Format with
--@command{texi2dvi}}) to specify this without altering the source file at
-+example).  We recommend using @command{texi2dvi} (@pxref{@command{texi2dvi}})
-+to specify this without altering the source file at
- all.  For example:
- 
- @example
 @@ -12716,8 +12716,7 @@
  itself, but will usually be the case for up-to-date distributions of
  the extended @TeX{} programs @command{etex} (DVI output) and

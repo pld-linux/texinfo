@@ -9,18 +9,18 @@ Summary(ru.UTF-8):	Инструменты для создания файлов �
 Summary(tr.UTF-8):	texinfo biçimleyici ve info okuyucu
 Summary(uk.UTF-8):	Інструменти для створення файлів документації формату Texinfo
 Name:		texinfo
-Version:	6.1
+Version:	6.3
 Release:	1
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.xz
-# Source0-md5:	1d7ec1888fae00730693597852b00cde
+# Source0-md5:	32baefe5c7080dfb512a4eac5ce67b2a
 Source1:	info.desktop
 Patch0:		%{name}-info.patch
-URL:		http://texinfo.org/
+URL:		http://www.gnu.org/software/texinfo/
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.14
-BuildRequires:	gettext-tools >= 0.19.4
+BuildRequires:	gettext-tools >= 0.19.6
 BuildRequires:	help2man
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	perl-Encode
@@ -210,11 +210,14 @@ ln -sf %{_sbindir}/install-info $RPM_BUILD_ROOT/sbin/install-info
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
-%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{ca.us-ascii,ca}/LC_MESSAGES/texinfo_document.mo
-%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{de.us-ascii,de}/LC_MESSAGES/texinfo_document.mo
+# copy of default encoding
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/ca.us-ascii
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/de.us-ascii
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/pt.us-ascii
+# outdated copy of default encoding
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/pt_BR.us-ascii
+# normalize locale name
 %{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{no.us-ascii,nb}/LC_MESSAGES/texinfo_document.mo
-%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{pt.us-ascii,pt}
-%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{pt_BR.us-ascii,pt_BR}/LC_MESSAGES/texinfo_document.mo
 
 %find_lang %{name}
 %find_lang texinfo_document
