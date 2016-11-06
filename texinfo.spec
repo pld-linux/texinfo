@@ -24,6 +24,7 @@ BuildRequires:	gettext-tools >= 0.19.6
 BuildRequires:	help2man
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	perl-Encode
+BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-modules >= 1:5.8.0
 BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	rpm-perlprov
