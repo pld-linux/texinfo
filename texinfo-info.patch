@@ -12,8 +12,8 @@
  @end direntry
  
  @titlepage
---- texinfo-6.1/doc/texinfo.texi.orig	2016-02-06 10:04:55.000000000 +0100
-+++ texinfo-6.1/doc/texinfo.texi	2016-02-20 10:19:40.158531500 +0100
+--- texinfo-6.4/doc/texinfo.texi.orig	2017-05-24 21:50:37.000000000 +0200
++++ texinfo-6.4/doc/texinfo.texi	2017-06-29 21:30:29.610768169 +0200
 @@ -55,16 +55,16 @@
  @end quotation
  @end copying
@@ -32,7 +32,7 @@
 +* Texinfo: (texinfo).			The GNU documentation format
 +* install-info: (texinfo)install-info.	Update info/dir entries
 +* makeinfo: (texinfo)makeinfo.		Translate Texinfo source
-+* pod2texi: (pod2texi)pod2texi.		Translate Perl POD to Texinfo.
++* pod2texi: (pod2texi)pod2texi.		Translate Perl POD to Texinfo
 +* texi2dvi: (texinfo)texi2dvi.		Print Texinfo documents
 +* texi2pdf: (texinfo)texi2pdf.		PDF output for Texinfo
 +* pdftexi2dvi: (texinfo)pdftexi2dvi.	PDF output for Texinfo
@@ -60,12 +60,13 @@
  * Obtaining @TeX{}::               How to obtain @TeX{}.
  
  Format with @command{tex}/@command{texindex}
-@@ -582,12 +582,12 @@
+@@ -582,13 +582,13 @@
  @command{texi2any}: The Generic Translator for Texinfo
  
  * Reference Implementation::    @command{texi2any}: the reference implementation.
 -* Invoking @command{texi2any}::           Running the translator from a shell.
 +* @command{texi2any}::                    Running the translator from a shell.
+ * @command{texi2any} Environment Variables::
  * @command{texi2any} Printed Output::     Calling @command{texi2dvi}.
  * Pointer Validation::          How to check that pointers point somewhere.
  * Customization Variables::     Configuring @command{texi2any}.
@@ -75,7 +76,7 @@
  * @command{texi2html}::                   An ancestor of @command{texi2any}.
  
  Customization Variables
-@@ -621,7 +621,7 @@
+@@ -622,7 +622,7 @@
                                   located in other directories.
  * Installing Dir Entries::      How to specify what menu entry to add
                                   to the Info directory.
@@ -84,7 +85,7 @@
  
  Generating HTML
  
-@@ -954,7 +954,7 @@
+@@ -955,7 +955,7 @@
  @uref{http://tug.org/TUGboat/tb22-3/tb72beebe-pdf.pdf} have some
  background.  By default, Texinfo uses the @command{pdftex} program, an
  extension of @TeX{}, to output PDF; see
@@ -93,7 +94,7 @@
  
  @item Docbook
  @cindex Docbook output, overview
-@@ -1961,7 +1961,7 @@
+@@ -1966,7 +1966,7 @@
  the original file name to leave enough space for the subfile suffix,
  thus producing files named @file{texin-10}, @file{gcc.i12}, etc.
  
@@ -102,7 +103,7 @@
  
  
  @node @code{@@settitle}
-@@ -12716,8 +12716,7 @@
+@@ -12686,8 +12686,7 @@
  itself, but will usually be the case for up-to-date distributions of
  the extended @TeX{} programs @command{etex} (DVI output) and
  @command{pdftex} (PDF output).  @command{texi2dvi} will use the
@@ -112,7 +113,7 @@
  
  In September 2006, the W3C Internationalization Activity released a
  new recommendation for specifying languages:
-@@ -14040,8 +14039,8 @@
+@@ -14009,8 +14008,8 @@
  some of the caveats are listed below.  Thus, if you get macro-related
  errors when producing the printed version of a manual, you might try
  expanding the macros with @command{makeinfo} by invoking
@@ -235,12 +236,13 @@
  want to process the document by hand, you can run the @command{pdftex}
  program instead of plain @command{tex}.  That is, run @samp{pdftex
  foo.texi} instead of @samp{tex foo.texi}.
-@@ -15959,12 +15958,12 @@
+@@ -15959,13 +15958,13 @@
  
  @menu
  * Reference Implementation::    @command{texi2any}: the reference implementation.
 -* Invoking @command{texi2any}::           Running the translator from a shell.
 +* @command{texi2any}::                    Running the translator from a shell.
+ * @command{texi2any} Environment Variables::
  * @command{texi2any} Printed Output::     Calling @command{texi2dvi}.
  * Pointer Validation::          How to check that pointers point somewhere.
  * Customization Variables::     Configuring @command{texi2any}.
@@ -250,7 +252,7 @@
  * @command{texi2html}::                   An ancestor of @command{texi2any}.
  @end menu
  
-@@ -16025,10 +16024,10 @@
+@@ -16026,10 +16025,10 @@
  @command{texi2any}.
  
  
@@ -263,7 +265,7 @@
  @pindex makeinfo
  @pindex texi2any
  
-@@ -16567,8 +16566,8 @@
+@@ -16604,8 +16603,8 @@
  @command{texi2dvi} directly.
  
  The output format options for this are @option{--dvi},
@@ -274,7 +276,7 @@
  @command{texi2dvi} operation.  In addition, the @option{--verbose},
  @option{--silent}, and @option{--quiet} options are passed on if
  specified; the @option{-I} and @option{-o} options are likewise passed
-@@ -16741,7 +16740,7 @@
+@@ -16778,7 +16777,7 @@
  @cindex Options, customization variables for
  
  The following table gives the customization variables associated with
@@ -283,16 +285,16 @@
  meaning of the options.
  
  @multitable @columnfractions 0.5 0.5
-@@ -16816,7 +16815,7 @@
+@@ -16871,7 +16870,7 @@
  @itemx xml
  These correspond to the command-line options (and
  @code{TEXINFO_OUTPUT_FORMAT} environment variable values) of the same
 -name.  @xref{Invoking @command{texi2any}}.
 +name.  @xref{@command{texi2any}}.
  
- @item debugcount
- Instead of generating a regular output format, output the count of
-@@ -17471,7 +17470,7 @@
+ @item debugtree
+ @cindex tree representation, for debugging
+@@ -17515,7 +17514,7 @@
  
  The following transformations are currently supported (many are used
  in the @code{pod2texi} utility distributed with Texinfo;
@@ -301,7 +303,7 @@
  
  @ftable @samp
  @item complete_tree_nodes_menus
-@@ -17646,7 +17645,7 @@
+@@ -17686,7 +17685,7 @@
  appropriately in many languages.
  
  
@@ -310,7 +312,7 @@
  @section Invoking @command{pod2texi}: Convert POD to Texinfo
  
  @pindex pod2texi
-@@ -18102,7 +18101,7 @@
+@@ -18142,7 +18141,7 @@
                                   located in other directories.
  * Installing Dir Entries::      How to specify what menu entry to add
                                   to the Info directory.
@@ -319,7 +321,7 @@
  @end menu
  
  
-@@ -18340,7 +18339,7 @@
+@@ -18380,7 +18379,7 @@
  @@dircategory Texinfo documentation system
  @@direntry
  * Texinfo: (texinfo).           The GNU documentation format.
@@ -328,7 +330,7 @@
  @dots{}
  @@end direntry
  @end smallexample
-@@ -18351,7 +18350,7 @@
+@@ -18391,7 +18390,7 @@
  INFO-DIR-SECTION Texinfo documentation system
  START-INFO-DIR-ENTRY
  * Texinfo: (texinfo).           The GNU documentation format.
@@ -337,7 +339,7 @@
  @dots{}
  END-INFO-DIR-ENTRY
  @end smallexample
-@@ -18373,7 +18372,7 @@
+@@ -18413,7 +18412,7 @@
  most others.  Description for individual utilities best start in
  column 48, where possible.  For more information about formatting see
  the @samp{--calign}, @samp{--align}, and @samp{--max-width} options in
@@ -346,7 +348,7 @@
  
  If you use @code{@@dircategory} more than once in the Texinfo source,
  each usage specifies the `current' category; any subsequent
-@@ -18408,7 +18407,7 @@
+@@ -18448,7 +18447,7 @@
  traditional @command{man} system.
  
  
@@ -355,7 +357,7 @@
  @subsection Invoking @command{install-info}
  
  @pindex install-info
-@@ -18676,7 +18675,7 @@
+@@ -18716,7 +18715,7 @@
  @pindex html32.pm
  Some known exceptions to HTML@tie{}3.2 (using
  @samp{--init-file=html32.pm} produces strict HTML@tie{}3.2 output;
@@ -364,7 +366,7 @@
  
  @enumerate
  @item
-@@ -18778,7 +18777,7 @@
+@@ -18818,7 +18817,7 @@
  @code{CASE_INSENSITIVE_FILENAMES}.
  
  It is also possible to split at chapters or sections with
@@ -373,7 +375,7 @@
  the file names are constructed after the name of the node associated
  with the relevant sectioning command.  Also, unless
  @option{--no-node-files} is specified, a redirection file is output
-@@ -22392,8 +22391,7 @@
+@@ -22449,8 +22448,7 @@
  this, you must run the @code{texindex} command after first running the
  @code{tex} typesetting command; and then you must run the @code{tex}
  command again.  Or else run the @code{texi2dvi} command which

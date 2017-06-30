@@ -9,18 +9,18 @@ Summary(ru.UTF-8):	Инструменты для создания файлов �
 Summary(tr.UTF-8):	texinfo biçimleyici ve info okuyucu
 Summary(uk.UTF-8):	Інструменти для створення файлів документації формату Texinfo
 Name:		texinfo
-Version:	6.3
-Release:	4
+Version:	6.4
+Release:	1
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.xz
-# Source0-md5:	32baefe5c7080dfb512a4eac5ce67b2a
+# Source0-md5:	2a676c8339efe6ddea0f1cb52e626d15
 Source1:	info.desktop
 Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/texinfo/
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.14
-BuildRequires:	gettext-tools >= 0.19.6
+BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	help2man
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	perl-Encode
@@ -206,8 +206,8 @@ install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_sbindir},/sbin}
 %{__mv} $RPM_BUILD_ROOT%{_bindir}/install-info $RPM_BUILD_ROOT%{_sbindir}
 ln -sf %{_sbindir}/install-info $RPM_BUILD_ROOT/sbin/install-info
 
-# perl module
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/texinfo/XSParagraph.la
+# perl modules
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/texinfo/*.la
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
@@ -247,8 +247,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/texindex
 %{_datadir}/texinfo
 %dir %{_libdir}/texinfo
+%attr(755,root,root) %{_libdir}/texinfo/MiscXS.so
 %attr(755,root,root) %{_libdir}/texinfo/XSParagraph.so
-%{_infodir}/texinfo*
+%{_infodir}/texinfo*.info*
 %{_mandir}/man1/makeinfo.1*
 %{_mandir}/man1/pod2texi.1*
 %{_mandir}/man1/texi2any.1*
