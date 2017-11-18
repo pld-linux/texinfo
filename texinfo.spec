@@ -9,12 +9,12 @@ Summary(ru.UTF-8):	Инструменты для создания файлов �
 Summary(tr.UTF-8):	texinfo biçimleyici ve info okuyucu
 Summary(uk.UTF-8):	Інструменти для створення файлів документації формату Texinfo
 Name:		texinfo
-Version:	6.4
+Version:	6.5
 Release:	1
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.xz
-# Source0-md5:	2a676c8339efe6ddea0f1cb52e626d15
+# Source0-md5:	3715197e62e0e07f85860b3d7aab55ed
 Source1:	info.desktop
 Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/texinfo/
