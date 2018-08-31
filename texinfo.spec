@@ -17,6 +17,7 @@ Source0:	http://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.xz
 # Source0-md5:	3715197e62e0e07f85860b3d7aab55ed
 Source1:	info.desktop
 Patch0:		%{name}-info.patch
+Patch1:		regex-fix.patch
 URL:		http://www.gnu.org/software/texinfo/
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.14
@@ -187,6 +188,7 @@ Narzędzie do konwersji plików texinfo na dvi.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__aclocal} -I gnulib/m4
