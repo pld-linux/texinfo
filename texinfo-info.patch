@@ -52,9 +52,9 @@
  * Within Emacs::                How to format and print from an Emacs shell.
  * Texinfo Mode Printing::       How to format and print in Texinfo mode.
 @@ -571,7 +571,7 @@
+ * A4 Paper::                    How to print on A4 or A5 paper.
  * @code{@@pagesizes}::                  How to print with customized page sizes.
- * Cropmarks and Magnification:: How to print marks to indicate the size
-                                  of pages and how to print scaled up output.
+ * Magnification::               How to print scaled up output.
 -* PDF Output::                  Portable Document Format output.
 +* texi2pdf::                    Portable Document Format output.
  * Obtaining @TeX{}::               How to obtain @TeX{}.
@@ -147,9 +147,9 @@
  * Within Emacs::                How to format and print from an Emacs shell.
  * Texinfo Mode Printing::       How to format and print in Texinfo mode.
 @@ -14850,7 +14849,7 @@
+ * A4 Paper::                    How to print on A4 or A5 paper.
  * @code{@@pagesizes}::                  How to print with customized page sizes.
- * Cropmarks and Magnification:: How to print marks to indicate the size
-                                  of pages and how to print scaled up output.
+ * Magnification::               How to print scaled up output.
 -* PDF Output::                  Portable Document Format output.
 +* texi2pdf::                    Portable Document Format output.
  * Obtaining @TeX{}::               How to obtain @TeX{}.
@@ -358,9 +358,9 @@
  
  @pindex install-info
 @@ -18716,7 +18715,7 @@
- @pindex html32.pm
  Some known exceptions to HTML@tie{}3.2 (using
- @samp{--init-file=html32.pm} produces strict HTML@tie{}3.2 output;
+ @samp{--init-file=html32.pm} produced strict HTML@tie{}3.2 output, but
+ this has not been tested lately;
 -@pxref{Invoking @command{texi2any}}):
 +@pxref{@command{texi2any}}):
  

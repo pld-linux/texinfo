@@ -9,15 +9,14 @@ Summary(ru.UTF-8):	Инструменты для создания файлов �
 Summary(tr.UTF-8):	texinfo biçimleyici ve info okuyucu
 Summary(uk.UTF-8):	Інструменти для створення файлів документації формату Texinfo
 Name:		texinfo
-Version:	6.5
-Release:	2
+Version:	6.6
+Release:	1
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.xz
-# Source0-md5:	3715197e62e0e07f85860b3d7aab55ed
+# Source0-md5:	5231da3e6aa106cd0532b8609e5b3702
 Source1:	info.desktop
 Patch0:		%{name}-info.patch
-Patch1:		regex-fix.patch
 URL:		http://www.gnu.org/software/texinfo/
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.14
@@ -188,7 +187,6 @@ Narzędzie do konwersji plików texinfo na dvi.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__aclocal} -I gnulib/m4
@@ -252,6 +250,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/texinfo
 %attr(755,root,root) %{_libdir}/texinfo/MiscXS.so
 %attr(755,root,root) %{_libdir}/texinfo/XSParagraph.so
+%attr(755,root,root) %{_libdir}/texinfo/Parsetexi.so
 %{_infodir}/texinfo*.info*
 %{_mandir}/man1/makeinfo.1*
 %{_mandir}/man1/pod2texi.1*
