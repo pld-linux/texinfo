@@ -10,7 +10,7 @@ Summary(tr.UTF-8):	texinfo biçimleyici ve info okuyucu
 Summary(uk.UTF-8):	Інструменти для створення файлів документації формату Texinfo
 Name:		texinfo
 Version:	6.6
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.xz
@@ -33,6 +33,7 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRequires:	zlib-devel
 Requires:	info = %{version}-%{release}
+Provides:	perl(Texinfo::Parser) = %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
