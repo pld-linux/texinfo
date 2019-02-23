@@ -10,7 +10,7 @@ Summary(tr.UTF-8):	texinfo biçimleyici ve info okuyucu
 Summary(uk.UTF-8):	Інструменти для створення файлів документації формату Texinfo
 Name:		texinfo
 Version:	6.6
-Release:	2
+Release:	3
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	http://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.xz
@@ -28,13 +28,21 @@ BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-modules >= 1:5.8.0
 BuildRequires:	perl-tools-devel
 BuildRequires:	rpm >= 4.4.9-56
+BuildRequires:	rpm-build-macros >= 1.663
 BuildRequires:	rpm-perlprov
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildRequires:	zlib-devel
 Requires:	info = %{version}-%{release}
-Provides:	perl(Texinfo::Parser) = %{version}
+Requires:	perl-Text-Unidecode >= 0.04
+Requires:	perl-Unicode-EastAsianWidth >= 1.30
+Requires:	perl-libintl >= 1.31
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# don't provide private perl modules as system available
+%define		_noautoprovfiles	%{_datadir}/texinfo
+# and don't require them externally
+%define		_noautoreq_perl		Pod::Simple::Texinfo Texinfo::.*
 
 %description
 Texinfo is a documentation system that can produce both online
@@ -194,7 +202,10 @@ Narzędzie do konwersji plików texinfo na dvi.
 %{__autoconf}
 %{__automake}
 %configure \
-	--disable-static
+	--disable-static \
+	--with-external-Text-Unidecode \
+	--with-external-Unicode-EastAsianWidth \
+	--with-external-libintl-perl
 
 PATH="$PATH:../util" %{__make}
 
@@ -250,8 +261,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/texinfo
 %dir %{_libdir}/texinfo
 %attr(755,root,root) %{_libdir}/texinfo/MiscXS.so
-%attr(755,root,root) %{_libdir}/texinfo/XSParagraph.so
 %attr(755,root,root) %{_libdir}/texinfo/Parsetexi.so
+%attr(755,root,root) %{_libdir}/texinfo/XSParagraph.so
 %{_infodir}/texinfo*.info*
 %{_mandir}/man1/makeinfo.1*
 %{_mandir}/man1/pod2texi.1*
