@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.perl
 Summary:	Tools needed to create Texinfo format documentation files
 Summary(de.UTF-8):	Tools zum Erstellen von texinfo-Dokumentationsdateien
 Summary(es.UTF-8):	Formateador texinfo y lector de archivos info
