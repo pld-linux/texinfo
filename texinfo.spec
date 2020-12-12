@@ -28,7 +28,7 @@ BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-modules >= 1:5.8.0
 BuildRequires:	perl-tools-devel
 BuildRequires:	rpm >= 4.4.9-56
-BuildRequires:	rpmbuild(macros) >= 1.663
+BuildRequires:	rpmbuild(macros) >= 1.745
 BuildRequires:	rpm-perlprov
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
