@@ -8,12 +8,12 @@ Summary(ru.UTF-8):	Инструменты для создания файлов �
 Summary(tr.UTF-8):	texinfo biçimleyici ve info okuyucu
 Summary(uk.UTF-8):	Інструменти для створення файлів документації формату Texinfo
 Name:		texinfo
-Version:	6.8
+Version:	7.0.1
 Release:	1
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	https://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.xz
-# Source0-md5:	a91b404e30561a5df803e6eb3a53be71
+# Source0-md5:	545e6fdb23f5c7923c057187aa19f9f4
 Source1:	info.desktop
 Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/texinfo/
@@ -24,8 +24,8 @@ BuildRequires:	help2man
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	perl-Encode
 BuildRequires:	perl-Text-Unidecode >= 0.04
-BuildRequires:	perl-devel >= 1:5.8.0
-BuildRequires:	perl-modules >= 1:5.8.0
+BuildRequires:	perl-devel >= 1:5.8.1
+BuildRequires:	perl-modules >= 1:5.8.1
 BuildRequires:	perl-tools-devel
 BuildRequires:	rpm >= 4.4.9-56
 BuildRequires:	rpmbuild(macros) >= 1.745
@@ -202,7 +202,6 @@ Narzędzie do konwersji plików texinfo na dvi.
 %{__autoconf}
 %{__automake}
 %configure \
-	--disable-static \
 	--with-external-Text-Unidecode \
 	--with-external-Unicode-EastAsianWidth \
 	--with-external-libintl-perl
@@ -263,7 +262,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/texinfo/MiscXS.so
 %attr(755,root,root) %{_libdir}/texinfo/Parsetexi.so
 %attr(755,root,root) %{_libdir}/texinfo/XSParagraph.so
-%{_infodir}/texinfo*.info*
+%{_infodir}/texinfo.info*
+%{_infodir}/texi2any_api.info*
+%{_infodir}/texi2any_internals.info*
 %{_mandir}/man1/makeinfo.1*
 %{_mandir}/man1/pod2texi.1*
 %{_mandir}/man1/texi2any.1*
