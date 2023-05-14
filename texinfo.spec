@@ -9,7 +9,7 @@ Summary(tr.UTF-8):	texinfo biçimleyici ve info okuyucu
 Summary(uk.UTF-8):	Інструменти для створення файлів документації формату Texinfo
 Name:		texinfo
 Version:	7.0.1
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	https://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.xz
@@ -185,6 +185,7 @@ Group:		Applications/Publishing
 Requires:	%{name} = %{version}-%{release}
 Requires:	texlive
 Requires:	texlive-fonts-latex
+Requires:	texlive-pdftex
 Requires:	texlive-plain
 
 %description texi2dvi
