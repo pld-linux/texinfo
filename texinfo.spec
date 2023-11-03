@@ -8,17 +8,17 @@ Summary(ru.UTF-8):	Инструменты для создания файлов �
 Summary(tr.UTF-8):	texinfo biçimleyici ve info okuyucu
 Summary(uk.UTF-8):	Інструменти для створення файлів документації формату Texinfo
 Name:		texinfo
-Version:	7.0.3
+Version:	7.1
 Release:	1
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	https://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.xz
-# Source0-md5:	37bf94fd255729a14d4ea3dda119f81a
+# Source0-md5:	edd9928b4a3f82674bcc3551616eef3b
 Source1:	info.desktop
 Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/texinfo/
 BuildRequires:	autoconf >= 2.69
-BuildRequires:	automake >= 1:1.14
+BuildRequires:	automake >= 1:1.16.2
 BuildRequires:	gettext-tools >= 0.21
 BuildRequires:	help2man
 BuildRequires:	ncurses-devel >= 5.0
