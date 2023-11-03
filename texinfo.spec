@@ -24,7 +24,9 @@ BuildRequires:	help2man
 BuildRequires:	ncurses-devel >= 5.0
 BuildRequires:	perl-Encode
 BuildRequires:	perl-Text-Unidecode >= 0.04
+BuildRequires:	perl-Unicode-EastAsianWidth >= 1.30
 BuildRequires:	perl-devel >= 1:5.8.1
+BuildRequires:	perl-libintl >= 1.31
 BuildRequires:	perl-modules >= 1:5.8.1
 BuildRequires:	perl-tools-devel
 BuildRequires:	rpm >= 4.4.9-56
