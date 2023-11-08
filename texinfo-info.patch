@@ -1,6 +1,20 @@
+--- texinfo-7.1/doc/info-stnd.texi.orig	2023-10-08 13:25:11.000000000 +0200
++++ texinfo-7.1/doc/info-stnd.texi	2023-11-06 17:42:26.673145395 +0100
+@@ -34,9 +34,9 @@ separately from the collection, you can
+ license to the document, as described in section 6 of the license.
+ @end copying
+ 
+-@dircategory Texinfo documentation system
++@dircategory Texinfo documentation system:
+ @direntry
+-* info stand-alone: (info-stnd).           Read Info documents without Emacs.
++* info stand-alone: (info-stnd).	Read Info documents without Emacs
+ @end direntry
+ 
+ @titlepage
 --- texinfo-7.1/doc/texinfo.texi.orig	2023-10-18 14:30:47.000000000 +0200
 +++ texinfo-7.1/doc/texinfo.texi	2023-11-04 00:25:57.719850317 +0100
-@@ -45,17 +45,17 @@
+@@ -45,17 +45,17 @@ Texts.  A copy of the license is include
  @end quotation
  @end copying
  
@@ -20,7 +34,7 @@
 +* install-info: (texinfo)install-info.	Update info/dir entries
 +* texi2any: (texinfo)texi2any.		Translate Texinfo source
 +* makeinfo: (texinfo)makeinfo.		Translate Texinfo source
-+* pod2texi: (pod2texi)pod2texi.		Translate Perl Pod to Texinfo
++* pod2texi: (texinfo)pod2texi.		Translate Perl Pod to Texinfo
 +* texi2dvi: (texinfo)texi2dvi.		Print Texinfo documents
 +* texi2pdf: (texinfo)PDF Output.	PDF output for Texinfo
 +* pdftexi2dvi: (texinfo)PDF Output.	PDF output for Texinfo
@@ -28,7 +42,7 @@
  @end direntry
  
  @set txiindexatsignignore
-@@ -1171,7 +1171,7 @@
+@@ -1171,7 +1171,7 @@ processed from standard input, without a
  base file name from, @code{@@setfilename} could still be relevant.
  This is not the only way, however: @option{--output} option specifies
  the output file name on the @command{texi2any} command-line
@@ -37,7 +51,7 @@
  
  @cindex Length of file names
  @cindex File name collision
-@@ -11845,8 +11845,7 @@
+@@ -11845,8 +11845,7 @@ included.  This will generally not be th
  itself, but will usually be the case for up-to-date distributions of
  the extended @TeX{} programs @command{etex} (DVI output) and
  @command{pdftex} (PDF output).  @command{texi2dvi} will use the
@@ -47,7 +61,7 @@
  
  @cindex ISO 639-2 language codes
  @cindex ISO 3166 country codes
-@@ -13163,8 +13162,8 @@
+@@ -13163,8 +13162,8 @@ Also, quite a few macro-related construc
  some of the caveats are listed below.  Thus, if you get macro-related
  errors when producing the printed version of a manual, you might try
  expanding the macros with @command{texi2any} by invoking
@@ -58,7 +72,7 @@
  and use a language designed for macro processing, such as M4
  (@pxref{External Macro Processors}).
  
-@@ -13704,8 +13703,8 @@
+@@ -13704,8 +13703,8 @@ use @command{texi2any}'s macro expansion
  
  @itemize @bullet
  @item
@@ -69,7 +83,7 @@
  will run @command{texi2any} first to expand macros and eliminate
  @samp{#line}.
  
-@@ -13991,7 +13990,7 @@
+@@ -13991,7 +13990,7 @@ process in which you use the @TeX{} prog
  you may also create indices using the @command{texindex} command
  after first running @TeX{}; and then you must run @TeX{} again.
  @command{texi2dvi} takes care of all of this, running @TeX{} and
@@ -78,7 +92,7 @@
  
  @anchor{Within Emacs} @c old node name
  @anchor{Emacs Shell Printing} @c old node name
-@@ -14035,16 +14034,16 @@
+@@ -14035,16 +14034,16 @@ and you can get it over the Internet or
  @c please keep that text in sync with www.gnu.org/prep/FTP
  
  
@@ -98,7 +112,7 @@
  
  @pindex texi2dvi @r{(shell script)}
  @pindex texi2pdf @r{(shell script)}
-@@ -14202,7 +14201,7 @@
+@@ -14202,7 +14201,7 @@ The default is @samp{nomaybe}.  This env
  for troubleshooting purposes, and may change or disappear in the future.
  
  
@@ -107,7 +121,7 @@
  @nodedescription Formatting with explicit shell commands.
  @section Format with @command{tex}/@command{texindex}
  
-@@ -14336,7 +14335,7 @@
+@@ -14336,7 +14335,7 @@ Thus, the beginning of your file would l
  
  @noindent @code{@@novalidate} also turns off validation in
  @command{texi2any}, just like its @code{--no-validate} option
@@ -116,7 +130,7 @@
  
  Furthermore, you need not run @command{texindex} each time after you run
  @command{tex}.  The @command{tex} formatting command simply uses whatever
-@@ -14395,7 +14394,7 @@
+@@ -14395,7 +14394,7 @@ file directly.
  
  For example, the following commands will (probably) suffice to sort
  the indices, format, and print this manual using the @command{texi2dvi}
@@ -125,7 +139,7 @@
  
  @example
  @group
-@@ -14616,7 +14615,7 @@
+@@ -14616,11 +14615,11 @@ anything which can be specified on the c
  specified within a initialization file.
  
  
@@ -134,7 +148,12 @@
  @nodedescription Running the translator from a shell.
  @section Invoking @command{texi2any} from a Shell
  
-@@ -15275,8 +15274,8 @@
+-@anchor{Invoking makeinfo}
++@anchor{makeinfo}
+ @pindex makeinfo
+ @pindex texi2any
+ 
+@@ -15275,8 +15274,8 @@ tricks together with @file{texinfo.tex},
  @command{texi2dvi} directly.
  
  The output format options for this are @option{--dvi},
@@ -145,7 +164,7 @@
  @command{texi2dvi} operation.  In addition, the @option{--verbose},
  @option{--silent}, and @option{--quiet} options are passed on if
  specified; the @option{-I} and @option{-o} options are likewise passed
-@@ -15413,7 +15412,7 @@
+@@ -15413,7 +15412,7 @@ variables may not be passed on to @TeX{}
  @cindex Options, customization variables for
  
  The following table gives the customization variables associated with
@@ -154,7 +173,7 @@
  meaning of the options.
  
  @multitable @columnfractions 0.5 0.5
-@@ -15487,7 +15486,7 @@
+@@ -15487,7 +15486,7 @@ forms:
  @itemx xml
  These correspond to the command-line options (and
  @code{TEXINFO_OUTPUT_FORMAT} environment variable values) of the same
@@ -163,7 +182,7 @@
  
  @cindex tree representation, for debugging
  @cindex debugging document, with tree representation
-@@ -16130,13 +16129,13 @@
+@@ -16130,13 +16129,13 @@ output quotation marks.
  For Info output, column at which to start a menu entry description
  provided by @code{@@nodedescription} or @code{@@nodedescriptionblock}.
  Undefined by default, in which case 45% of the fill column value is used
@@ -179,7 +198,25 @@
  
  @item CHECK_MISSING_MENU_ENTRY
  When a @code{@@menu} block occurs in a node, check if there is a menu
-@@ -17063,7 +17062,7 @@
+@@ -16488,7 +16487,7 @@ This may be remedied in a future release
+ 
+ The following transformations are currently supported (many are used
+ in the @code{pod2texi} utility distributed with Texinfo;
+-@pxref{Invoking @command{pod2texi}}):
++@pxref{@command{pod2texi}}):
+ 
+ @ftable @samp
+ @item complete_tree_nodes_menus
+@@ -16670,7 +16669,7 @@ format, while nevertheless with rich for
+ appropriately in many languages.
+ 
+ 
+-@node Invoking @command{pod2texi}
++@node @command{pod2texi}
+ @nodedescription Translating Perl Pod to Texinfo.
+ @section Invoking @command{pod2texi}: Convert Pod to Texinfo
+ 
+@@ -17063,7 +17062,7 @@ start at column 32, starting at zero (as
  most others.  Description for individual utilities best start in
  column 48, where possible.  For more information about formatting see
  the @samp{--calign}, @samp{--align}, and @samp{--max-width} options in
@@ -188,7 +225,7 @@
  
  If you use @code{@@dircategory} more than once in the Texinfo source,
  each usage specifies the `current' category; any subsequent
-@@ -17076,7 +17075,7 @@
+@@ -17076,7 +17075,7 @@ documentation for the different programs
  traditional @command{man} system.
  
  
@@ -197,7 +234,7 @@
  @nodedescription @code{install-info} options.
  @subsection Invoking @command{install-info}
  
-@@ -17323,7 +17322,7 @@
+@@ -17323,7 +17322,7 @@ large Info file into shorter @dfn{indire
  300,000 characters each.  With @command{texi2any}, splitting
  may be prevented by @option{--no-split}, and the default size
  of 300,000 characters may be modified with @option{--split-size}
@@ -206,7 +243,7 @@
  
  When a file is split, Info itself makes use of a shortened version of
  the original file that contains just the tag table and references to
-@@ -17505,7 +17504,7 @@
+@@ -17505,7 +17504,7 @@ Variables}.  In particular, there is sup
  @code{@@example} (@pxref{Syntax Highlighting}). You can also write so-called
  @dfn{initialization files}, or @dfn{init files} for short, to modify almost
  every aspect of HTML output formatting.  Initialization files contain code and
@@ -215,7 +252,7 @@
  
  Some initialization files are maintained with Texinfo and installed
  in the default case.  For example, @file{chm.pm} produces the intermediate
-@@ -17595,7 +17594,7 @@
+@@ -17595,7 +17594,7 @@ insensitive filesystem by setting the cu
  @code{CASE_INSENSITIVE_FILENAMES}.
  
  It is also possible to split at chapters or sections with
@@ -224,7 +261,7 @@
  the file names are constructed after the name of the node associated
  with the relevant sectioning command.  Also, unless
  @option{--no-node-files} is specified, a redirection file is output
-@@ -17816,7 +17815,7 @@
+@@ -17816,7 +17815,7 @@ The EPUB output file is not generated if
  is left after the final EPUB file has been generated if
  @code{EPUB_KEEP_CONTAINER_FOLDER} is set.
  
@@ -233,7 +270,7 @@
  
  
  @node EPUB Cross-References
-@@ -23111,7 +23110,7 @@
+@@ -23111,7 +23110,7 @@ have been called the @code{@@regularbook
  called the @code{@@smallbook} command by comparison to the 8.5 by 11
  inch format.)
  
@@ -242,7 +279,7 @@
  and @ref{Preparing for @TeX{}}, for other ways to format with
  @code{@@smallbook} with @TeX{} that do not require changing the source file.
  
-@@ -23137,7 +23136,7 @@
+@@ -23137,7 +23136,7 @@ You may or may not prefer the formatting
  wide format, @code{@@afivepaper} for A5 paper, and @code{@@bsixpaper} for
  B6 paper.
  
@@ -251,7 +288,7 @@
  and @ref{Preparing for @TeX{}}, for other ways to format for different
  paper sizes that do not require changing the source file.
  
-@@ -23181,7 +23180,7 @@
+@@ -23181,7 +23180,7 @@ To make more elaborate changes, such as
  margins, you must define a new command in @file{texinfo.tex} or
  @file{texinfo.cnf}.
  
@@ -260,3 +297,11 @@
  and @ref{Preparing for @TeX{}}, for other ways to specify
  @code{@@pagesizes} that do not require changing the source file.
  
+--- texinfo-7.1/doc/pod2texi.texi.orig	2023-08-15 14:06:23.000000000 +0200
++++ texinfo-7.1/doc/pod2texi.texi	2023-11-07 22:11:30.144286396 +0100
+@@ -1,5 +1,4 @@
+ @subsection pod2texi
+-@anchor{pod2texi}
+ 
+ @subsubheading pod2texi NAME
+ @anchor{pod2texi NAME}
