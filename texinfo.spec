@@ -9,7 +9,7 @@ Summary(tr.UTF-8):	texinfo biçimleyici ve info okuyucu
 Summary(uk.UTF-8):	Інструменти для створення файлів документації формату Texinfo
 Name:		texinfo
 Version:	7.1
-Release:	2
+Release:	3
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	https://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.xz
@@ -232,6 +232,8 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 %{__rm} -r $RPM_BUILD_ROOT%{_localedir}/pt.us-ascii
 # outdated copy of default encoding
 %{__rm} -r $RPM_BUILD_ROOT%{_localedir}/pt_BR.us-ascii
+# outdated encoding
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/pl.iso-8859-2
 # normalize locale name
 %{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{no.us-ascii,nb}/LC_MESSAGES/texinfo_document.mo
 
