@@ -8,12 +8,12 @@ Summary(ru.UTF-8):	Инструменты для создания файлов �
 Summary(tr.UTF-8):	texinfo biçimleyici ve info okuyucu
 Summary(uk.UTF-8):	Інструменти для створення файлів документації формату Texinfo
 Name:		texinfo
-Version:	7.1.1
+Version:	7.2
 Release:	1
 License:	GPL v3+
 Group:		Applications/Publishing
 Source0:	https://ftp.gnu.org/gnu/texinfo/%{name}-%{version}.tar.xz
-# Source0-md5:	e5fc595794a7980f98ce446a5f8aa273
+# Source0-md5:	11939a7624572814912a18e76c8d8972
 Source1:	info.desktop
 Patch0:		%{name}-info.patch
 URL:		http://www.gnu.org/software/texinfo/
@@ -45,6 +45,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_noautoprovfiles	%{_datadir}/texinfo
 # and don't require them externally
 %define		_noautoreq_perl		Pod::Simple::Texinfo Texinfo::.*
+# libraries use perl symbols
+%define		skip_post_check_so	libtexinfo.*
 
 %description
 Texinfo is a documentation system that can produce both online
@@ -198,7 +200,7 @@ Narzędzie do konwersji plików texinfo na dvi.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__aclocal} -I gnulib/m4
@@ -221,21 +223,11 @@ install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_sbindir},/sbin}
 %{__mv} $RPM_BUILD_ROOT%{_bindir}/install-info $RPM_BUILD_ROOT%{_sbindir}
 ln -sf %{_sbindir}/install-info $RPM_BUILD_ROOT/sbin/install-info
 
-# perl modules
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/texinfo/*.la
+# perl modules and shared libs with no exported API
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/texi2any/*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/texi2any/lib*.so
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
-
-# copy of default encoding
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/ca.us-ascii
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/de.us-ascii
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/pt.us-ascii
-# outdated copy of default encoding
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/pt_BR.us-ascii
-# outdated encoding
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/pl.iso-8859-2
-# normalize locale name
-%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{no.us-ascii,nb}/LC_MESSAGES/texinfo_document.mo
 
 %find_lang %{name}
 %find_lang texinfo_document
@@ -262,11 +254,17 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/pod2texi
 %attr(755,root,root) %{_bindir}/texi2any
 %attr(755,root,root) %{_bindir}/texindex
+%{_datadir}/texi2any
 %{_datadir}/texinfo
-%dir %{_libdir}/texinfo
-%attr(755,root,root) %{_libdir}/texinfo/MiscXS.so
-%attr(755,root,root) %{_libdir}/texinfo/Parsetexi.so
-%attr(755,root,root) %{_libdir}/texinfo/XSParagraph.so
+%dir %{_libdir}/texi2any
+%attr(755,root,root) %{_libdir}/texi2any/ConvertXS.so
+%attr(755,root,root) %{_libdir}/texi2any/DocumentXS.so
+%attr(755,root,root) %{_libdir}/texi2any/IndicesXS.so
+%attr(755,root,root) %{_libdir}/texi2any/MiscXS.so
+%attr(755,root,root) %{_libdir}/texi2any/Parsetexi.so
+%attr(755,root,root) %{_libdir}/texi2any/StructuringTransfoXS.so
+%attr(755,root,root) %{_libdir}/texi2any/XSParagraph.so
+%attr(755,root,root) %{_libdir}/texi2any/libtexinfo*.so.*
 %{_infodir}/texinfo.info*
 %{_infodir}/texi2any_api.info*
 %{_infodir}/texi2any_internals.info*
